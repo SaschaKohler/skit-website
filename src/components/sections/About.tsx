@@ -1,78 +1,96 @@
-// src/components/sections/About.tsx
 import React from "react";
+import { GraduationCap, Heart, Brain, Landmark } from "lucide-react";
 
 const About: React.FC = () => {
+  const qualifications = [
+    {
+      icon: <Landmark className="w-6 h-6" />,
+      title: "Apotheker",
+      description: "Über 20 Jahre Erfahrung in öffentlichen Apotheken",
+    },
+    {
+      icon: <Brain className="w-6 h-6" />,
+      title: "NLP-Practitioner & Life Master",
+      description: "Zertifizierte Ausbildung in NLP-Techniken",
+    },
+    {
+      icon: <Heart className="w-6 h-6" />,
+      title: "Lebens- und Sozialberater",
+      description: "In Ausbildung unter Supervision (Rene Otto Knor Akademie)",
+    },
+    {
+      icon: <GraduationCap className="w-6 h-6" />,
+      title: "IT-Experte",
+      description:
+        "Spezialisiert auf moderne Webtechnologien und Digitallösungen",
+    },
+  ];
+
   return (
-    <section id="about" className="py-20 bg-gray-100">
+    <section id="about" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-16">EPU mit Fokus</h2>
-        <div className="grid md:grid-cols-2 gap-12">
-          <div>
-            <h3 className="text-2xl font-semibold mb-4">Vorteile als EPU</h3>
-            <ul className="space-y-4">
-              <li className="flex items-center">
-                <svg
-                  className="w-5 h-5 text-green-500 mr-2"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
-                </svg>
-                100% Konzentration auf nur ein Projekt
-              </li>
-              <li className="flex items-center">
-                <svg
-                  className="w-5 h-5 text-green-500 mr-2"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
-                </svg>
-                Maximale Reaktionszeit: 30 Minuten
-              </li>
-              <li className="flex items-center">
-                <svg
-                  className="w-5 h-5 text-green-500 mr-2"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
-                </svg>
-                Komplettlösungen aus einer Hand
-              </li>
-            </ul>
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <h2 className="text-3xl font-bold mb-6">Ganzheitliche Expertise</h2>
+          <p className="text-gray-600 text-lg mb-8">
+            Mein Weg führt vom Apotheker über die IT bis zur Lebensberatung -
+            eine einzigartige Kombination, die es mir ermöglicht, Menschen und
+            Technologie auf besondere Weise zu verbinden.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-12 mb-16">
+          {/* Professionelle Entwicklung */}
+          <div className="bg-white rounded-lg shadow-lg p-8">
+            <h3 className="text-2xl font-bold mb-4">Mein Werdegang</h3>
+            <div className="space-y-4">
+              <p className="text-gray-600">
+                Als Apotheker durfte ich über zwei Jahrzehnte Menschen in nahezu
+                jeder Lebenssituation begleiten. Diese Zeit hat mir nicht nur
+                ein tiefes Verständnis für körperliche Aspekte des Wohlbefindens
+                vermittelt, sondern auch meinen Blick für die emotionalen und
+                sozialen Bedürfnisse der Menschen geschärft.
+              </p>
+              <p className="text-gray-600">
+                Die Verbindung von Technologie und menschlichem Wohlbefinden
+                wurde zu meiner Passion. Als IT-Experte entwickle ich heute
+                Lösungen, die nicht nur technisch exzellent sind, sondern auch
+                den Menschen in den Mittelpunkt stellen.
+              </p>
+            </div>
           </div>
-          <div>
-            <h3 className="text-2xl font-semibold mb-4">Unser Prozess</h3>
-            <ol className="space-y-4">
-              <li className="flex">
-                <span className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4">
-                  1
-                </span>
-                <div>
-                  <h4 className="font-semibold">Zielsetzung & Anforderungen</h4>
-                  <p>Gemeinsames Erarbeiten Ihrer spezifischen Bedürfnisse</p>
-                </div>
-              </li>
-              <li className="flex">
-                <span className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4">
-                  2
-                </span>
-                <div>
-                  <h4 className="font-semibold">Konzepterstellung</h4>
-                  <p>Detaillierte Planung und technisches Konzept</p>
-                </div>
-              </li>
-              <li className="flex">
-                <span className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4">
-                  3
-                </span>
-                <div>
-                  <h4 className="font-semibold">Umsetzung</h4>
-                  <p>Entwicklung und kontinuierlicher Support</p>
-                </div>
-              </li>
-            </ol>
+
+          {/* Qualifikationen Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {qualifications.map((qual, index) => (
+              <div
+                key={index}
+                className="bg-white p-6 rounded-lg shadow-lg border-l-4 border-blue-600"
+              >
+                <div className="text-blue-600 mb-4">{qual.icon}</div>
+                <h4 className="text-xl font-semibold mb-2">{qual.title}</h4>
+                <p className="text-gray-600">{qual.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Projekt "Ja zum Leben" */}
+        <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-lg p-8">
+          <div className="max-w-3xl mx-auto">
+            <h3 className="text-2xl font-bold mb-4">Projekt "Ja zum Leben"</h3>
+            <p className="mb-4">
+              Gemeinsam mit meiner Frau Gerda Ahorner verbinde ich modernste
+              Beratungstechniken mit traditionellem Heilwissen. Wir unterstützen
+              Menschen dabei, ihr volles Potenzial zu entfalten und ein
+              erfülltes, selbstbestimmtes Leben zu führen.
+            </p>
+            <a
+              href="#contact"
+              className="inline-block bg-white text-blue-600 px-6 py-2 rounded-lg 
+                font-semibold hover:bg-blue-50 transition duration-300"
+            >
+              Mehr erfahren
+            </a>
           </div>
         </div>
       </div>
