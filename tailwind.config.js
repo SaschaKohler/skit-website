@@ -4,20 +4,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        brand: {
-          peach: "#E6C7B3", // Hintergrundfarbe
-          dark: "#3C3C3C", // Dunkelgrau für Seitenleiste
-          accent: "#E67E22", // Orange Akzentfarbe
-          gold: "#FFD700", // Goldfarbe für das Mandala-Icon
+        primary: {
+          50: "#f0f9ff",
+          100: "#e0f2fe",
+          200: "#bae6fd",
+          300: "#7dd3fc",
+          400: "#38bdf8",
+          500: "#0ea5e9",
+          600: "#0284c7",
+          700: "#0369a1",
+          800: "#075985",
+          900: "#0c4a6e",
         },
-        text: {
-          primary: "#3C3C3C", // Haupttextfarbe
-          light: "#FFFFFF", // Weißer Text
-          accent: "#E67E22", // Akzent-Textfarbe
-        },
-      },
-      gradients: {
-        peach: "linear-gradient(135deg, #E6C7B3 0%, #F5DEB3 100%)",
       },
     },
   },
