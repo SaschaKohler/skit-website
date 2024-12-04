@@ -33,7 +33,16 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: "dist/*"
-          target: "/var/www/skit.sascha-kohler.at/dist"
-          strip_components: 0
+          target: "/var/www/skit.sascha-kohler.at"
+          strip_components: 1
           overwrite: true
           debug: true
+
+      - name: Fix permissions
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            sudo chown -R www-data:www-data /var/www/skit.sascha-kohler.at
