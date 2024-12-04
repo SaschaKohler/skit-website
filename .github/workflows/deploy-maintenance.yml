@@ -30,5 +30,5 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: "dist/*"
-          target: "/var/www/skit.sascha-kohler.at"
+          target: "/var/www/skit.sascha-kohler.at/"
           strip_components: 1
