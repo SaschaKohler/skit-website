@@ -29,7 +29,7 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           source: "dist/*"
-          target: "/var/www/skit.sascha-kohler.at/"
+          target: "/var/www/skit.sascha-kohler.at"
           strip_components: 1
 
       - name: Execute remote commands
