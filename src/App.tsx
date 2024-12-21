@@ -12,7 +12,7 @@ import MakePage from "./pages/technologies/Make.tsx";
 import NLPPage from "./pages/technologies/NLP.tsx";
 import TechnologyOverview from "./pages/technologies/Overview.tsx";
 import ReactVitePage from "./pages/technologies/ReactVite.tsx";
-import WordPress from "./pages/technologies/WordPress.tsx";
+// import WordPress from "./pages/technologies/WordPress.tsx";
 import JaZumLebenPage from "./pages/ja-zum-leben";
 import Impressum from "./pages/impressum";
 import Datenschutz from "./pages/datenschutz";
@@ -36,7 +36,7 @@ const App: React.FC = () => {
         <Route path="/packages" element={<PricingPage />} />
         <Route path="technologies" element={<TechnologyLayout />}>
           <Route index element={<TechnologyOverview />} />
-          <Route path="wordpress" element={<WordPress />} />
+          {/* <Route path="wordpress" element={<WordPress />} /> */}
           <Route path="make" element={<MakePage />} />
           <Route path="brevo" element={<BrevoPage />} />
           <Route path="react-vite" element={<ReactVitePage />} />
@@ -48,3 +48,4 @@ const App: React.FC = () => {
 };
 
 export default App;
+
