@@ -1,5 +1,6 @@
 import React from "react";
 import { GraduationCap, Heart, Brain, Landmark } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const About: React.FC = () => {
   const qualifications = [
@@ -40,7 +41,8 @@ const About: React.FC = () => {
 
         <div className="grid md:grid-cols-2 gap-12 mb-16">
           {/* Professionelle Entwicklung */}
-          <div className="bg-white rounded-lg shadow-lg p-8">
+          <div className="bg-white rounded-lg shadow-md p-8 transition duration-300 
+                       hover:shadow-lg">
             <h3 className="text-2xl font-bold mb-4">Mein Werdegang</h3>
             <div className="space-y-4">
               <p className="text-gray-600">
@@ -64,7 +66,8 @@ const About: React.FC = () => {
             {qualifications.map((qual, index) => (
               <div
                 key={index}
-                className="bg-white p-6 rounded-lg shadow-lg border-l-4 border-blue-600"
+                className="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600
+                         transition duration-300 hover:shadow-lg"
               >
                 <div className="text-blue-600 mb-4">{qual.icon}</div>
                 <h4 className="text-xl font-semibold mb-2">{qual.title}</h4>
@@ -75,7 +78,8 @@ const About: React.FC = () => {
         </div>
 
         {/* Projekt "Ja zum Leben" */}
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-lg p-8">
+        <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-lg p-8
+                     transition duration-300 hover:from-blue-700 hover:to-indigo-800">
           <div className="max-w-3xl mx-auto">
             <h3 className="text-2xl font-bold mb-4">Projekt "Ja zum Leben"</h3>
             <p className="mb-4">
@@ -84,13 +88,13 @@ const About: React.FC = () => {
               Menschen dabei, ihr volles Potenzial zu entfalten und ein
               erfülltes, selbstbestimmtes Leben zu führen.
             </p>
-            <a
-              href="#contact"
+            <Link
+              to="/ja-zum-leben"
               className="inline-block bg-white text-blue-600 px-6 py-2 rounded-lg 
-                font-semibold hover:bg-blue-50 transition duration-300"
+                     font-semibold transition duration-300 hover:bg-opacity-90"
             >
               Mehr erfahren
-            </a>
+            </Link>
           </div>
         </div>
       </div>

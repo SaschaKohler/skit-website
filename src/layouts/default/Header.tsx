@@ -44,24 +44,30 @@ const Header: React.FC = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-6">
-            <a
-              href="#services"
+            <Link
+              to="/services"
               className="hover:text-blue-200 transition duration-300"
             >
               Leistungen
-            </a>
-            <a
-              href="#about"
+            </Link>
+            <Link
+              to="/about"
               className="hover:text-blue-200 transition duration-300"
             >
-              Über uns
-            </a>
-            <a
-              href="#contact"
+              Über mich
+            </Link>
+            <Link
+              to="/ja-zum-leben"
+              className="hover:text-blue-200 transition duration-300"
+            >
+              Ja zum Leben
+            </Link>
+            <Link
+              to="/contact"
               className="hover:text-blue-200 transition duration-300"
             >
               Kontakt
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -69,27 +75,34 @@ const Header: React.FC = () => {
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4">
             <div className="flex flex-col space-y-4">
-              <a
-                href="#services"
+              <Link
+                to="/services"
                 className="hover:text-blue-200 transition duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Leistungen
-              </a>
-              <a
-                href="#about"
+              </Link>
+              <Link
+                to="/about"
                 className="hover:text-blue-200 transition duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Über uns
-              </a>
-              <a
-                href="#contact"
+                Über mich
+              </Link>
+              <Link
+                to="/ja-zum-leben"
+                className="hover:text-blue-200 transition duration-300"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Ja zum Leben
+              </Link>
+              <Link
+                to="/contact"
                 className="hover:text-blue-200 transition duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Kontakt
-              </a>
+              </Link>
             </div>
           </div>
         )}

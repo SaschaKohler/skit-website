@@ -1,4 +1,3 @@
-// src/pages/services/index.tsx
 import React from "react";
 import { Link } from "react-router-dom";
 import DefaultLayout from "../../layouts/default/DefaultLayout";
@@ -14,13 +13,13 @@ interface ServicePreview {
 const ServicesIndex: React.FC = () => {
   const services: ServicePreview[] = [
     {
-      title: "Webentwicklung",
-      description: "Professionelle Websites und Content Management Systeme",
+      title: "Ihre Website",
+      description: "Ihre persönliche digitale Visitenkarte - professionell & einzigartig",
       features: [
-        "WordPress mit Divi Theme",
-        "Mitgliederbereiche",
-        "E-Mail Marketing",
-        "Hosting & Support",
+        "Einfach selbst zu pflegen",
+        "Geschützter Kundenbereich",
+        "Newsletter & Kontaktmöglichkeiten",
+        "Alles-inklusive-Betreuung",
       ],
       link: "/services/web-development",
       icon: (
@@ -40,13 +39,13 @@ const ServicesIndex: React.FC = () => {
       ),
     },
     {
-      title: "App-Entwicklung",
-      description: "Moderne Webanwendungen mit React und TypeScript",
+      title: "Individuelle Lösungen",
+      description: "Spezielle Funktionen für Ihre besonderen Anforderungen",
       features: [
-        "Single Page Applications",
-        "React/Vite Setup",
-        "TypeScript Integration",
-        "CI/CD Pipeline",
+        "Maßgeschneiderte Entwicklung",
+        "Genau auf Sie zugeschnitten",
+        "Einfach zu bedienen",
+        "Zukunftssicher gebaut",
       ],
       link: "/services/app-development",
       icon: (
@@ -66,13 +65,13 @@ const ServicesIndex: React.FC = () => {
       ),
     },
     {
-      title: "Automation",
-      description: "Geschäftsprozesse automatisieren und optimieren",
+      title: "Zeit sparen",
+      description: "Lassen Sie Ihre Routineaufgaben automatisch erledigen",
       features: [
-        "Make.com Workflows",
-        "E-Mail Automation",
-        "Social Media Integration",
-        "API Entwicklung",
+        "Automatische Arbeitsabläufe",
+        "E-Mails & Terminbuchungen",
+        "Alles greift ineinander",
+        "Mehr Zeit fürs Wesentliche",
       ],
       link: "/services/automation",
       icon: (
@@ -98,9 +97,9 @@ const ServicesIndex: React.FC = () => {
       <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20">
         <div className="container mx-auto px-6">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Unsere Leistungen
+            Ihre digitale Zukunft
           </h1>
-          <p className="text-xl">Professionelle IT-Lösungen aus einer Hand</p>
+          <p className="text-xl">Gemeinsam finden wir die perfekte Lösung für Sie</p>
         </div>
       </div>
 

@@ -10,25 +10,81 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: "18"
+          node-version: "20"
+          cache: 'npm'
 
       - name: Install Dependencies
         run: npm ci
 
+      - name: Check for TypeScript errors
+        run: npx tsc --noEmit
+
       - name: Build
         run: npm run build
+        
+      - name: Backup main site
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          script: |
+            cd /var/www/skit.sascha-kohler.at
+            if [ -d "current" ]; then
+              rm -rf production_backup
+              mv current production_backup
+            fi
+            mkdir -p maintenance
 
-      - name: Deploy to Server
+      - name: Deploy Maintenance Page
         uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
           source: "dist/*"
-          target: "/var/www/skit.sascha-kohler.at"
+          target: "/var/www/skit.sascha-kohler.at/maintenance"
           strip_components: 1
+          overwrite: true
+
+      - name: Configure Maintenance Mode
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          script: |
+            sudo chown -R www-data:www-data /var/www/skit.sascha-kohler.at/maintenance
+            sudo chmod -R 755 /var/www/skit.sascha-kohler.at/maintenance
+            # Aktiviere Maintenance-Mode im Nginx
+            sudo cp /etc/nginx/sites-available/maintenance.conf /etc/nginx/sites-available/skit.sascha-kohler.at.conf
+            sudo systemctl reload nginx
+
+      - name: Verify Maintenance Mode
+        run: |
+          if curl -s --head https://skit.sascha-kohler.at | grep "503" > /dev/null; then 
+            echo "Maintenance mode activated successfully!"
+          else
+            echo "Maintenance mode activation failed"
+            exit 1
+          fi
+
+      - name: Notification
+        uses: actions/github-script@v7
+        if: always()
+        with:
+          script: |
+            const { context } = require('@actions/github');
+            const status = context.job.status === 'success' ? '✅' : '❌';
+            const message = `Maintenance Mode ${context.job.status}: ${status}\nCommit: ${context.sha}`;
+            github.rest.repos.createCommitComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              commit_sha: context.sha,
+              body: message
+            });

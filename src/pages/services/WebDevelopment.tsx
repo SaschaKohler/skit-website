@@ -1,4 +1,3 @@
-// src/pages/services/WebDevelopment.tsx
 import React from "react";
 import DefaultLayout from "../../layouts/default/DefaultLayout";
 
@@ -8,10 +7,10 @@ const WebDevelopment: React.FC = () => {
       <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20">
         <div className="container mx-auto px-6">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Webentwicklung
+            Ihre neue Website
           </h1>
           <p className="text-xl">
-            Maßgeschneiderte Websites und Web-Anwendungen
+            Modern, einladend und einfach zu pflegen
           </p>
         </div>
       </div>
@@ -19,7 +18,7 @@ const WebDevelopment: React.FC = () => {
       <div className="container mx-auto px-6 py-16">
         <div className="grid md:grid-cols-2 gap-12">
           <div>
-            <h2 className="text-2xl font-bold mb-6">WordPress & Divi</h2>
+            <h2 className="text-2xl font-bold mb-6">Was Sie bekommen</h2>
             <ul className="space-y-4">
               <li className="flex items-start">
                 <svg
@@ -37,12 +36,11 @@ const WebDevelopment: React.FC = () => {
                 </svg>
                 <div>
                   <h3 className="font-semibold mb-2">
-                    Professionelle WordPress-Entwicklung
+                    Einfach selbst zu pflegen
                   </h3>
                   <p className="text-gray-600">
-                    Individuelle Themes und Plugins basierend auf dem
-                    Divi-Framework mit Fokus auf Performance und
-                    Benutzerfreundlichkeit.
+                    Mit WordPress und dem Divi-Editor können Sie Ihre Inhalte ganz 
+                    leicht selbst aktualisieren - ohne technische Vorkenntnisse.
                   </p>
                 </div>
               </li>
@@ -61,10 +59,10 @@ const WebDevelopment: React.FC = () => {
                   />
                 </svg>
                 <div>
-                  <h3 className="font-semibold mb-2">Mitgliederbereiche</h3>
+                  <h3 className="font-semibold mb-2">Geschützter Bereich für Ihre Kunden</h3>
                   <p className="text-gray-600">
-                    Sichere und benutzerfreundliche Mitgliederbereiche für Paid
-                    Content, Kurse und exklusive Inhalte.
+                    Bieten Sie exklusive Inhalte, Online-Kurse oder digitale Produkte 
+                    in einem passwortgeschützten Bereich an.
                   </p>
                 </div>
               </li>
@@ -72,7 +70,7 @@ const WebDevelopment: React.FC = () => {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold mb-6">E-Mail & Automation</h2>
+            <h2 className="text-2xl font-bold mb-6">Automatische Helfer</h2>
             <ul className="space-y-4">
               <li className="flex items-start">
                 <svg
@@ -89,10 +87,10 @@ const WebDevelopment: React.FC = () => {
                   />
                 </svg>
                 <div>
-                  <h3 className="font-semibold mb-2">Brevo Integration</h3>
+                  <h3 className="font-semibold mb-2">Newsletter & Kundenbetreuung</h3>
                   <p className="text-gray-600">
-                    Professionelle E-Mail-Marketing-Lösungen mit automatisierten
-                    Kampagnen und personalisierten Newslettern.
+                    Halten Sie mit personalisierten E-Mails Kontakt zu Ihren Kunden. 
+                    Automatische Willkommensnachrichten, Geburtstagswünsche und mehr.
                   </p>
                 </div>
               </li>
@@ -111,15 +109,46 @@ const WebDevelopment: React.FC = () => {
                   />
                 </svg>
                 <div>
-                  <h3 className="font-semibold mb-2">Make.com Workflows</h3>
+                  <h3 className="font-semibold mb-2">Alles greift ineinander</h3>
                   <p className="text-gray-600">
-                    Automatisierte Geschäftsprozesse durch intelligente
-                    Verknüpfung verschiedener Dienste und Anwendungen.
+                    Ihre Website, E-Mails und Social Media arbeiten Hand in Hand. 
+                    Einmal eingerichtet, läuft alles wie von selbst.
                   </p>
                 </div>
               </li>
             </ul>
           </div>
+        </div>
+
+        {/* Zusätzlicher Bereich für Vorteile */}
+        <div className="mt-16 bg-gray-50 rounded-lg p-8">
+          <h2 className="text-2xl font-bold mb-6 text-center">Ihre Vorteile</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="text-blue-600 text-2xl font-bold mb-2">Zeitersparnis</div>
+              <p>Sie konzentrieren sich auf Ihr Geschäft, während die Website für Sie arbeitet</p>
+            </div>
+            <div className="text-center">
+              <div className="text-blue-600 text-2xl font-bold mb-2">Alles inklusive</div>
+              <p>Hosting, Domain, E-Mails und Support aus einer Hand</p>
+            </div>
+            <div className="text-center">
+              <div className="text-blue-600 text-2xl font-bold mb-2">Persönlich</div>
+              <p>Ein Ansprechpartner für alle Ihre Fragen und Wünsche</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Call to Action */}
+        <div className="mt-16 text-center">
+          <h2 className="text-3xl font-bold mb-4">Bereit für Ihre neue Website?</h2>
+          <p className="text-gray-600 mb-8">
+            Lassen Sie uns in einem unverbindlichen Gespräch herausfinden, 
+            was die beste Lösung für Sie ist.
+          </p>
+          <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+            Kostenloses Erstgespräch vereinbaren
+          </button>
         </div>
       </div>
     </DefaultLayout>
