@@ -1,25 +1,27 @@
-import React from 'react';
-import { ArrowRight, Calendar, Users, HeartHandshake } from 'lucide-react';
+import { ArrowRight, Calendar, Users, HeartHandshake } from "lucide-react";
 
 const JaZumLebenSection = () => {
   const nextCourseDate = "04.02.25";
-  
+
   const features = [
     {
       title: "Bachblüten & Mindset",
-      description: "Einzigartige Kombination aus der sanften Kraft der Bachblüten und modernen Mindset-Techniken",
-      icon: HeartHandshake
+      description:
+        "Einzigartige Kombination aus der sanften Kraft der Bachblüten und modernen Mindset-Techniken",
+      icon: HeartHandshake,
     },
     {
       title: "14 Wochen Begleitung",
-      description: "Intensive persönliche Betreuung mit wöchentlichen Live-Calls",
-      icon: Calendar
+      description:
+        "Intensive persönliche Betreuung mit wöchentlichen Live-Calls",
+      icon: Calendar,
     },
     {
       title: "Erfahrene Mentoren",
-      description: "Gerda als Bachblüten-Expertin und Sascha als NLP-Master verbinden ihre Expertise",
-      icon: Users
-    }
+      description:
+        "Gerda als Bachblüten-Expertin und Sascha als NLP-Master verbinden ihre Expertise",
+      icon: Users,
+    },
   ];
 
   return (
@@ -37,7 +39,11 @@ const JaZumLebenSection = () => {
         {/* Hauptbeschreibung */}
         <div className="mt-12 max-w-3xl mx-auto text-lg text-gray-600">
           <p>
-            Die "Ja zum Leben" Werkstatt ist ein einzigartiges Projekt, das Anfang 2024 aus der Synergie zwischen Gerda Ahorner und Sascha Kohler entstanden ist. Wir verbinden die heilsame Kraft der Bachblüten mit modernem Mindset-Training für Ihre persönliche Transformation.
+            Die "Ja zum Leben" Werkstatt ist ein einzigartiges Projekt, das
+            Anfang 2024 aus der Synergie zwischen Gerda Ahorner und Sascha
+            Kohler entstanden ist. Wir verbinden die heilsame Kraft der
+            Bachblüten mit modernem Mindset-Training für Ihre persönliche
+            Transformation.
           </p>
         </div>
 
@@ -47,11 +53,16 @@ const JaZumLebenSection = () => {
             <div key={index} className="relative p-6 bg-gray-50 rounded-xl">
               <div className="absolute -top-4 left-4">
                 <span className="inline-flex items-center justify-center p-3 bg-blue-600 rounded-md shadow-lg">
-                  <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
+                  <feature.icon
+                    className="h-6 w-6 text-white"
+                    aria-hidden="true"
+                  />
                 </span>
               </div>
               <div className="pt-4">
-                <h3 className="text-xl font-medium text-gray-900 mt-4">{feature.title}</h3>
+                <h3 className="text-xl font-medium text-gray-900 mt-4">
+                  {feature.title}
+                </h3>
                 <p className="mt-2 text-gray-600">{feature.description}</p>
               </div>
             </div>
@@ -82,3 +93,4 @@ const JaZumLebenSection = () => {
 };
 
 export default JaZumLebenSection;
+

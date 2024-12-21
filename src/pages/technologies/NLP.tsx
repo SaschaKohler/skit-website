@@ -2,7 +2,6 @@ import React from "react";
 import {
   Brain,
   Target,
-  Users,
   MessageCircle,
   HeartHandshake,
   ArrowUpRight,
