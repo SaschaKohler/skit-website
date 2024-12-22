@@ -90,9 +90,10 @@ jobs:
         run: |
           # Warte kurz, damit Nginx neu geladen werden kann
           sleep 5
-          if curl -s --head https://skit.sascha-kohler.at | grep "200 OK" > /dev/null; then 
-            echo "Deployment successful!"
+          response_code=$(curl -s -o /dev/null -w "%{http_code}" https://skit.sascha-kohler.at)
+          if [[ $response_code =~ ^(200|301|302)$ ]]; then
+            echo "Deployment successful! Response code: $response_code"
           else
-            echo "Deployment verification failed"
+            echo "Deployment verification failed with response code: $response_code"
             exit 1
           fi
