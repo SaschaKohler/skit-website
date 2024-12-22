@@ -6,17 +6,32 @@ import Services from "../components/sections/Services";
 import PricingPackages from "../components/sections/PricingPackages";
 import About from "../components/sections/About";
 import ContactForm from "../components/common/ContactForm";
+import MaintenancePage from "./Maintenance";
 
 const Home: React.FC = () => {
-  return (
-    <DefaultLayout>
-      <Hero />
-      <Services />
-      <About />
-      <PricingPackages />
-      <ContactForm />
-    </DefaultLayout>
-  );
+  return <MaintenancePage />;
+
+  {
+    /* <DefaultLayout> */
+  }
+
+  {
+    /*   <Hero /> */
+  }
+  {
+    /*   <Services /> */
+  }
+  {
+    /*   <About /> */
+  }
+  {
+    /*   <PricingPackages /> */
+  }
+  {
+    /*   <ContactForm /> */
+  }
+  // </DefaultLayout>
 };
 
 export default Home;
+
