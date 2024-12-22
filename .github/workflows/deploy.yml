@@ -3,8 +3,6 @@ name: Deploy
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
   workflow_dispatch:
 
 jobs:
@@ -29,7 +27,25 @@ jobs:
         
       - name: Build project
         run: npm run build
+<<<<<<< HEAD
       
+=======
+        
+      - name: Backup current deployment
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          script: |
+            cd /var/www/skit.sascha-kohler.at
+            if [ -d "current" ]; then
+              rm -rf backup
+              mv current backup
+            fi
+            mkdir -p current
+          
+>>>>>>> c2eb66c (fix(chore): update deployment workflow with nginx configuration)
       - name: Deploy to server
         uses: appleboy/scp-action@master
         with:
@@ -50,14 +66,47 @@ jobs:
           script: |
             sudo chown -R www-data:www-data /var/www/skit.sascha-kohler.at/current
             sudo chmod -R 755 /var/www/skit.sascha-kohler.at/current
+<<<<<<< HEAD
           
       - name: Verify deployment
         run: |
+=======
+
+      - name: Configure Nginx
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          script: |
+            # Prüfe ob der Link bereits existiert und entferne ihn gegebenenfalls
+            sudo rm -f /etc/nginx/sites-enabled/skit.sascha-kohler.at.conf
+            
+            # Erstelle den neuen symbolischen Link
+            sudo ln -s /etc/nginx/sites-available/skit.sascha-kohler.at.conf /etc/nginx/sites-enabled/
+            
+            # Teste die Nginx Konfiguration
+            sudo nginx -t
+            
+            # Wenn der Test erfolgreich war, lade Nginx neu
+            if [ $? -eq 0 ]; then
+                sudo systemctl reload nginx
+            else
+                echo "Nginx configuration test failed"
+                exit 1
+            fi
+            
+      - name: Verify deployment
+        run: |
+          # Warte kurz, damit Nginx neu geladen werden kann
+          sleep 5
+>>>>>>> c2eb66c (fix(chore): update deployment workflow with nginx configuration)
           if curl -s --head https://skit.sascha-kohler.at | grep "200 OK" > /dev/null; then 
             echo "Deployment successful!"
           else
             echo "Deployment verification failed"
             exit 1
+<<<<<<< HEAD
           fi
           
       - name: Deployment status
@@ -74,3 +123,6 @@ jobs:
               commit_sha: context.sha,
               body: message
             });
+=======
+          fi
+>>>>>>> c2eb66c (fix(chore): update deployment workflow with nginx configuration)
