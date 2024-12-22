@@ -8,8 +8,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  build_and_test:
+  deploy:
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     
     steps:
       - uses: actions/checkout@v4
@@ -28,49 +29,7 @@ jobs:
         
       - name: Build project
         run: npm run build
-        
-      - name: Cache build output
-        uses: actions/cache@v3
-        with:
-          path: dist
-          key: ${{ runner.os }}-build-${{ github.sha }}
-          restore-keys: |
-            ${{ runner.os }}-build-
-            
-  deploy:
-    needs: build_and_test
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-    
-    steps:
-      - uses: actions/checkout@v4
       
-      - name: Restore cached build
-        uses: actions/cache@v3
-        with:
-          path: dist
-          key: ${{ runner.os }}-build-${{ github.sha }}
-      
-      - name: Install SSH Key
-        uses: shimataro/ssh-key-action@v2
-        with:
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
-      
-      - name: Backup current deployment
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USERNAME }}
-          key: ${{ secrets.SERVER_SSH_KEY }}
-          script: |
-            cd /var/www/skit.sascha-kohler.at
-            if [ -d "current" ]; then
-              rm -rf backup
-              mv current backup
-            fi
-            mkdir -p current
-          
       - name: Deploy to server
         uses: appleboy/scp-action@master
         with:
@@ -80,6 +39,7 @@ jobs:
           source: "dist/*"
           target: "/var/www/skit.sascha-kohler.at/current"
           strip_components: 1
+          overwrite: true
           
       - name: Set permissions
         uses: appleboy/ssh-action@master
@@ -114,32 +74,3 @@ jobs:
               commit_sha: context.sha,
               body: message
             });
-
-  rollback:
-    needs: deploy
-    runs-on: ubuntu-latest
-    if: failure()
-    
-    steps:
-      - name: Install SSH Key
-        uses: shimataro/ssh-key-action@v2
-        with:
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
-          
-      - name: Rollback deployment
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USERNAME }}
-          key: ${{ secrets.SERVER_SSH_KEY }}
-          script: |
-            cd /var/www/skit.sascha-kohler.at
-            if [ -d "backup" ]; then
-              rm -rf current
-              mv backup current
-              echo 'Rollback completed'
-            else
-              echo 'No backup found'
-              exit 1
-            fi
