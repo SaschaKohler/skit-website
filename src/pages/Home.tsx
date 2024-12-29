@@ -6,7 +6,6 @@ import PricingPackages from "../components/sections/PricingPackages";
 import DefaultLayout from "../layouts/default/DefaultLayout";
 import About from "../components/sections/About.tsx";
 import Services from "../components/sections/Services";
-import TechStack from "../components/sections/TechStack";
 
 const Home: React.FC = () => {
   return (
@@ -22,4 +21,3 @@ const Home: React.FC = () => {
 };
 
 export default Home;
-

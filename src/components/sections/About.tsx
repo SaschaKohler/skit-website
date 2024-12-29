@@ -1,7 +1,6 @@
 import React from "react";
 import { GraduationCap, Heart, Brain, Landmark } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useContactNavigation } from "../../hooks/useContactNavigation";
 
 const About: React.FC = () => {
   const qualifications = [
@@ -108,4 +107,3 @@ const About: React.FC = () => {
 };
 
 export default About;
-

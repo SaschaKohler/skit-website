@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import {
   Code2,
   Wrench,
@@ -139,4 +139,3 @@ const Services: React.FC = () => {
 };
 
 export default Services;
-

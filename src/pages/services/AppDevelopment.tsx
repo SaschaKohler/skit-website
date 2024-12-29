@@ -1,15 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import DefaultLayout from "../../layouts/default/DefaultLayout";
 import { useContactNavigation } from "../../hooks/useContactNavigation";
 
 const AppDevelopment: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleContactClick = useContactNavigation();
 
-  const handleMobileContactClick = (e: React.MouseEvent) => {
-    handleContactClick(e);
-    setIsMenuOpen(false);
-  };
   return (
     <DefaultLayout>
       <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20">
@@ -184,4 +179,3 @@ const AppDevelopment: React.FC = () => {
 };
 
 export default AppDevelopment;
-

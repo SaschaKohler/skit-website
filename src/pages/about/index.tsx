@@ -5,13 +5,7 @@ import { useContactNavigation } from "../../hooks/useContactNavigation";
 import { Heart, Users, Target } from "lucide-react";
 
 const AboutPage: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleContactClick = useContactNavigation();
-
-  const handleMobileContactClick = (e: React.MouseEvent) => {
-    handleContactClick(e);
-    setIsMenuOpen(false);
-  };
 
   return (
     <DefaultLayout>
