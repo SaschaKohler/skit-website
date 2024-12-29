@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import DefaultLayout from "../../layouts/default/DefaultLayout";
-import { Heart, Users, Coffee, Target } from "lucide-react";
+import { useContactNavigation } from "../../hooks/useContactNavigation";
+import { Heart, Users, Target } from "lucide-react";
 
 const AboutPage: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const handleContactClick = useContactNavigation();
+
+  const handleMobileContactClick = (e: React.MouseEvent) => {
+    handleContactClick(e);
+    setIsMenuOpen(false);
+  };
+
   return (
     <DefaultLayout>
       {/* Hero Section */}
@@ -12,7 +22,7 @@ const AboutPage: React.FC = () => {
             Die Geschichte hinter dem Code
           </h1>
           <p className="text-xl max-w-2xl mx-auto">
-            Vom Herz einer Apotheke zum Herz der digitalen Welt
+            Ein Pharmazeut auf digitaler Entdeckungsreise
           </p>
         </div>
       </div>
@@ -22,11 +32,11 @@ const AboutPage: React.FC = () => {
         {/* Personal Story Section */}
         <div className="mb-20">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="flex justify-center">
               <img
-                src="/api/placeholder/600/400"
+                src="/images/about/me.jpeg"
                 alt="Portrait"
-                className="rounded-lg shadow-lg"
+                className="rounded-lg shadow-lg w-96 h-auto"
               />
             </div>
             <div>
@@ -172,21 +182,14 @@ const AboutPage: React.FC = () => {
             herauszufinden, wie ich Sie auf Ihrem Weg in die digitale Zukunft
             unterstützen kann.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 
-              transition-colors inline-flex items-center justify-center gap-2"
-            >
-              <Coffee className="w-5 h-5" />
-              Auf einen Kaffee treffen
-            </button>
-            <button
-              className="border border-blue-600 text-blue-600 px-8 py-3 rounded-lg 
-              hover:bg-blue-50 transition-colors"
-            >
-              Portfolio ansehen
-            </button>
-          </div>
+          <Link
+            to="/#contact"
+            className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 
+            transition-colors inline-flex items-center justify-center"
+            onClick={handleContactClick}
+          >
+            Kontakt aufnehmen
+          </Link>
         </div>
       </div>
     </DefaultLayout>
@@ -194,4 +197,3 @@ const AboutPage: React.FC = () => {
 };
 
 export default AboutPage;
-

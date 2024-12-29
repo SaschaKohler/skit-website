@@ -45,5 +45,4 @@ const MaintenancePage: React.FC = () => {
     </div>
   );
 };
-
 export default MaintenancePage;

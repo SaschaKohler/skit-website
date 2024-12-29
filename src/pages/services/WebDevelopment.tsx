@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import DefaultLayout from "../../layouts/default/DefaultLayout";
+import { Link } from "react-router-dom";
+import { useContactNavigation } from "../../hooks/useContactNavigation";
 
 const WebDevelopment: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const handleContactClick = useContactNavigation();
+
+  const handleMobileContactClick = (e: React.MouseEvent) => {
+    handleContactClick(e);
+    setIsMenuOpen(false);
+  };
+
   return (
     <DefaultLayout>
       <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20">
@@ -9,9 +19,7 @@ const WebDevelopment: React.FC = () => {
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Ihre neue Website
           </h1>
-          <p className="text-xl">
-            Modern, einladend und einfach zu pflegen
-          </p>
+          <p className="text-xl">Modern, einladend und einfach zu pflegen</p>
         </div>
       </div>
 
@@ -39,8 +47,9 @@ const WebDevelopment: React.FC = () => {
                     Einfach selbst zu pflegen
                   </h3>
                   <p className="text-gray-600">
-                    Mit WordPress und dem Divi-Editor können Sie Ihre Inhalte ganz 
-                    leicht selbst aktualisieren - ohne technische Vorkenntnisse.
+                    Mit WordPress und dem Divi-Editor können Sie Ihre Inhalte
+                    ganz leicht selbst aktualisieren - ohne technische
+                    Vorkenntnisse.
                   </p>
                 </div>
               </li>
@@ -59,10 +68,12 @@ const WebDevelopment: React.FC = () => {
                   />
                 </svg>
                 <div>
-                  <h3 className="font-semibold mb-2">Geschützter Bereich für Ihre Kunden</h3>
+                  <h3 className="font-semibold mb-2">
+                    Geschützter Bereich für Ihre Kunden
+                  </h3>
                   <p className="text-gray-600">
-                    Bieten Sie exklusive Inhalte, Online-Kurse oder digitale Produkte 
-                    in einem passwortgeschützten Bereich an.
+                    Bieten Sie exklusive Inhalte, Online-Kurse oder digitale
+                    Produkte in einem passwortgeschützten Bereich an.
                   </p>
                 </div>
               </li>
@@ -87,10 +98,13 @@ const WebDevelopment: React.FC = () => {
                   />
                 </svg>
                 <div>
-                  <h3 className="font-semibold mb-2">Newsletter & Kundenbetreuung</h3>
+                  <h3 className="font-semibold mb-2">
+                    Newsletter & Kundenbetreuung
+                  </h3>
                   <p className="text-gray-600">
-                    Halten Sie mit personalisierten E-Mails Kontakt zu Ihren Kunden. 
-                    Automatische Willkommensnachrichten, Geburtstagswünsche und mehr.
+                    Halten Sie mit personalisierten E-Mails Kontakt zu Ihren
+                    Kunden. Automatische Willkommensnachrichten,
+                    Geburtstagswünsche und mehr.
                   </p>
                 </div>
               </li>
@@ -109,10 +123,12 @@ const WebDevelopment: React.FC = () => {
                   />
                 </svg>
                 <div>
-                  <h3 className="font-semibold mb-2">Alles greift ineinander</h3>
+                  <h3 className="font-semibold mb-2">
+                    Alles greift ineinander
+                  </h3>
                   <p className="text-gray-600">
-                    Ihre Website, E-Mails und Social Media arbeiten Hand in Hand. 
-                    Einmal eingerichtet, läuft alles wie von selbst.
+                    Ihre Website, E-Mails und Social Media arbeiten Hand in
+                    Hand. Einmal eingerichtet, läuft alles wie von selbst.
                   </p>
                 </div>
               </li>
@@ -125,15 +141,24 @@ const WebDevelopment: React.FC = () => {
           <h2 className="text-2xl font-bold mb-6 text-center">Ihre Vorteile</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="text-blue-600 text-2xl font-bold mb-2">Zeitersparnis</div>
-              <p>Sie konzentrieren sich auf Ihr Geschäft, während die Website für Sie arbeitet</p>
+              <div className="text-blue-600 text-2xl font-bold mb-2">
+                Zeitersparnis
+              </div>
+              <p>
+                Sie konzentrieren sich auf Ihr Geschäft, während die Website für
+                Sie arbeitet
+              </p>
             </div>
             <div className="text-center">
-              <div className="text-blue-600 text-2xl font-bold mb-2">Alles inklusive</div>
+              <div className="text-blue-600 text-2xl font-bold mb-2">
+                Alles inklusive
+              </div>
               <p>Hosting, Domain, E-Mails und Support aus einer Hand</p>
             </div>
             <div className="text-center">
-              <div className="text-blue-600 text-2xl font-bold mb-2">Persönlich</div>
+              <div className="text-blue-600 text-2xl font-bold mb-2">
+                Persönlich
+              </div>
               <p>Ein Ansprechpartner für alle Ihre Fragen und Wünsche</p>
             </div>
           </div>
@@ -141,14 +166,20 @@ const WebDevelopment: React.FC = () => {
 
         {/* Call to Action */}
         <div className="mt-16 text-center">
-          <h2 className="text-3xl font-bold mb-4">Bereit für Ihre neue Website?</h2>
+          <h2 className="text-3xl font-bold mb-4">
+            Digitale Lösungen, die begeistern
+          </h2>
           <p className="text-gray-600 mb-8">
-            Lassen Sie uns in einem unverbindlichen Gespräch herausfinden, 
-            was die beste Lösung für Sie ist.
+            Sie haben eine Vision - gemeinsam finden wir den besten Weg, diese
+            digital umzusetzen.
           </p>
-          <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors">
-            Kostenloses Erstgespräch vereinbaren
-          </button>
+          <Link
+            to="/#contact"
+            className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+            onClick={handleContactClick}
+          >
+            Jetzt unverbindlich beraten lassen
+          </Link>
         </div>
       </div>
     </DefaultLayout>

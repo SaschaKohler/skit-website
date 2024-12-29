@@ -1,6 +1,7 @@
 import React from "react";
 import { GraduationCap, Heart, Brain, Landmark } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useContactNavigation } from "../../hooks/useContactNavigation";
 
 const About: React.FC = () => {
   const qualifications = [
@@ -11,7 +12,7 @@ const About: React.FC = () => {
     },
     {
       icon: <Brain className="w-6 h-6" />,
-      title: "NLP-Practitioner & Life Master",
+      title: "NLP-Practitioner,Life Master & Train the Trainer i.A.",
       description: "Zertifizierte Ausbildung in NLP-Techniken",
     },
     {
@@ -41,8 +42,10 @@ const About: React.FC = () => {
 
         <div className="grid md:grid-cols-2 gap-12 mb-16">
           {/* Professionelle Entwicklung */}
-          <div className="bg-white rounded-lg shadow-md p-8 transition duration-300 
-                       hover:shadow-lg">
+          <div
+            className="bg-white rounded-lg shadow-md p-8 transition duration-300 
+                       hover:shadow-lg"
+          >
             <h3 className="text-2xl font-bold mb-4">Mein Werdegang</h3>
             <div className="space-y-4">
               <p className="text-gray-600">
@@ -78,8 +81,10 @@ const About: React.FC = () => {
         </div>
 
         {/* Projekt "Ja zum Leben" */}
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-lg p-8
-                     transition duration-300 hover:from-blue-700 hover:to-indigo-800">
+        <div
+          className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-lg p-8
+                     transition duration-300 hover:from-blue-700 hover:to-indigo-800"
+        >
           <div className="max-w-3xl mx-auto">
             <h3 className="text-2xl font-bold mb-4">Projekt "Ja zum Leben"</h3>
             <p className="mb-4">
@@ -103,3 +108,4 @@ const About: React.FC = () => {
 };
 
 export default About;
+

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import DefaultLayout from "../../layouts/default/DefaultLayout";
+import BusinessTechStack from "../../components/solutions/BusinessTechStack";
 
 interface ServicePreview {
   title: string;
@@ -14,7 +15,8 @@ const ServicesIndex: React.FC = () => {
   const services: ServicePreview[] = [
     {
       title: "Ihre Website",
-      description: "Ihre persönliche digitale Visitenkarte - professionell & einzigartig",
+      description:
+        "Ihre persönliche digitale Visitenkarte - professionell & einzigartig",
       features: [
         "Einfach selbst zu pflegen",
         "Geschützter Kundenbereich",
@@ -94,55 +96,61 @@ const ServicesIndex: React.FC = () => {
 
   return (
     <DefaultLayout>
-      <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20">
+      {/* <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20"> */}
+      {/*   <div className="container mx-auto px-6"> */}
+      {/*     <h1 className="text-4xl md:text-5xl font-bold mb-6"> */}
+      {/*       Ihre digitale Zukunft */}
+      {/*     </h1> */}
+      {/*     <p className="text-xl">Gemeinsam finden wir die perfekte Lösung für Sie</p> */}
+      {/*   </div> */}
+      {/* </div> */}
+      {/**/}
+      {/* <div className="container mx-auto px-6 py-16"> */}
+      {/*   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"> */}
+      {/*     {services.map((service, index) => ( */}
+      {/*       <Link */}
+      {/*         key={index} */}
+      {/*         to={service.link} */}
+      {/*         className="block bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300" */}
+      {/*       > */}
+      {/*         <div className="p-6"> */}
+      {/*           <div className="text-blue-600 mb-4">{service.icon}</div> */}
+      {/*           <h2 className="text-2xl font-bold mb-4">{service.title}</h2> */}
+      {/*           <p className="text-gray-600 mb-4">{service.description}</p> */}
+      {/*           <div className="border-t border-gray-100 pt-4"> */}
+      {/*             <ul className="space-y-2"> */}
+      {/*               {service.features.map((feature, idx) => ( */}
+      {/*                 <li key={idx} className="flex items-center text-gray-600"> */}
+      {/*                   <svg */}
+      {/*                     className="w-4 h-4 text-blue-600 mr-2" */}
+      {/*                     fill="none" */}
+      {/*                     stroke="currentColor" */}
+      {/*                     viewBox="0 0 24 24" */}
+      {/*                   > */}
+      {/*                     <path */}
+      {/*                       strokeLinecap="round" */}
+      {/*                       strokeLinejoin="round" */}
+      {/*                       strokeWidth={2} */}
+      {/*                       d="M5 13l4 4L19 7" */}
+      {/*                     /> */}
+      {/*                   </svg> */}
+      {/*                   {feature} */}
+      {/*                 </li> */}
+      {/*               ))} */}
+      {/*             </ul> */}
+      {/*           </div> */}
+      {/*           <div className="mt-6 text-blue-600 font-medium"> */}
+      {/*             Mehr erfahren → */}
+      {/*           </div> */}
+      {/*         </div> */}
+      {/*       </Link> */}
+      {/*     ))} */}
+      {/*   </div> */}
+      {/* </div> */}
+      {/**/}
+      <div className="bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-6">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Ihre digitale Zukunft
-          </h1>
-          <p className="text-xl">Gemeinsam finden wir die perfekte Lösung für Sie</p>
-        </div>
-      </div>
-
-      <div className="container mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <Link
-              key={index}
-              to={service.link}
-              className="block bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
-            >
-              <div className="p-6">
-                <div className="text-blue-600 mb-4">{service.icon}</div>
-                <h2 className="text-2xl font-bold mb-4">{service.title}</h2>
-                <p className="text-gray-600 mb-4">{service.description}</p>
-                <div className="border-t border-gray-100 pt-4">
-                  <ul className="space-y-2">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-gray-600">
-                        <svg
-                          className="w-4 h-4 text-blue-600 mr-2"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="mt-6 text-blue-600 font-medium">
-                  Mehr erfahren →
-                </div>
-              </div>
-            </Link>
-          ))}
+          <BusinessTechStack />
         </div>
       </div>
     </DefaultLayout>
@@ -150,3 +158,4 @@ const ServicesIndex: React.FC = () => {
 };
 
 export default ServicesIndex;
+

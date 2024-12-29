@@ -79,10 +79,10 @@ const JaZumLebenSection = () => {
           </p>
           <div className="mt-8">
             <a
-              href="#contact"
+              href="https://www.ja-zum-leben.at"
               className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
             >
-              Zum Infogespräch
+              Zur Website
               <ArrowRight className="ml-2 h-5 w-5" />
             </a>
           </div>
@@ -93,4 +93,3 @@ const JaZumLebenSection = () => {
 };
 
 export default JaZumLebenSection;
-

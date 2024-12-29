@@ -1,81 +1,85 @@
 import React from "react";
 import {
-  Workflow,
-  Bot,
+  Settings,
+  Clock,
+  Users,
+  Target,
+  Shield,
+  MessageCircle,
   Zap,
   Link as LinkIcon,
-  Clock,
-  Shield,
 } from "lucide-react";
 
 const MakePage: React.FC = () => {
   const useCases = [
     {
-      title: "Automatische Kundenbetreuung",
+      title: "Professionelle Erstbetreuung",
       description:
-        "Wenn sich ein Kunde über Ihr Kontaktformular meldet, wird automatisch eine Bestätigung versendet, ein Ticket erstellt und Sie werden benachrichtigt.",
+        "Bei Kontaktaufnahme wird automatisch eine Begrüßung versendet, Ihr CRM aktualisiert und Sie werden benachrichtigt - schnell und zuverlässig.",
     },
     {
-      title: "E-Commerce Integration",
+      title: "Effiziente Terminverwaltung",
       description:
-        "Nach einem Verkauf werden automatisch Rechnungen erstellt, Versandlabel generiert und Kundeninformationen in Ihre CRM-System übertragen.",
+        "Nach Terminbuchungen werden Bestätigungen verschickt, Kalender synchronisiert und relevante Unterlagen bereitgestellt.",
     },
     {
-      title: "Content Management",
+      title: "Digitale Präsenz",
       description:
-        "Blogbeiträge werden automatisch auf verschiedenen Social-Media-Plattformen geteilt und in Ihrem Newsletter angekündigt.",
+        "Ihre Inhalte werden automatisch auf verschiedenen Plattformen geteilt und Ihre Online-Sichtbarkeit optimal genutzt.",
     },
     {
-      title: "Datenmanagement",
+      title: "Datensynchronisation",
       description:
-        "Kundendaten werden automatisch zwischen Ihrem CRM, Newsletter-Tool und anderen Systemen synchronisiert.",
+        "Ihre Klientendaten werden sicher zwischen allen wichtigen Systemen synchronisiert - für einen reibungslosen Arbeitsablauf.",
     },
   ];
 
   const features = [
     {
-      icon: <Workflow className="w-8 h-8" />,
-      title: "Visuelle Workflows",
-      description:
-        "Erstellen Sie komplexe Automatisierungen ohne Programmierung",
-    },
-    {
-      icon: <Bot className="w-8 h-8" />,
+      icon: <Settings className="w-8 h-8" />,
       title: "Intelligente Automation",
-      description: "Automatisieren Sie wiederkehrende Aufgaben und Prozesse",
-    },
-    {
-      icon: <LinkIcon className="w-8 h-8" />,
-      title: "Nahtlose Integration",
-      description: "Verbinden Sie verschiedene Apps und Dienste miteinander",
+      description:
+        "Optimieren Sie Ihre Arbeitsabläufe ohne technische Vorkenntnisse",
     },
     {
       icon: <Clock className="w-8 h-8" />,
       title: "Zeitersparnis",
+      description: "Fokussieren Sie sich auf Ihre Kernaufgaben, während Routinearbeiten automatisch ablaufen",
+    },
+    {
+      icon: <LinkIcon className="w-8 h-8" />,
+      title: "Nahtlose Integration",
+      description: "Verbinden Sie Ihre bestehenden Tools zu einem effizienten System",
+    },
+    {
+      icon: <Target className="w-8 h-8" />,
+      title: "Gezielte Prozesse",
       description:
-        "Reduzieren Sie manuelle Arbeit durch automatisierte Workflows",
+        "Entwickeln Sie maßgeschneiderte Abläufe für Ihre spezifischen Anforderungen",
     },
     {
       icon: <Shield className="w-8 h-8" />,
-      title: "Sicherheit",
-      description: "Verschlüsselte Datenübertragung und sichere Verarbeitung",
+      title: "Datensicherheit",
+      description: "Ihre sensiblen Daten werden stets professionell und sicher verarbeitet",
     },
     {
       icon: <Zap className="w-8 h-8" />,
-      title: "Echtzeit-Verarbeitung",
-      description: "Sofortige Ausführung von Aktionen bei definierten Triggern",
+      title: "Schnelle Reaktion",
+      description: "Automatische Ausführung wichtiger Prozesse in Echtzeit",
     },
   ];
 
   return (
     <div className="max-w-4xl mx-auto">
-      <h1 className="text-4xl font-bold mb-6">Make.com Automation</h1>
+      <h1 className="text-4xl font-bold mb-6">Effiziente Arbeitsabläufe mit Make.com</h1>
 
       <div className="prose prose-lg max-w-none mb-12">
         <p>
-          Make.com ist eine leistungsstarke Automatisierungsplattform, die es
-          ermöglicht, verschiedene Apps und Dienste miteinander zu verbinden und
-          Geschäftsprozesse zu automatisieren - ohne Programmierkenntnisse.
+          Befreien Sie sich von zeitraubenden Verwaltungsaufgaben und gewinnen Sie mehr 
+          Zeit für Ihre Klienten. Make.com automatisiert Ihre administrativen Prozesse 
+          intelligent und zuverlässig. Von der Terminverwaltung bis zur Dokumentenorganisation - 
+          alles läuft strukturiert im Hintergrund, während Sie sich auf Ihre Kernkompetenzen 
+          konzentrieren.
         </p>
       </div>
 
@@ -96,7 +100,7 @@ const MakePage: React.FC = () => {
 
       {/* Use Cases */}
       <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-lg p-8 mb-12">
-        <h2 className="text-2xl font-bold mb-6">Praxisbeispiele</h2>
+        <h2 className="text-2xl font-bold mb-6">Make.com in der Praxis</h2>
         <div className="grid md:grid-cols-2 gap-6">
           {useCases.map((useCase, index) => (
             <div key={index} className="bg-white/10 rounded-lg p-6">
@@ -109,17 +113,20 @@ const MakePage: React.FC = () => {
 
       {/* Integration Section */}
       <div className="bg-blue-50 rounded-lg p-8 mb-12">
-        <h2 className="text-2xl font-bold mb-4">Populäre Integrationen</h2>
+        <h2 className="text-2xl font-bold mb-4">System-Integrationen</h2>
+        <p className="text-gray-600 mb-6">
+          Make.com verbindet sich nahtlos mit Ihren bestehenden Systemen:
+        </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
             "WordPress",
-            "WooCommerce",
+            "Website-Systeme",
             "Brevo",
-            "Google Workspace",
-            "Slack",
-            "Trello",
-            "Shopify",
-            "PayPal",
+            "Google Kalender",
+            "E-Mail-Systeme",
+            "CRM-Lösungen",
+            "Terminplanung",
+            "Und mehr",
           ].map((integration, index) => (
             <div
               key={index}
@@ -134,41 +141,40 @@ const MakePage: React.FC = () => {
 
       {/* Service Offering */}
       <div className="bg-white rounded-lg shadow-lg p-8">
-        <h2 className="text-2xl font-bold mb-4">Meine Make.com Services</h2>
+        <h2 className="text-2xl font-bold mb-4">Make.com Services</h2>
         <div className="space-y-4">
           <div className="flex items-start gap-3">
             <span className="text-blue-600 mt-1">
-              <LinkIcon className="w-5 h-5" />
+              <Settings className="w-5 h-5" />
             </span>
             <p>
-              Analyse Ihrer Geschäftsprozesse und Identifikation von
-              Automatisierungspotentialen
+              Analyse Ihrer Prozesse und Identifikation von Optimierungspotentialen
             </p>
           </div>
           <div className="flex items-start gap-3">
             <span className="text-blue-600 mt-1">
-              <Workflow className="w-5 h-5" />
+              <Target className="w-5 h-5" />
             </span>
-            <p>Entwicklung und Implementierung maßgeschneiderter Workflows</p>
+            <p>Entwicklung und Implementierung passgenauer Automatisierungen</p>
           </div>
           <div className="flex items-start gap-3">
             <span className="text-blue-600 mt-1">
-              <Bot className="w-5 h-5" />
+              <LinkIcon className="w-5 h-5" />
             </span>
-            <p>Integration mit bestehenden Systemen und Anwendungen</p>
+            <p>Integration mit Ihren bestehenden Tools und Systemen</p>
           </div>
           <div className="flex items-start gap-3">
             <span className="text-blue-600 mt-1">
-              <Shield className="w-5 h-5" />
+              <Users className="w-5 h-5" />
             </span>
-            <p>Schulung und Support für Ihr Team</p>
+            <p>Einführung und kontinuierliche Unterstützung</p>
           </div>
         </div>
         <button
           className="mt-8 bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold 
           hover:bg-blue-700 transition duration-300"
         >
-          Automation-Beratung anfragen
+          Beratungsgespräch vereinbaren
         </button>
       </div>
     </div>

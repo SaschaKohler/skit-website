@@ -1,8 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import DefaultLayout from "../../layouts/default/DefaultLayout";
-import { Clock, CalendarCheck, Mail, Users, ArrowRight, Zap } from "lucide-react";
+import {
+  Clock,
+  CalendarCheck,
+  Mail,
+  Users,
+  ArrowRight,
+  Zap,
+} from "lucide-react";
+import { useContactNavigation } from "../../hooks/useContactNavigation";
 
 const Automation: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const handleContactClick = useContactNavigation();
+
+  const handleMobileContactClick = (e: React.MouseEvent) => {
+    handleContactClick(e);
+    setIsMenuOpen(false);
+  };
   return (
     <DefaultLayout>
       <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20">
@@ -10,9 +25,7 @@ const Automation: React.FC = () => {
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Mehr Zeit für das Wesentliche
           </h1>
-          <p className="text-xl">
-            Lassen Sie sich die Routinearbeit abnehmen
-          </p>
+          <p className="text-xl">Lassen Sie sich die Routinearbeit abnehmen</p>
         </div>
       </div>
 
@@ -40,8 +53,9 @@ const Automation: React.FC = () => {
                     Automatische Kundenbetreuung
                   </h3>
                   <p className="text-gray-600">
-                    Willkommens-E-Mails, Terminbestätigungen und Erinnerungen - 
-                    alles läuft von selbst, während Sie sich um Ihre Kunden kümmern.
+                    Willkommens-E-Mails, Terminbestätigungen und Erinnerungen -
+                    alles läuft von selbst, während Sie sich um Ihre Kunden
+                    kümmern.
                   </p>
                 </div>
               </li>
@@ -62,8 +76,9 @@ const Automation: React.FC = () => {
                 <div>
                   <h3 className="font-semibold mb-2">Clever verknüpft</h3>
                   <p className="text-gray-600">
-                    Alle Ihre Programme arbeiten nahtlos zusammen - von der Website 
-                    über E-Mails bis zum Kalender. Ein reibungsloser Ablauf ohne Ihr Zutun.
+                    Alle Ihre Programme arbeiten nahtlos zusammen - von der
+                    Website über E-Mails bis zum Kalender. Ein reibungsloser
+                    Ablauf ohne Ihr Zutun.
                   </p>
                 </div>
               </li>
@@ -90,8 +105,8 @@ const Automation: React.FC = () => {
                 <div>
                   <h3 className="font-semibold mb-2">Keine Fleißarbeit mehr</h3>
                   <p className="text-gray-600">
-                    Schluss mit dem Kopieren von Daten zwischen Programmen oder dem 
-                    manuellen Versenden von Standard-E-Mails.
+                    Schluss mit dem Kopieren von Daten zwischen Programmen oder
+                    dem manuellen Versenden von Standard-E-Mails.
                   </p>
                 </div>
               </li>
@@ -110,10 +125,12 @@ const Automation: React.FC = () => {
                   />
                 </svg>
                 <div>
-                  <h3 className="font-semibold mb-2">Keine vergessenen Aufgaben</h3>
+                  <h3 className="font-semibold mb-2">
+                    Keine vergessenen Aufgaben
+                  </h3>
                   <p className="text-gray-600">
-                    Wichtige Erinnerungen und Nachfassen bei Kunden - 
-                    Ihr digitaler Assistent denkt mit und behält alles im Blick.
+                    Wichtige Erinnerungen und Nachfassen bei Kunden - Ihr
+                    digitaler Assistent denkt mit und behält alles im Blick.
                   </p>
                 </div>
               </li>
@@ -123,21 +140,23 @@ const Automation: React.FC = () => {
 
         {/* Beispiele für Automatisierungen */}
         <div className="mt-16 bg-gray-50 rounded-lg p-8">
-          <h2 className="text-2xl font-bold mb-8 text-center">Das wird automatisch</h2>
+          <h2 className="text-2xl font-bold mb-8 text-center">
+            Das wird automatisch
+          </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center p-6">
               <CalendarCheck className="w-12 h-12 text-blue-600 mx-auto mb-4" />
               <h3 className="font-semibold mb-2">Terminbuchungen</h3>
               <p className="text-gray-600">
-                Kunden buchen online, bekommen automatisch eine Bestätigung 
-                und werden rechtzeitig erinnert
+                Kunden buchen online, bekommen automatisch eine Bestätigung und
+                werden rechtzeitig erinnert
               </p>
             </div>
             <div className="text-center p-6">
               <Mail className="w-12 h-12 text-blue-600 mx-auto mb-4" />
               <h3 className="font-semibold mb-2">E-Mail-Betreuung</h3>
               <p className="text-gray-600">
-                Newsletter, Willkommens-Mails und Geburtstagswünsche - 
+                Newsletter, Willkommens-Mails und Geburtstagswünsche -
                 persönlich, aber automatisch
               </p>
             </div>
@@ -145,8 +164,8 @@ const Automation: React.FC = () => {
               <Users className="w-12 h-12 text-blue-600 mx-auto mb-4" />
               <h3 className="font-semibold mb-2">Kundenservice</h3>
               <p className="text-gray-600">
-                Anfragen werden sortiert, Aufgaben verteilt und 
-                nichts wird vergessen
+                Anfragen werden sortiert, Aufgaben verteilt und nichts wird
+                vergessen
               </p>
             </div>
           </div>
@@ -161,8 +180,8 @@ const Automation: React.FC = () => {
               <div>
                 <h3 className="font-semibold mb-2">Zeit gewinnen</h3>
                 <p className="text-gray-600">
-                  Bis zu 70% weniger Zeit für Verwaltungsaufgaben. 
-                  Endlich wieder Zeit für das, was wirklich wichtig ist.
+                  Bis zu 70% weniger Zeit für Verwaltungsaufgaben. Endlich
+                  wieder Zeit für das, was wirklich wichtig ist.
                 </p>
               </div>
             </div>
@@ -171,8 +190,8 @@ const Automation: React.FC = () => {
               <div>
                 <h3 className="font-semibold mb-2">Fehler vermeiden</h3>
                 <p className="text-gray-600">
-                  Automatische Abläufe arbeiten zuverlässig und genau - 
-                  keine vergessenen Aufgaben mehr.
+                  Automatische Abläufe arbeiten zuverlässig und genau - keine
+                  vergessenen Aufgaben mehr.
                 </p>
               </div>
             </div>
@@ -183,11 +202,14 @@ const Automation: React.FC = () => {
         <div className="mt-16 text-center">
           <h2 className="text-3xl font-bold mb-4">Bereit für mehr Freiheit?</h2>
           <p className="text-gray-600 mb-8">
-            Lassen Sie uns gemeinsam herausfinden, welche Aufgaben wir Ihnen 
+            Lassen Sie uns gemeinsam herausfinden, welche Aufgaben wir Ihnen
             abnehmen können.
           </p>
-          <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors 
-            inline-flex items-center gap-2">
+          <button
+            onClick={handleContactClick}
+            className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors 
+            inline-flex items-center gap-2"
+          >
             Möglichkeiten besprechen
             <ArrowRight className="w-5 h-5" />
           </button>
@@ -198,3 +220,4 @@ const Automation: React.FC = () => {
 };
 
 export default Automation;
+

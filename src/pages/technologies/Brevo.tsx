@@ -2,86 +2,86 @@ import React from "react";
 import {
   Mail,
   MessageCircle,
-  BarChart,
+  Heart,
   Users,
   Target,
   Send,
   Clock,
-  Settings,
+  Smile,
 } from "lucide-react";
 
 const BrevoPage: React.FC = () => {
   const features = [
     {
       icon: <Mail className="w-8 h-8" />,
-      title: "E-Mail Marketing",
+      title: "Persönliche Kommunikation",
       description:
-        "Professionelle Newsletter und Marketing-Kampagnen erstellen und versenden",
+        "Erreichen Sie Ihre Klienten mit authentischen und relevanten Nachrichten",
     },
     {
       icon: <MessageCircle className="w-8 h-8" />,
-      title: "SMS Marketing",
-      description: "Direkte Kommunikation mit Kunden über SMS und WhatsApp",
+      title: "Gezielte Ansprache",
+      description: "Die richtige Botschaft zum richtigen Zeitpunkt an die richtige Person",
     },
     {
-      icon: <BarChart className="w-8 h-8" />,
-      title: "Analytics & Reports",
-      description: "Detaillierte Einblicke in die Performance Ihrer Kampagnen",
+      icon: <Users className="w-8 h-8" />,
+      title: "Nachhaltige Beziehungen",
+      description: "Pflegen Sie den Kontakt zu Ihren Klienten auf natürliche Weise",
     },
     {
       icon: <Target className="w-8 h-8" />,
-      title: "Zielgruppen-Segmentierung",
+      title: "Individuelle Betreuung",
       description:
-        "Präzise Zielgruppenansprache durch intelligente Segmentierung",
+        "Automatisierte und dennoch persönliche Kommunikation mit jedem Einzelnen",
     },
   ];
 
   const useCases = [
     {
-      title: "Willkommens-Sequenz",
+      title: "Professionelle Begrüßung",
       description:
-        "Automatische E-Mail-Serie für neue Newsletter-Abonnenten oder Kunden",
+        "Eine durchdachte Willkommenssequenz für neue Interessenten",
       steps: [
-        "Bestätigungsmail nach Anmeldung",
-        "Willkommensgeschenk (z.B. PDF-Guide)",
-        "Vorstellung Ihrer Services",
-        "Spezielle Erstkundenangebote",
+        "Persönliche Begrüßungsnachricht",
+        "Nützliche Erstinformationen",
+        "Vorstellung Ihrer Beratung",
+        "Einladung zum Gespräch",
       ],
     },
     {
-      title: "Verkaufstrichter",
+      title: "Kontinuierliche Begleitung",
       description:
-        "Automatisierter Verkaufsprozess mit personalisierten E-Mails",
+        "Strukturierte Kommunikation während der Zusammenarbeit",
       steps: [
-        "Interesse wecken mit wertvollen Inhalten",
-        "Problemlösungen aufzeigen",
-        "Produktvorstellung",
-        "Follow-up bei Kaufabbruch",
+        "Regelmäßige Updates",
+        "Begleitende Informationen",
+        "Erfolgsgeschichten",
+        "Follow-up Nachrichten",
       ],
     },
     {
-      title: "Kundenbindung",
+      title: "Langfristige Bindung",
       description:
-        "Automatische Kommunikation zur Stärkung der Kundenbeziehung",
+        "Bleiben Sie professionell und persönlich in Kontakt",
       steps: [
-        "Geburtstagsmails",
-        "Feedback-Anfragen",
-        "Reaktivierungskampagnen",
-        "Treue-Belohnungen",
+        "Geburtstagsnachrichten",
+        "Feedback-Gespräche",
+        "Newsletter mit Mehrwert",
+        "Besondere Anlässe",
       ],
     },
   ];
 
   return (
     <div className="max-w-4xl mx-auto">
-      <h1 className="text-4xl font-bold mb-6">Brevo Marketing Automation</h1>
+      <h1 className="text-4xl font-bold mb-6">Professionelle Kommunikation mit Brevo</h1>
 
       <div className="prose prose-lg max-w-none mb-12">
         <p>
-          Brevo ist eine All-in-One Marketing-Plattform, die E-Mail-Marketing,
-          SMS-Marketing und Marketing-Automation vereint. Die Plattform
-          ermöglicht es, personalisierte Marketing-Kampagnen zu erstellen und
-          Ihre Kundenbeziehungen zu automatisieren.
+          Kommunizieren Sie mit Ihren Klienten auf eine Weise, die sowohl persönlich 
+          als auch professionell ist. Mit Brevo gestalten Sie Ihre E-Mail-Kommunikation 
+          effizient und zielgerichtet, ohne dabei die persönliche Note zu verlieren. 
+          Automatisieren Sie Routineaufgaben und gewinnen Sie Zeit für das Wesentliche.
         </p>
       </div>
 
@@ -103,7 +103,7 @@ const BrevoPage: React.FC = () => {
       {/* Automation Examples */}
       <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-lg p-8 mb-12">
         <h2 className="text-2xl font-bold mb-6">
-          Marketing-Automatisierung in der Praxis
+          Kommunikation die wirkt
         </h2>
         <div className="grid md:grid-cols-3 gap-6">
           {useCases.map((useCase, index) => (
@@ -132,38 +132,37 @@ const BrevoPage: React.FC = () => {
           <div className="flex items-start gap-4">
             <Clock className="w-6 h-6 text-blue-600 flex-shrink-0" />
             <div>
-              <h3 className="font-semibold mb-2">Zeitersparnis</h3>
+              <h3 className="font-semibold mb-2">Zeitgewinn</h3>
               <p className="text-gray-600">
-                Automatisieren Sie wiederkehrende Marketing-Aufgaben und
-                konzentrieren Sie sich auf Ihr Kerngeschäft.
+                Automatisieren Sie Standardkommunikation und fokussieren Sie sich 
+                auf wichtige Gespräche.
               </p>
             </div>
           </div>
           <div className="flex items-start gap-4">
             <Target className="w-6 h-6 text-blue-600 flex-shrink-0" />
             <div>
-              <h3 className="font-semibold mb-2">Bessere Conversion</h3>
+              <h3 className="font-semibold mb-2">Gezielte Wirkung</h3>
               <p className="text-gray-600">
-                Erreichen Sie Ihre Zielgruppe zum richtigen Zeitpunkt mit
-                relevanten Inhalten.
+                Erreichen Sie Ihre Zielgruppe mit relevanten Inhalten zum optimalen Zeitpunkt.
               </p>
             </div>
           </div>
           <div className="flex items-start gap-4">
             <Users className="w-6 h-6 text-blue-600 flex-shrink-0" />
             <div>
-              <h3 className="font-semibold mb-2">Personalisierung</h3>
+              <h3 className="font-semibold mb-2">Individualisierung</h3>
               <p className="text-gray-600">
-                Sprechen Sie Ihre Kunden individuell und persönlich an.
+                Personalisierte Kommunikation für jeden einzelnen Kontakt.
               </p>
             </div>
           </div>
           <div className="flex items-start gap-4">
-            <Settings className="w-6 h-6 text-blue-600 flex-shrink-0" />
+            <MessageCircle className="w-6 h-6 text-blue-600 flex-shrink-0" />
             <div>
-              <h3 className="font-semibold mb-2">Skalierbarkeit</h3>
+              <h3 className="font-semibold mb-2">Konstanter Dialog</h3>
               <p className="text-gray-600">
-                Wachsen Sie ohne zusätzlichen Personalaufwand.
+                Bleiben Sie regelmäßig und professionell mit Ihren Klienten in Kontakt.
               </p>
             </div>
           </div>
@@ -176,32 +175,32 @@ const BrevoPage: React.FC = () => {
         <div className="space-y-4 mb-8">
           <div className="flex items-start gap-3">
             <span className="text-blue-600 mt-1">•</span>
-            <p>Einrichtung und Konfiguration Ihres Brevo-Accounts</p>
+            <p>Einrichtung und Optimierung Ihres Brevo-Accounts</p>
           </div>
           <div className="flex items-start gap-3">
             <span className="text-blue-600 mt-1">•</span>
-            <p>Entwicklung von E-Mail-Marketing-Strategien</p>
+            <p>Entwicklung Ihrer Kommunikationsstrategie</p>
           </div>
           <div className="flex items-start gap-3">
             <span className="text-blue-600 mt-1">•</span>
             <p>
-              Erstellung von E-Mail-Templates und Automatisierungs-Workflows
+              Erstellung professioneller E-Mail-Vorlagen und Automatisierungen
             </p>
           </div>
           <div className="flex items-start gap-3">
             <span className="text-blue-600 mt-1">•</span>
-            <p>Integration mit Ihrer Website und anderen Marketing-Tools</p>
+            <p>Integration in Ihre bestehenden Systeme</p>
           </div>
           <div className="flex items-start gap-3">
             <span className="text-blue-600 mt-1">•</span>
-            <p>Schulung und Support für Ihr Marketing-Team</p>
+            <p>Individuelle Einarbeitung und fortlaufende Unterstützung</p>
           </div>
         </div>
         <button
           className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold 
           hover:bg-blue-700 transition duration-300"
         >
-          Marketing-Automation Beratung anfragen
+          Beratungsgespräch vereinbaren
         </button>
       </div>
     </div>

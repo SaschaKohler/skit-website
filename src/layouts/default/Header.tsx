@@ -1,9 +1,16 @@
 // src/layouts/default/Header.tsx
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useContactNavigation } from "../../hooks/useContactNavigation";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const handleContactClick = useContactNavigation();
+
+  const handleMobileContactClick = (e: React.MouseEvent) => {
+    handleContactClick(e);
+    setIsMenuOpen(false);
+  };
 
   return (
     <header className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white sticky top-0 z-50">
@@ -45,7 +52,7 @@ const Header: React.FC = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-6">
             <Link
-              to="/services"
+              to="/technologies"
               className="hover:text-blue-200 transition duration-300"
             >
               Leistungen
@@ -62,12 +69,13 @@ const Header: React.FC = () => {
             >
               Ja zum Leben
             </Link>
-            <Link
-              to="/contact"
+            <a
+              href="/#contact"
               className="hover:text-blue-200 transition duration-300"
+              onClick={handleContactClick}
             >
               Kontakt
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -76,7 +84,7 @@ const Header: React.FC = () => {
           <div className="md:hidden mt-4 pb-4">
             <div className="flex flex-col space-y-4">
               <Link
-                to="/services"
+                to="/technologies"
                 className="hover:text-blue-200 transition duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -96,13 +104,13 @@ const Header: React.FC = () => {
               >
                 Ja zum Leben
               </Link>
-              <Link
-                to="/contact"
+              <a
+                href="/#contact"
                 className="hover:text-blue-200 transition duration-300"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={handleMobileContactClick}
               >
                 Kontakt
-              </Link>
+              </a>
             </div>
           </div>
         )}
