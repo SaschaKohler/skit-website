@@ -15,18 +15,18 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: '20'
           cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
-        
+
       - name: Check for TypeScript errors
         run: npx tsc --noEmit
-        
+
       - name: Lint
         run: npm run lint
-        
+
       - name: Build
         run: npm run build
 
@@ -50,8 +50,8 @@ jobs:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SERVER_SSH_KEY }}
-          source: "dist/*"
-          target: "/var/www/skit.sascha-kohler.at/current"
+          source: 'dist/*'
+          target: '/var/www/skit.sascha-kohler.at/current'
           strip_components: 1
           overwrite: true
 
@@ -64,7 +64,31 @@ jobs:
           script: |
             sudo chown -R www-data:www-data /var/www/skit.sascha-kohler.at/current
             sudo chmod -R 755 /var/www/skit.sascha-kohler.at/current
-            
+
+      - name: Configure Nginx
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            # Prüfe ob der Link bereits existiert und entferne ihn gegebenenfalls
+            sudo rm -f /etc/nginx/sites-enabled/skit.sascha-kohler.at.conf
+
+            # Erstelle den neuen symbolischen Link
+            sudo ln -s /etc/nginx/sites-available/skit.sascha-kohler.at.production.conf /etc/nginx/sites-enabled/
+
+            # Teste die Nginx Konfiguration
+            sudo nginx -t
+
+            # Wenn der Test erfolgreich war, lade Nginx neu
+            if [ $? -eq 0 ]; then
+                sudo systemctl reload nginx
+            else
+                echo "Nginx configuration test failed"
+                exit 1
+            fi
+
       - name: Verify deployment
         run: |
           if curl -s --head https://skit.sascha-kohler.at | grep "200 OK" > /dev/null; then 
