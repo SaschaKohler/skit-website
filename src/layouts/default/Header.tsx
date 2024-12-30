@@ -7,8 +7,8 @@ const Header: React.FC = (): React.JSX.Element => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const handleContactClick = useContactNavigation()
 
-  const handleMobileContactClick = (e: React.MouseEvent): void => {
-    handleContactClick(e)
+  const handleMobileContactClick = (): void => {
+    handleContactClick()
     setIsMenuOpen(false)
   }
 
@@ -128,4 +128,3 @@ const Header: React.FC = (): React.JSX.Element => {
 }
 
 export default Header
-
