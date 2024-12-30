@@ -16,7 +16,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: 'npm'
+          cache: "npm"
 
       - name: Install Dependencies
         run: npm ci
@@ -26,7 +26,7 @@ jobs:
 
       - name: Build
         run: npm run build
-        
+
       - name: Backup production config
         uses: appleboy/ssh-action@master
         with:
@@ -35,8 +35,8 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             # Backup nginx production config wenn noch nicht vorhanden
-            if [ ! -f /etc/nginx/sites-available/skit.sascha-kohler.at.conf.production ]; then
-              sudo cp /etc/nginx/sites-available/skit.sascha-kohler.at.conf /etc/nginx/sites-available/skit.sascha-kohler.at.conf.production
+            if [ ! -f /etc/nginx/sites-available/skit.sascha-kohler.at.conf.production.backup ]; then
+              sudo cp /etc/nginx/sites-available/skit.sascha-kohler.at.conf /etc/nginx/sites-available/skit.sascha-kohler.at.conf.production.backup
             fi
 
       - name: Deploy Maintenance Page
@@ -60,10 +60,10 @@ jobs:
             # Setze Berechtigungen
             sudo chown -R www-data:www-data /var/www/skit.sascha-kohler.at/maintenance
             sudo chmod -R 755 /var/www/skit.sascha-kohler.at/maintenance
-            
+
             # Aktiviere Maintenance-Konfiguration
             sudo cp /etc/nginx/sites-available/skit.sascha-kohler.at.maintenance.conf /etc/nginx/sites-available/skit.sascha-kohler.at.conf
-            
+
             # Teste und lade Nginx neu
             sudo nginx -t
             if [ $? -eq 0 ]; then
@@ -72,7 +72,7 @@ jobs:
                 echo "Nginx configuration test failed"
                 exit 1
             fi
-            
+
       - name: Verify Maintenance Mode
         run: |
           sleep 5
@@ -82,3 +82,4 @@ jobs:
             echo "Maintenance mode activation failed"
             exit 1
           fi
+
