@@ -1,13 +1,14 @@
-import { UI } from "./components";
-import { useContactForm } from "./hooks";
+import { FormEvent } from 'react'
+import { UI } from './components'
+import { useContactForm } from './hooks'
 import {
   serviceCategories,
   budgetOptions,
   timeframeOptions,
   contactOptions,
-} from "./types";
+} from './types'
 
-const ContactForm = () => {
+const ContactForm = (): React.JSX.Element => {
   const {
     step,
     setStep,
@@ -17,9 +18,9 @@ const ContactForm = () => {
     handleServiceToggle,
     handleSubmit,
     handleReset,
-  } = useContactForm();
+  } = useContactForm()
 
-  const renderProjectDetails = () => (
+  const renderProjectDetails = (): React.JSX.Element => (
     <div className="space-y-4 md:space-y-6">
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -27,11 +28,13 @@ const ContactForm = () => {
         </label>
         <select
           value={formData.budget}
-          onChange={(e) => updateFormData({ budget: e.target.value })}
+          onChange={e => {
+            updateFormData({ budget: e.target.value })
+          }}
           className="w-full px-3 py-2 md:px-4 md:py-2 border border-gray-300 rounded-lg"
           required
         >
-          {budgetOptions.map((option) => (
+          {budgetOptions.map(option => (
             <option key={option.value} value={option.value}>
               {option.label}
             </option>
@@ -45,11 +48,13 @@ const ContactForm = () => {
         </label>
         <select
           value={formData.timeframe}
-          onChange={(e) => updateFormData({ timeframe: e.target.value })}
+          onChange={e => {
+            updateFormData({ timeframe: e.target.value })
+          }}
           className="w-full px-3 py-2 md:px-4 md:py-2 border border-gray-300 rounded-lg"
           required
         >
-          {timeframeOptions.map((option) => (
+          {timeframeOptions.map(option => (
             <option key={option.value} value={option.value}>
               {option.label}
             </option>
@@ -63,7 +68,9 @@ const ContactForm = () => {
         </label>
         <textarea
           value={formData.message}
-          onChange={(e) => updateFormData({ message: e.target.value })}
+          onChange={e => {
+            updateFormData({ message: e.target.value })
+          }}
           rows={4}
           className="w-full px-3 py-2 md:px-4 md:py-2 border border-gray-300 rounded-lg"
           placeholder="Beschreiben Sie Ihr Projekt und Ihre spezifischen Anforderungen..."
@@ -74,7 +81,9 @@ const ContactForm = () => {
       <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
         <button
           type="button"
-          onClick={() => setStep(1)}
+          onClick={() => {
+            setStep(1)
+          }}
           className="w-full sm:flex-1 px-4 py-2 md:px-6 md:py-3 border border-gray-300 rounded-lg font-semibold
                    hover:bg-gray-50 transition duration-300"
         >
@@ -82,7 +91,9 @@ const ContactForm = () => {
         </button>
         <button
           type="button"
-          onClick={() => setStep(3)}
+          onClick={() => {
+            setStep(3)
+          }}
           className="w-full sm:flex-1 bg-blue-600 text-white py-2 px-4 md:py-3 md:px-6 rounded-lg 
                    font-semibold hover:bg-blue-700 transition duration-300"
         >
@@ -90,9 +101,9 @@ const ContactForm = () => {
         </button>
       </div>
     </div>
-  );
+  )
 
-  const renderContactDetails = () => (
+  const renderContactDetails = (): React.JSX.Element => (
     <div className="space-y-4 md:space-y-6">
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -101,7 +112,9 @@ const ContactForm = () => {
         <input
           type="text"
           value={formData.name}
-          onChange={(e) => updateFormData({ name: e.target.value })}
+          onChange={e => {
+            updateFormData({ name: e.target.value })
+          }}
           className="w-full px-3 py-2 md:px-4 md:py-2 border border-gray-300 rounded-lg"
           required
         />
@@ -114,7 +127,9 @@ const ContactForm = () => {
         <input
           type="email"
           value={formData.email}
-          onChange={(e) => updateFormData({ email: e.target.value })}
+          onChange={e => {
+            updateFormData({ email: e.target.value })
+          }}
           className="w-full px-3 py-2 md:px-4 md:py-2 border border-gray-300 rounded-lg"
           required
         />
@@ -127,7 +142,9 @@ const ContactForm = () => {
         <input
           type="tel"
           value={formData.phone}
-          onChange={(e) => updateFormData({ phone: e.target.value })}
+          onChange={e => {
+            updateFormData({ phone: e.target.value })
+          }}
           className="w-full px-3 py-2 md:px-4 md:py-2 border border-gray-300 rounded-lg"
         />
       </div>
@@ -137,15 +154,15 @@ const ContactForm = () => {
           Bevorzugte Kontaktaufnahme
         </label>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-          {contactOptions.map((option) => (
+          {contactOptions.map(option => (
             <label
               key={option.value}
               className={`
                 p-3 md:p-4 border-2 rounded-lg cursor-pointer text-center
                 ${
                   formData.preferredContact === option.value
-                    ? "border-blue-500 bg-blue-50"
-                    : "border-gray-200 hover:border-blue-200"
+                    ? 'border-blue-500 bg-blue-50'
+                    : 'border-gray-200 hover:border-blue-200'
                 }
               `}
             >
@@ -154,12 +171,12 @@ const ContactForm = () => {
                 name="preferredContact"
                 value={option.value}
                 checked={formData.preferredContact === option.value}
-                onChange={(e) =>
+                onChange={e => {
                   updateFormData({
                     preferredContact: e.target
                       .value as typeof formData.preferredContact,
                   })
-                }
+                }}
                 className="sr-only"
               />
               {option.label}
@@ -171,7 +188,9 @@ const ContactForm = () => {
       <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
         <button
           type="button"
-          onClick={() => setStep(2)}
+          onClick={() => {
+            setStep(2)
+          }}
           className="w-full sm:flex-1 px-4 py-2 md:px-6 md:py-3 border border-gray-300 rounded-lg font-semibold
                    hover:bg-gray-50 transition duration-300"
         >
@@ -179,25 +198,25 @@ const ContactForm = () => {
         </button>
         <button
           type="submit"
-          disabled={status === "sending"}
+          disabled={status === 'sending'}
           className="w-full sm:flex-1 bg-blue-600 text-white py-2 px-4 md:py-3 md:px-6 rounded-lg 
                    font-semibold hover:bg-blue-700 transition duration-300
                    disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {status === "sending" ? (
+          {status === 'sending' ? (
             <span className="flex items-center justify-center">
               <UI.LoadingSpinner className="h-5 w-5 -ml-1 mr-3" />
               Wird gesendet...
             </span>
           ) : (
-            "Anfrage absenden"
+            'Anfrage absenden'
           )}
         </button>
       </div>
     </div>
-  );
+  )
 
-  if (status === "success") {
+  if (status === 'success') {
     return (
       <section className="py-12 md:py-20 bg-gray-50">
         <div className="container mx-auto px-4 md:px-6">
@@ -207,7 +226,12 @@ const ContactForm = () => {
           />
         </div>
       </section>
-    );
+    )
+  }
+
+  const onSubmit = (e: FormEvent): void => {
+    e.preventDefault()
+    void handleSubmit(e)
   }
 
   return (
@@ -224,13 +248,15 @@ const ContactForm = () => {
         <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-lg">
           <UI.StepIndicator currentStep={step} />
 
-          <form onSubmit={handleSubmit} className="p-4 md:p-8">
+          <form onSubmit={onSubmit} className="p-4 md:p-8">
             {step === 1 && (
               <UI.ServiceSelection
                 categories={serviceCategories}
                 selectedServices={formData.selectedServices}
                 onServiceToggle={handleServiceToggle}
-                onNext={() => setStep(2)}
+                onNext={() => {
+                  setStep(2)
+                }}
               />
             )}
 
@@ -252,7 +278,7 @@ const ContactForm = () => {
             </div>
           )}
 
-          {status === "error" && (
+          {status === 'error' && (
             <div className="px-4 md:px-8 pb-4 md:pb-8">
               <div className="p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg">
                 Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später
@@ -263,7 +289,8 @@ const ContactForm = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ContactForm;
+export default ContactForm
+

@@ -1,70 +1,70 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Globe, Workflow, Mail, Code, Brain } from "lucide-react";
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { Globe, Workflow, Mail, Code, Brain } from 'lucide-react'
 
 const TechnologyOverview: React.FC = () => {
   const technologies = [
     {
       icon: <Globe className="w-12 h-12" />,
-      title: "WordPress",
-      description: "Professionelle Websites mit Divi Theme",
-      path: "/technologies/wordpress",
+      title: 'WordPress',
+      description: 'Professionelle Websites mit Divi Theme',
+      path: '/technologies/wordpress',
       features: [
-        "Individuelle Themes",
-        "Mitgliederbereiche",
-        "E-Commerce",
-        "Automatisierung",
+        'Individuelle Themes',
+        'Mitgliederbereiche',
+        'E-Commerce',
+        'Automatisierung',
       ],
     },
     {
       icon: <Workflow className="w-12 h-12" />,
-      title: "Make.com",
-      description: "Automatisierung von Geschäftsprozessen",
-      path: "/technologies/make",
+      title: 'Make.com',
+      description: 'Automatisierung von Geschäftsprozessen',
+      path: '/technologies/make',
       features: [
-        "Workflow-Automation",
-        "App-Integration",
-        "Prozessoptimierung",
-        "Zeitersparnis",
+        'Workflow-Automation',
+        'App-Integration',
+        'Prozessoptimierung',
+        'Zeitersparnis',
       ],
     },
     {
       icon: <Mail className="w-12 h-12" />,
-      title: "Brevo",
-      description: "E-Mail-Marketing und Automation",
-      path: "/technologies/brevo",
+      title: 'Brevo',
+      description: 'E-Mail-Marketing und Automation',
+      path: '/technologies/brevo',
       features: [
-        "Newsletter",
-        "Marketing-Automation",
-        "Kundenbeziehungen",
-        "Kampagnen",
+        'Newsletter',
+        'Marketing-Automation',
+        'Kundenbeziehungen',
+        'Kampagnen',
       ],
     },
     {
       icon: <Code className="w-12 h-12" />,
-      title: "React & Vite",
-      description: "Maßgeschneiderte Webanwendungen",
-      path: "/technologies/react-vite",
+      title: 'React & Vite',
+      description: 'Maßgeschneiderte Webanwendungen',
+      path: '/technologies/react-vite',
       features: [
-        "Single Page Apps",
-        "Performance",
-        "Moderne UIs",
-        "Responsives Design",
+        'Single Page Apps',
+        'Performance',
+        'Moderne UIs',
+        'Responsives Design',
       ],
     },
     {
       icon: <Brain className="w-12 h-12" />,
-      title: "NLP-Integration",
-      description: "Ganzheitliche Kommunikation",
-      path: "/technologies/nlp",
+      title: 'NLP-Integration',
+      description: 'Ganzheitliche Kommunikation',
+      path: '/technologies/nlp',
       features: [
-        "Klare Kommunikation",
-        "Bedürfnisanalyse",
-        "Zielorientierung",
-        "Nachhaltigkeit",
+        'Klare Kommunikation',
+        'Bedürfnisanalyse',
+        'Zielorientierung',
+        'Nachhaltigkeit',
       ],
     },
-  ];
+  ]
 
   return (
     <div className="max-w-6xl mx-auto">
@@ -78,7 +78,7 @@ const TechnologyOverview: React.FC = () => {
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {technologies.map((tech) => (
+        {technologies.map(tech => (
           <Link
             key={tech.path}
             to={tech.path}
@@ -127,7 +127,7 @@ const TechnologyOverview: React.FC = () => {
         </p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default TechnologyOverview;
+export default TechnologyOverview

@@ -1,9 +1,9 @@
-import React from "react";
-import DefaultLayout from "../../layouts/default/DefaultLayout";
-import { useContactNavigation } from "../../hooks/useContactNavigation";
+import React from 'react'
+import DefaultLayout from '../../layouts/default/DefaultLayout'
+import { useContactNavigation } from '../../hooks/useContactNavigation'
 
 const AppDevelopment: React.FC = () => {
-  const handleContactClick = useContactNavigation();
+  const handleContactClick = useContactNavigation()
 
   return (
     <DefaultLayout>
@@ -175,7 +175,7 @@ const AppDevelopment: React.FC = () => {
         </div>
       </div>
     </DefaultLayout>
-  );
-};
+  )
+}
 
-export default AppDevelopment;
+export default AppDevelopment

@@ -1,31 +1,31 @@
-import React from "react";
-import { GraduationCap, Heart, Brain, Landmark } from "lucide-react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { GraduationCap, Heart, Brain, Landmark } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 const About: React.FC = () => {
   const qualifications = [
     {
       icon: <Landmark className="w-6 h-6" />,
-      title: "Apotheker",
-      description: "Über 20 Jahre Erfahrung in öffentlichen Apotheken",
+      title: 'Apotheker',
+      description: 'Über 20 Jahre Erfahrung in öffentlichen Apotheken',
     },
     {
       icon: <Brain className="w-6 h-6" />,
-      title: "NLP-Practitioner,Life Master & Train the Trainer i.A.",
-      description: "Zertifizierte Ausbildung in NLP-Techniken",
+      title: 'NLP-Practitioner,Life Master & Train the Trainer i.A.',
+      description: 'Zertifizierte Ausbildung in NLP-Techniken',
     },
     {
       icon: <Heart className="w-6 h-6" />,
-      title: "Lebens- und Sozialberater",
-      description: "In Ausbildung unter Supervision (Rene Otto Knor Akademie)",
+      title: 'Lebens- und Sozialberater',
+      description: 'In Ausbildung unter Supervision (Rene Otto Knor Akademie)',
     },
     {
       icon: <GraduationCap className="w-6 h-6" />,
-      title: "IT-Experte",
+      title: 'IT-Experte',
       description:
-        "Spezialisiert auf moderne Webtechnologien und Digitallösungen",
+        'Spezialisiert auf moderne Webtechnologien und Digitallösungen',
     },
-  ];
+  ]
 
   return (
     <section id="about" className="py-20 bg-gray-50">
@@ -103,7 +103,7 @@ const About: React.FC = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default About;
+export default About

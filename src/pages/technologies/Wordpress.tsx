@@ -1,30 +1,30 @@
 // src/pages/technologies/WordPress.tsx
-import React from "react";
-import { Code, Layout, Shield, Zap } from "lucide-react";
+import React from 'react'
+import { Code, Layout, Shield, Zap } from 'lucide-react'
 
 const WordPress: React.FC = () => {
   const features = [
     {
       icon: <Layout className="w-8 h-8" />,
-      title: "Divi Theme Builder",
-      description: "Visuelles Design ohne Programmierkenntnisse",
+      title: 'Divi Theme Builder',
+      description: 'Visuelles Design ohne Programmierkenntnisse',
     },
     {
       icon: <Shield className="w-8 h-8" />,
-      title: "Sicherheit & Updates",
-      description: "Automatische Updates und Sicherheitsmaßnahmen",
+      title: 'Sicherheit & Updates',
+      description: 'Automatische Updates und Sicherheitsmaßnahmen',
     },
     {
       icon: <Code className="w-8 h-8" />,
-      title: "Custom Development",
-      description: "Individuelle Erweiterungen und Anpassungen",
+      title: 'Custom Development',
+      description: 'Individuelle Erweiterungen und Anpassungen',
     },
     {
       icon: <Zap className="w-8 h-8" />,
-      title: "Performance",
-      description: "Optimierung für schnelle Ladezeiten",
+      title: 'Performance',
+      description: 'Optimierung für schnelle Ladezeiten',
     },
-  ];
+  ]
 
   return (
     <div className="max-w-4xl mx-auto">
@@ -85,7 +85,7 @@ const WordPress: React.FC = () => {
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default WordPress;
+export default WordPress

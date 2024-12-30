@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Footer: React.FC = () => {
   return (
@@ -16,7 +16,10 @@ const Footer: React.FC = () => {
               </a>
             </p>
             <p>
-              <a href="mailto:office@sascha-kohler.at" className="hover:text-blue-400">
+              <a
+                href="mailto:office@sascha-kohler.at"
+                className="hover:text-blue-400"
+              >
                 office@sascha-kohler.at
               </a>
             </p>
@@ -69,7 +72,8 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-sm text-gray-400">
-            © {new Date().getFullYear()} sk.IT software. Alle Rechte vorbehalten.
+            © {new Date().getFullYear()} sk.IT software. Alle Rechte
+            vorbehalten.
           </p>
           <p className="text-sm text-gray-400 mt-2">
             web | graphic | content | ❤️ www.sascha-kohler.at
@@ -77,7 +81,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

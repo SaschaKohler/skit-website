@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from 'react'
 import {
   ChevronLeft,
   ChevronRight,
@@ -7,56 +7,60 @@ import {
   Lock,
   Layout,
   Users,
-  Youtube,
+  Video,
   FileText,
   Workflow,
-} from "lucide-react";
-import memberAreaImage from "../../assets/images/ja-zum-leben/member-area.png";
-import cmsSystemImage from "../../assets/images/ja-zum-leben/cms-system.png";
-import emailMarketingImage from "../../assets/images/ja-zum-leben/email-marketing.png";
+} from 'lucide-react'
+import memberAreaImage from '../../assets/images/ja-zum-leben/member-area.png'
+import cmsSystemImage from '../../assets/images/ja-zum-leben/cms-system.png'
+import emailMarketingImage from '../../assets/images/ja-zum-leben/email-marketing.png'
 
-const TechShowcase = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
+const TechShowcase = (): React.JSX.Element => {
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [isTransitioning, setIsTransitioning] = useState(false)
 
   const slides = [
     {
       image: memberAreaImage,
-      alt: "WordPress Divi Member Area",
-      title: "Member Bereich",
+      alt: 'WordPress Divi Member Area',
+      title: 'Member Bereich',
     },
     {
       image: cmsSystemImage,
-      alt: "Content Management System",
-      title: "CMS System",
+      alt: 'Content Management System',
+      title: 'CMS System',
     },
     {
       image: emailMarketingImage,
-      alt: "Email Marketing Automation",
-      title: "Email Marketing",
+      alt: 'Email Marketing Automation',
+      title: 'Email Marketing',
     },
-  ];
+  ]
 
-  const nextSlide = () => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-    setTimeout(() => setIsTransitioning(false), 500);
-  };
+  const nextSlide = useCallback((): void => {
+    if (isTransitioning) return
+    setIsTransitioning(true)
+    setCurrentSlide(prev => (prev + 1) % slides.length)
+    setTimeout(() => {
+      setIsTransitioning(false)
+    }, 500)
+  }, [isTransitioning, slides.length])
 
-  const prevSlide = () => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-    setTimeout(() => setIsTransitioning(false), 500);
-  };
+  const prevSlide = (): void => {
+    if (isTransitioning) return
+    setIsTransitioning(true)
+    setCurrentSlide(prev => (prev - 1 + slides.length) % slides.length)
+    setTimeout(() => {
+      setIsTransitioning(false)
+    }, 500)
+  }
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      nextSlide();
-    }, 5000);
-    return () => clearInterval(timer);
-  }, [currentSlide, isTransitioning]); // Added dependencies
+    const timer = setInterval(nextSlide, 5000)
+    return () => {
+      clearInterval(timer)
+    }
+  }, [nextSlide])
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-16">
@@ -66,7 +70,7 @@ const TechShowcase = () => {
           {/* Slider Track */}
           <div
             className="absolute inset-0 flex transition-transform duration-500 ease-in-out"
-            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+            style={{ transform: `translateX(-${String(currentSlide * 100)}%)` }}
           >
             {slides.map((slide, index) => (
               <div
@@ -118,17 +122,19 @@ const TechShowcase = () => {
               className={`w-3 h-3 rounded-full transition-all duration-300 
                       ${
                         currentSlide === index
-                          ? "bg-white scale-110"
-                          : "bg-white/50 hover:bg-white/70"
+                          ? 'bg-white scale-110'
+                          : 'bg-white/50 hover:bg-white/70'
                       }`}
               onClick={() => {
                 if (!isTransitioning) {
-                  setIsTransitioning(true);
-                  setCurrentSlide(index);
-                  setTimeout(() => setIsTransitioning(false), 500);
+                  setIsTransitioning(true)
+                  setCurrentSlide(index)
+                  setTimeout(() => {
+                    setIsTransitioning(false)
+                  }, 500)
                 }
               }}
-              aria-label={`Go to slide ${index + 1}`}
+              aria-label={`Go to slide ${String(index + 1)}`}
             />
           ))}
         </div>
@@ -182,7 +188,7 @@ const TechShowcase = () => {
 
         <div className="bg-white p-6 rounded-lg shadow-md">
           <div className="flex items-center mb-4">
-            <Youtube className="w-8 h-8 text-blue-600 mr-3" />
+            <Video className="w-8 h-8 text-blue-600 mr-3" />
             <h3 className="text-xl font-semibold">Video Integration</h3>
           </div>
           <p className="text-gray-600">
@@ -222,7 +228,7 @@ const TechShowcase = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default TechShowcase;
+export default TechShowcase

@@ -1,28 +1,28 @@
-import { ArrowRight, Calendar, Users, HeartHandshake } from "lucide-react";
+import { ArrowRight, Calendar, Users, HeartHandshake } from 'lucide-react'
 
-const JaZumLebenSection = () => {
-  const nextCourseDate = "04.02.25";
+const JaZumLebenSection = (): React.JSX.Element => {
+  const nextCourseDate = '04.02.25'
 
   const features = [
     {
-      title: "Bachblüten & Mindset",
+      title: 'Bachblüten & Mindset',
       description:
-        "Einzigartige Kombination aus der sanften Kraft der Bachblüten und modernen Mindset-Techniken",
+        'Einzigartige Kombination aus der sanften Kraft der Bachblüten und modernen Mindset-Techniken',
       icon: HeartHandshake,
     },
     {
-      title: "14 Wochen Begleitung",
+      title: '14 Wochen Begleitung',
       description:
-        "Intensive persönliche Betreuung mit wöchentlichen Live-Calls",
+        'Intensive persönliche Betreuung mit wöchentlichen Live-Calls',
       icon: Calendar,
     },
     {
-      title: "Erfahrene Mentoren",
+      title: 'Erfahrene Mentoren',
       description:
-        "Gerda als Bachblüten-Expertin und Sascha als NLP-Master verbinden ihre Expertise",
+        'Gerda als Bachblüten-Expertin und Sascha als NLP-Master verbinden ihre Expertise',
       icon: Users,
     },
-  ];
+  ]
 
   return (
     <section className="bg-white py-16">
@@ -89,7 +89,8 @@ const JaZumLebenSection = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default JaZumLebenSection;
+export default JaZumLebenSection
+

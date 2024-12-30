@@ -1,16 +1,10 @@
-import React, { useState } from "react";
-import DefaultLayout from "../../layouts/default/DefaultLayout";
-import { Link } from "react-router-dom";
-import { useContactNavigation } from "../../hooks/useContactNavigation";
+import React from 'react'
+import DefaultLayout from '../../layouts/default/DefaultLayout'
+import { Link } from 'react-router-dom'
+import { useContactNavigation } from '../../hooks/useContactNavigation'
 
-const WebDevelopment: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const handleContactClick = useContactNavigation();
-
-  const handleMobileContactClick = (e: React.MouseEvent) => {
-    handleContactClick(e);
-    setIsMenuOpen(false);
-  };
+const WebDevelopment: React.FC = (): React.JSX.Element => {
+  const handleContactClick = useContactNavigation()
 
   return (
     <DefaultLayout>
@@ -183,7 +177,8 @@ const WebDevelopment: React.FC = () => {
         </div>
       </div>
     </DefaultLayout>
-  );
-};
+  )
+}
 
-export default WebDevelopment;
+export default WebDevelopment
+

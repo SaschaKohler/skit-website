@@ -1,5 +1,5 @@
 // src/pages/Maintenance.tsx
-import React from "react";
+import React from 'react'
 
 const MaintenancePage: React.FC = () => {
   return (
@@ -43,6 +43,6 @@ const MaintenancePage: React.FC = () => {
         </div>
       </div>
     </div>
-  );
-};
-export default MaintenancePage;
+  )
+}
+export default MaintenancePage

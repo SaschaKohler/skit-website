@@ -1,11 +1,11 @@
 // src/components/ui/ServiceCard.tsx
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 interface ServiceCardProps {
-  title: string;
-  items: string[];
-  link?: string;
+  title: string
+  items: string[]
+  link?: string
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ title, items, link }) => {
@@ -26,7 +26,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, items, link }) => {
         </Link>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default ServiceCard;
+export default ServiceCard

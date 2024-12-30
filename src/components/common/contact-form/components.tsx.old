@@ -1,18 +1,18 @@
-import React from "react";
-import { ServiceCategory } from "./types";
+import React from 'react'
+import { ServiceCategory } from './types'
 
 interface StepIndicatorProps {
-  currentStep: number;
+  currentStep: number
 }
 
 export const StepIndicator: React.FC<StepIndicatorProps> = ({
   currentStep,
 }) => {
   const steps = [
-    { number: 1, label: "Services" },
-    { number: 2, label: "Details" },
-    { number: 3, label: "Kontakt" },
-  ];
+    { number: 1, label: 'Services' },
+    { number: 2, label: 'Details' },
+    { number: 3, label: 'Kontakt' },
+  ]
 
   return (
     <div className="relative py-4 px-4 md:px-8 border-b">
@@ -26,8 +26,8 @@ export const StepIndicator: React.FC<StepIndicatorProps> = ({
                 w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium
                 ${
                   currentStep >= step.number
-                    ? "bg-blue-600 text-white"
-                    : "bg-gray-100 text-gray-400"
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-gray-100 text-gray-400'
                 }
               `}
               >
@@ -36,7 +36,7 @@ export const StepIndicator: React.FC<StepIndicatorProps> = ({
               <span
                 className={`
                 mt-1 text-xs font-medium
-                ${currentStep >= step.number ? "text-blue-600" : "text-gray-400"}
+                ${currentStep >= step.number ? 'text-blue-600' : 'text-gray-400'}
               `}
               >
                 {step.label}
@@ -46,7 +46,7 @@ export const StepIndicator: React.FC<StepIndicatorProps> = ({
               <div
                 className={`
                 w-full max-w-[60px] h-0.5 mx-1
-                ${currentStep > step.number ? "bg-blue-600" : "bg-gray-200"}
+                ${currentStep > step.number ? 'bg-blue-600' : 'bg-gray-200'}
               `}
               />
             )}
@@ -64,8 +64,8 @@ export const StepIndicator: React.FC<StepIndicatorProps> = ({
                 w-10 h-10 rounded-full flex items-center justify-center text-base font-medium transition-colors
                 ${
                   currentStep >= step.number
-                    ? "bg-blue-600 text-white"
-                    : "bg-gray-100 text-gray-400"
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-gray-100 text-gray-400'
                 }
               `}
               >
@@ -74,7 +74,7 @@ export const StepIndicator: React.FC<StepIndicatorProps> = ({
               <span
                 className={`
                 ml-3 font-medium transition-colors
-                ${currentStep >= step.number ? "text-blue-600" : "text-gray-400"}
+                ${currentStep >= step.number ? 'text-blue-600' : 'text-gray-400'}
               `}
               >
                 {step.label}
@@ -92,14 +92,14 @@ export const StepIndicator: React.FC<StepIndicatorProps> = ({
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
 interface ServiceSelectionProps {
-  categories: ServiceCategory[];
-  selectedServices: string[];
-  onServiceToggle: (service: string) => void;
-  onNext: () => void;
+  categories: ServiceCategory[]
+  selectedServices: string[]
+  onServiceToggle: (service: string) => void
+  onNext: () => void
 }
 
 export const ServiceSelection: React.FC<ServiceSelectionProps> = ({
@@ -109,11 +109,11 @@ export const ServiceSelection: React.FC<ServiceSelectionProps> = ({
   onNext,
 }) => (
   <div className="space-y-8">
-    {categories.map((category) => (
+    {categories.map(category => (
       <div key={category.id}>
         <h3 className="font-semibold mb-4">{category.title}</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {category.options.map((service) => (
+          {category.options.map(service => (
             <label
               key={service}
               className={`
@@ -121,15 +121,15 @@ export const ServiceSelection: React.FC<ServiceSelectionProps> = ({
                 transition-colors duration-200
                 ${
                   selectedServices.includes(service)
-                    ? "border-blue-500 bg-blue-50"
-                    : "border-gray-200 hover:border-blue-200"
+                    ? 'border-blue-500 bg-blue-50'
+                    : 'border-gray-200 hover:border-blue-200'
                 }
               `}
             >
               <input
                 type="checkbox"
                 checked={selectedServices.includes(service)}
-                onChange={() => onServiceToggle(service)}
+                onChange={() => { onServiceToggle(service); }}
                 className="sr-only"
               />
               <span className="ml-2">{service}</span>
@@ -149,14 +149,14 @@ export const ServiceSelection: React.FC<ServiceSelectionProps> = ({
       Weiter zu Details
     </button>
   </div>
-);
+)
 
 interface LoadingSpinnerProps {
-  className?: string;
+  className?: string
 }
 
 export const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
-  className = "h-5 w-5",
+  className = 'h-5 w-5',
 }) => (
   <svg
     className={`animate-spin ${className}`}
@@ -178,11 +178,11 @@ export const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
       d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
     />
   </svg>
-);
+)
 
 interface SuccessMessageProps {
-  selectedServices: string[];
-  onReset: () => void;
+  selectedServices: string[]
+  onReset: () => void
 }
 
 export const SuccessMessage: React.FC<SuccessMessageProps> = ({
@@ -230,12 +230,11 @@ export const SuccessMessage: React.FC<SuccessMessageProps> = ({
       Neue Anfrage starten
     </button>
   </div>
-);
+)
 
 export const UI = {
   StepIndicator,
   ServiceSelection,
   LoadingSpinner,
   SuccessMessage,
-};
-
+}

@@ -1,37 +1,37 @@
-import React from "react";
+import React from 'react'
 import {
   Brain,
   Target,
   MessageCircle,
   HeartHandshake,
   ArrowUpRight,
-} from "lucide-react";
+} from 'lucide-react'
 
 const NLPPage: React.FC = () => {
   const benefits = [
     {
       icon: <MessageCircle className="w-8 h-8" />,
-      title: "Verbesserte Kommunikation",
-      description: "Klare und effektive Kommunikation in allen Projektphasen",
+      title: 'Verbesserte Kommunikation',
+      description: 'Klare und effektive Kommunikation in allen Projektphasen',
     },
     {
       icon: <Target className="w-8 h-8" />,
-      title: "Zielgerichtete Lösungen",
-      description: "Präzise Erfassung und Umsetzung Ihrer Anforderungen",
+      title: 'Zielgerichtete Lösungen',
+      description: 'Präzise Erfassung und Umsetzung Ihrer Anforderungen',
     },
     {
       icon: <Brain className="w-8 h-8" />,
-      title: "Ganzheitlicher Ansatz",
+      title: 'Ganzheitlicher Ansatz',
       description:
-        "Berücksichtigung sowohl technischer als auch menschlicher Aspekte",
+        'Berücksichtigung sowohl technischer als auch menschlicher Aspekte',
     },
     {
       icon: <HeartHandshake className="w-8 h-8" />,
-      title: "Nachhaltige Zusammenarbeit",
+      title: 'Nachhaltige Zusammenarbeit',
       description:
-        "Aufbau langfristiger, vertrauensvoller Geschäftsbeziehungen",
+        'Aufbau langfristiger, vertrauensvoller Geschäftsbeziehungen',
     },
-  ];
+  ]
 
   return (
     <div className="max-w-4xl mx-auto">
@@ -125,7 +125,7 @@ const NLPPage: React.FC = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default NLPPage;
+export default NLPPage

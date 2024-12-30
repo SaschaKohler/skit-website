@@ -1,10 +1,10 @@
-import React from "react";
-import Header from "./Header";
-import Footer from "./Footer";
-import PageTransition from "../../components/common/PageTransition";
+import React from 'react'
+import Header from './Header'
+import Footer from './Footer'
+import PageTransition from '../../components/common/PageTransition'
 
 interface DefaultLayoutProps {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 const DefaultLayout: React.FC<DefaultLayoutProps> = ({ children }) => {
@@ -16,7 +16,7 @@ const DefaultLayout: React.FC<DefaultLayoutProps> = ({ children }) => {
       </main>
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default DefaultLayout;
+export default DefaultLayout

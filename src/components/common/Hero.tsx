@@ -1,5 +1,5 @@
-import React from "react";
-import { ArrowRight, Monitor, Heart, Brain } from "lucide-react";
+import React from 'react'
+import { ArrowRight, Monitor, Heart, Brain } from 'lucide-react'
 
 const Hero: React.FC = () => {
   const features = [
@@ -7,31 +7,31 @@ const Hero: React.FC = () => {
       icon: (
         <Monitor className="w-8 h-8 md:w-12 md:h-12 mb-3 md:mb-4 text-blue-200" />
       ),
-      title: "Aus der Praxis",
-      description: "Lösungen, die Ihren Arbeitsalltag wirklich erleichtern",
+      title: 'Aus der Praxis',
+      description: 'Lösungen, die Ihren Arbeitsalltag wirklich erleichtern',
     },
     {
       icon: (
         <Heart className="w-8 h-8 md:w-12 md:h-12 mb-3 md:mb-4 text-blue-200" />
       ),
-      title: "Persönlich",
-      description: "Ein Ansprechpartner für alle Ihre Fragen",
-      extraClasses: "sm:mt-8 md:mt-12",
+      title: 'Persönlich',
+      description: 'Ein Ansprechpartner für alle Ihre Fragen',
+      extraClasses: 'sm:mt-8 md:mt-12',
     },
     {
       icon: (
         <Brain className="w-8 h-8 md:w-12 md:h-12 mb-3 md:mb-4 text-blue-200" />
       ),
-      title: "Verständlich",
-      description: "Komplexe Technik einfach erklärt",
+      title: 'Verständlich',
+      description: 'Komplexe Technik einfach erklärt',
     },
     {
       icon: <div className="text-2xl md:text-3xl mb-3 md:mb-4">30 Min</div>,
-      title: "Reaktionszeit",
-      description: "Schnelle Hilfe garantiert",
-      extraClasses: "sm:mt-8 md:mt-12",
+      title: 'Reaktionszeit',
+      description: 'Schnelle Hilfe garantiert',
+      extraClasses: 'sm:mt-8 md:mt-12',
     },
-  ];
+  ]
 
   return (
     <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
@@ -110,7 +110,7 @@ const Hero: React.FC = () => {
                 key={index}
                 className={`bg-white/10 p-4 md:p-6 rounded-lg backdrop-blur-sm 
                           transition-all duration-300 hover:bg-white/20
-                          ${feature.extraClasses || ""}`}
+                          ${feature.extraClasses || ''}`}
               >
                 {feature.icon}
                 <h3 className="text-lg md:text-xl font-semibold mb-2">
@@ -125,7 +125,7 @@ const Hero: React.FC = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero

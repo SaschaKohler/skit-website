@@ -1,45 +1,45 @@
-import { Code2, Globe, Workflow, Database, Brain } from "lucide-react";
+import { Code2, Globe, Workflow, Database, Brain } from 'lucide-react'
 
 const TechStack = () => {
   const sections = [
     {
-      title: "Web-Applikationen",
+      title: 'Web-Applikationen',
       icon: <Code2 className="w-6 h-6" />,
       features: [
-        "Single Page Applications (SPA)",
-        "Progressive Web Apps (PWA)",
-        "Admin-Dashboards",
-        "E-Commerce Lösungen",
+        'Single Page Applications (SPA)',
+        'Progressive Web Apps (PWA)',
+        'Admin-Dashboards',
+        'E-Commerce Lösungen',
       ],
       tools: [
-        { name: "WordPress", icon: <Globe className="w-5 h-5" /> },
-        { name: "Make.com", icon: <Workflow className="w-5 h-5" /> },
-        { name: "Brevo", icon: <Database className="w-5 h-5" /> },
-        { name: "React & Vite", icon: <Code2 className="w-5 h-5" /> },
-        { name: "NLP", icon: <Brain className="w-5 h-5" /> },
+        { name: 'WordPress', icon: <Globe className="w-5 h-5" /> },
+        { name: 'Make.com', icon: <Workflow className="w-5 h-5" /> },
+        { name: 'Brevo', icon: <Database className="w-5 h-5" /> },
+        { name: 'React & Vite', icon: <Code2 className="w-5 h-5" /> },
+        { name: 'NLP', icon: <Brain className="w-5 h-5" /> },
       ],
     },
     {
-      title: "Interaktive Websites",
+      title: 'Interaktive Websites',
       icon: <Globe className="w-6 h-6" />,
       features: [
-        "Animierte Benutzeroberflächen",
-        "Echtzeit-Updates",
-        "Formulare mit Validierung",
-        "Filterfunktionen",
+        'Animierte Benutzeroberflächen',
+        'Echtzeit-Updates',
+        'Formulare mit Validierung',
+        'Filterfunktionen',
       ],
     },
     {
-      title: "Backend Integration",
+      title: 'Backend Integration',
       icon: <Database className="w-6 h-6" />,
       features: [
-        "REST API Integration",
-        "Echtzeit-Daten",
-        "Authentifizierung",
-        "Datenbankanbindung",
+        'REST API Integration',
+        'Echtzeit-Daten',
+        'Authentifizierung',
+        'Datenbankanbindung',
       ],
     },
-  ];
+  ]
 
   return (
     <div className="py-16 bg-gradient-to-b from-blue-50 to-white">
@@ -91,8 +91,7 @@ const TechStack = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default TechStack;
-
+export default TechStack

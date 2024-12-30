@@ -1,23 +1,23 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import WebDevelopment from "./pages/services/WebDevelopment";
-import AppDevelopment from "./pages/services/AppDevelopment";
-import Automation from "./pages/services/Automation";
-import AboutPage from "./pages/about";
-import ServicesIndex from "./pages/services/index.tsx";
-import TechnologyLayout from "./layouts/TechnologyLayout.tsx";
-import BrevoPage from "./pages/technologies/Brevo.tsx";
-import MakePage from "./pages/technologies/Make.tsx";
-import WordPress from "./pages/technologies/Wordpress.tsx";
-import TechnologyOverview from "./pages/technologies/Overview.tsx";
-import NLPPage from "./pages/technologies/NLP.tsx";
-import ReactVitePage from "./pages/technologies/ReactVite.tsx";
-import JaZumLebenPage from "./pages/ja-zum-leben";
-import Impressum from "./pages/impressum";
-import Datenschutz from "./pages/datenschutz";
-import AGB from "./pages/agb";
-import PricingPage from "./pages/packages";
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import WebDevelopment from './pages/services/WebDevelopment'
+import AppDevelopment from './pages/services/AppDevelopment'
+import Automation from './pages/services/Automation'
+import AboutPage from './pages/about'
+import ServicesIndex from './pages/services/index.tsx'
+import TechnologyLayout from './layouts/TechnologyLayout.tsx'
+import BrevoPage from './pages/technologies/Brevo.tsx'
+import MakePage from './pages/technologies/Make.tsx'
+import WordPress from './pages/technologies/Wordpress.tsx'
+import TechnologyOverview from './pages/technologies/Overview.tsx'
+import NLPPage from './pages/technologies/NLP.tsx'
+import ReactVitePage from './pages/technologies/ReactVite.tsx'
+import JaZumLebenPage from './pages/ja-zum-leben'
+import Impressum from './pages/impressum'
+import Datenschutz from './pages/datenschutz'
+import AGB from './pages/agb'
+import PricingPage from './pages/packages'
 
 const App: React.FC = () => {
   return (
@@ -45,7 +45,7 @@ const App: React.FC = () => {
         </Route>
       </Routes>
     </Router>
-  );
-};
+  )
+}
 
-export default App;
+export default App

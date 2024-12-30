@@ -1,87 +1,80 @@
-import React from "react";
-import {
-  Mail,
-  MessageCircle,
-  Heart,
-  Users,
-  Target,
-  Send,
-  Clock,
-  Smile,
-} from "lucide-react";
+import React from 'react'
+import { Mail, MessageCircle, Users, Target, Send, Clock } from 'lucide-react'
 
-const BrevoPage: React.FC = () => {
+const BrevoPage: React.FC = (): React.JSX.Element => {
   const features = [
     {
       icon: <Mail className="w-8 h-8" />,
-      title: "Persönliche Kommunikation",
+      title: 'Persönliche Kommunikation',
       description:
-        "Erreichen Sie Ihre Klienten mit authentischen und relevanten Nachrichten",
+        'Erreichen Sie Ihre Klienten mit authentischen und relevanten Nachrichten',
     },
     {
       icon: <MessageCircle className="w-8 h-8" />,
-      title: "Gezielte Ansprache",
-      description: "Die richtige Botschaft zum richtigen Zeitpunkt an die richtige Person",
+      title: 'Gezielte Ansprache',
+      description:
+        'Die richtige Botschaft zum richtigen Zeitpunkt an die richtige Person',
     },
     {
       icon: <Users className="w-8 h-8" />,
-      title: "Nachhaltige Beziehungen",
-      description: "Pflegen Sie den Kontakt zu Ihren Klienten auf natürliche Weise",
+      title: 'Nachhaltige Beziehungen',
+      description:
+        'Pflegen Sie den Kontakt zu Ihren Klienten auf natürliche Weise',
     },
     {
       icon: <Target className="w-8 h-8" />,
-      title: "Individuelle Betreuung",
+      title: 'Individuelle Betreuung',
       description:
-        "Automatisierte und dennoch persönliche Kommunikation mit jedem Einzelnen",
+        'Automatisierte und dennoch persönliche Kommunikation mit jedem Einzelnen',
     },
-  ];
+  ]
 
   const useCases = [
     {
-      title: "Professionelle Begrüßung",
-      description:
-        "Eine durchdachte Willkommenssequenz für neue Interessenten",
+      title: 'Professionelle Begrüßung',
+      description: 'Eine durchdachte Willkommenssequenz für neue Interessenten',
       steps: [
-        "Persönliche Begrüßungsnachricht",
-        "Nützliche Erstinformationen",
-        "Vorstellung Ihrer Beratung",
-        "Einladung zum Gespräch",
+        'Persönliche Begrüßungsnachricht',
+        'Nützliche Erstinformationen',
+        'Vorstellung Ihrer Beratung',
+        'Einladung zum Gespräch',
       ],
     },
     {
-      title: "Kontinuierliche Begleitung",
-      description:
-        "Strukturierte Kommunikation während der Zusammenarbeit",
+      title: 'Kontinuierliche Begleitung',
+      description: 'Strukturierte Kommunikation während der Zusammenarbeit',
       steps: [
-        "Regelmäßige Updates",
-        "Begleitende Informationen",
-        "Erfolgsgeschichten",
-        "Follow-up Nachrichten",
+        'Regelmäßige Updates',
+        'Begleitende Informationen',
+        'Erfolgsgeschichten',
+        'Follow-up Nachrichten',
       ],
     },
     {
-      title: "Langfristige Bindung",
-      description:
-        "Bleiben Sie professionell und persönlich in Kontakt",
+      title: 'Langfristige Bindung',
+      description: 'Bleiben Sie professionell und persönlich in Kontakt',
       steps: [
-        "Geburtstagsnachrichten",
-        "Feedback-Gespräche",
-        "Newsletter mit Mehrwert",
-        "Besondere Anlässe",
+        'Geburtstagsnachrichten',
+        'Feedback-Gespräche',
+        'Newsletter mit Mehrwert',
+        'Besondere Anlässe',
       ],
     },
-  ];
+  ]
 
   return (
     <div className="max-w-4xl mx-auto">
-      <h1 className="text-4xl font-bold mb-6">Professionelle Kommunikation mit Brevo</h1>
+      <h1 className="text-4xl font-bold mb-6">
+        Professionelle Kommunikation mit Brevo
+      </h1>
 
       <div className="prose prose-lg max-w-none mb-12">
         <p>
-          Kommunizieren Sie mit Ihren Klienten auf eine Weise, die sowohl persönlich 
-          als auch professionell ist. Mit Brevo gestalten Sie Ihre E-Mail-Kommunikation 
-          effizient und zielgerichtet, ohne dabei die persönliche Note zu verlieren. 
-          Automatisieren Sie Routineaufgaben und gewinnen Sie Zeit für das Wesentliche.
+          Kommunizieren Sie mit Ihren Klienten auf eine Weise, die sowohl
+          persönlich als auch professionell ist. Mit Brevo gestalten Sie Ihre
+          E-Mail-Kommunikation effizient und zielgerichtet, ohne dabei die
+          persönliche Note zu verlieren. Automatisieren Sie Routineaufgaben und
+          gewinnen Sie Zeit für das Wesentliche.
         </p>
       </div>
 
@@ -102,9 +95,7 @@ const BrevoPage: React.FC = () => {
 
       {/* Automation Examples */}
       <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-lg p-8 mb-12">
-        <h2 className="text-2xl font-bold mb-6">
-          Kommunikation die wirkt
-        </h2>
+        <h2 className="text-2xl font-bold mb-6">Kommunikation die wirkt</h2>
         <div className="grid md:grid-cols-3 gap-6">
           {useCases.map((useCase, index) => (
             <div key={index} className="bg-white/10 rounded-lg p-6">
@@ -134,8 +125,8 @@ const BrevoPage: React.FC = () => {
             <div>
               <h3 className="font-semibold mb-2">Zeitgewinn</h3>
               <p className="text-gray-600">
-                Automatisieren Sie Standardkommunikation und fokussieren Sie sich 
-                auf wichtige Gespräche.
+                Automatisieren Sie Standardkommunikation und fokussieren Sie
+                sich auf wichtige Gespräche.
               </p>
             </div>
           </div>
@@ -144,7 +135,8 @@ const BrevoPage: React.FC = () => {
             <div>
               <h3 className="font-semibold mb-2">Gezielte Wirkung</h3>
               <p className="text-gray-600">
-                Erreichen Sie Ihre Zielgruppe mit relevanten Inhalten zum optimalen Zeitpunkt.
+                Erreichen Sie Ihre Zielgruppe mit relevanten Inhalten zum
+                optimalen Zeitpunkt.
               </p>
             </div>
           </div>
@@ -162,7 +154,8 @@ const BrevoPage: React.FC = () => {
             <div>
               <h3 className="font-semibold mb-2">Konstanter Dialog</h3>
               <p className="text-gray-600">
-                Bleiben Sie regelmäßig und professionell mit Ihren Klienten in Kontakt.
+                Bleiben Sie regelmäßig und professionell mit Ihren Klienten in
+                Kontakt.
               </p>
             </div>
           </div>
@@ -204,7 +197,8 @@ const BrevoPage: React.FC = () => {
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default BrevoPage;
+export default BrevoPage
+

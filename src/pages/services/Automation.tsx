@@ -1,5 +1,5 @@
-import React from "react";
-import DefaultLayout from "../../layouts/default/DefaultLayout";
+import React from 'react'
+import DefaultLayout from '../../layouts/default/DefaultLayout'
 import {
   Clock,
   CalendarCheck,
@@ -7,11 +7,11 @@ import {
   Users,
   ArrowRight,
   Zap,
-} from "lucide-react";
-import { useContactNavigation } from "../../hooks/useContactNavigation";
+} from 'lucide-react'
+import { useContactNavigation } from '../../hooks/useContactNavigation'
 
 const Automation: React.FC = () => {
-  const handleContactClick = useContactNavigation();
+  const handleContactClick = useContactNavigation()
 
   return (
     <DefaultLayout>
@@ -211,7 +211,7 @@ const Automation: React.FC = () => {
         </div>
       </div>
     </DefaultLayout>
-  );
-};
+  )
+}
 
-export default Automation;
+export default Automation

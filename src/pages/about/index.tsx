@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import DefaultLayout from "../../layouts/default/DefaultLayout";
-import { useContactNavigation } from "../../hooks/useContactNavigation";
-import { Heart, Users, Target } from "lucide-react";
+import React from 'react'
+import { Link } from 'react-router-dom'
+import DefaultLayout from '../../layouts/default/DefaultLayout'
+import { useContactNavigation } from '../../hooks/useContactNavigation'
+import { Heart, Users, Target } from 'lucide-react'
 
 const AboutPage: React.FC = () => {
-  const handleContactClick = useContactNavigation();
+  const handleContactClick = useContactNavigation()
 
   return (
     <DefaultLayout>
@@ -187,7 +187,7 @@ const AboutPage: React.FC = () => {
         </div>
       </div>
     </DefaultLayout>
-  );
-};
+  )
+}
 
-export default AboutPage;
+export default AboutPage

@@ -1,17 +1,17 @@
-import React from "react";
+import React from 'react'
 import {
   Code2,
   Wrench,
   Workflow,
   MessagesSquare,
   ArrowRight,
-} from "lucide-react";
+} from 'lucide-react'
 
 interface ServiceCardProps {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  features: string[];
+  icon: React.ReactNode
+  title: string
+  description: string
+  features: string[]
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({
@@ -52,48 +52,48 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         ))}
       </ul>
     </div>
-  );
-};
+  )
+}
 
 const Services: React.FC = () => {
   const services = [
     {
       icon: <Code2 className="w-12 h-12" />,
-      title: "Custom Web Development",
+      title: 'Custom Web Development',
       description:
-        "Maßgeschneiderte React/Vite Anwendungen, die genau auf Ihre Bedürfnisse zugeschnitten sind",
+        'Maßgeschneiderte React/Vite Anwendungen, die genau auf Ihre Bedürfnisse zugeschnitten sind',
       features: [
-        "Single Page Applications (SPA)",
-        "Progressive Web Apps (PWA)",
-        "Responsive Design",
-        "Performance-optimiert",
+        'Single Page Applications (SPA)',
+        'Progressive Web Apps (PWA)',
+        'Responsive Design',
+        'Performance-optimiert',
       ],
     },
     {
       icon: <Wrench className="w-12 h-12" />,
-      title: "WordPress Lösungen",
+      title: 'WordPress Lösungen',
       description:
-        "Professionelle WordPress-Entwicklung mit Divi Theme für maximale Flexibilität",
+        'Professionelle WordPress-Entwicklung mit Divi Theme für maximale Flexibilität',
       features: [
-        "Individuelle Divi Designs",
-        "Sichere Mitgliederbereiche",
-        "E-Commerce Integration",
-        "Content Management",
+        'Individuelle Divi Designs',
+        'Sichere Mitgliederbereiche',
+        'E-Commerce Integration',
+        'Content Management',
       ],
     },
     {
       icon: <Workflow className="w-12 h-12" />,
-      title: "Business Automation",
+      title: 'Business Automation',
       description:
-        "Automatisieren Sie Ihre Geschäftsprozesse mit make.com und steigern Sie Ihre Effizienz",
+        'Automatisieren Sie Ihre Geschäftsprozesse mit make.com und steigern Sie Ihre Effizienz',
       features: [
-        "Workflow Automatisierung",
-        "API Integrationen",
-        "Email Marketing Automation",
-        "CRM Synchronisation",
+        'Workflow Automatisierung',
+        'API Integrationen',
+        'Email Marketing Automation',
+        'CRM Synchronisation',
       ],
     },
-  ];
+  ]
 
   return (
     <section id="services" className="relative py-20 bg-gray-50">
@@ -135,7 +135,7 @@ const Services: React.FC = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Services;
+export default Services

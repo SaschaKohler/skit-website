@@ -1,13 +1,17 @@
-import React from 'react';
-import DefaultLayout from '../../layouts/default/DefaultLayout';
+import React from 'react'
+import DefaultLayout from '../../layouts/default/DefaultLayout'
 
 interface LegalLayoutProps {
-  title: string;
-  lastUpdated?: string;
-  children: React.ReactNode;
+  title: string
+  lastUpdated?: string
+  children: React.ReactNode
 }
 
-const LegalLayout: React.FC<LegalLayoutProps> = ({ title, lastUpdated, children }) => {
+const LegalLayout: React.FC<LegalLayoutProps> = ({
+  title,
+  lastUpdated,
+  children,
+}) => {
   return (
     <DefaultLayout>
       <div className="bg-gray-50 py-16">
@@ -15,18 +19,14 @@ const LegalLayout: React.FC<LegalLayoutProps> = ({ title, lastUpdated, children 
           <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-sm p-8">
             <h1 className="text-3xl font-bold mb-4">{title}</h1>
             {lastUpdated && (
-              <p className="text-gray-600 mb-8">
-                Stand: {lastUpdated}
-              </p>
+              <p className="text-gray-600 mb-8">Stand: {lastUpdated}</p>
             )}
-            <div className="prose prose-blue max-w-none">
-              {children}
-            </div>
+            <div className="prose prose-blue max-w-none">{children}</div>
           </div>
         </div>
       </div>
     </DefaultLayout>
-  );
-};
+  )
+}
 
-export default LegalLayout;
+export default LegalLayout

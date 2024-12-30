@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 import {
   Zap,
   Code,
@@ -8,67 +8,67 @@ import {
   Gauge,
   Settings,
   RefreshCw,
-} from "lucide-react";
+} from 'lucide-react'
 
 const ReactVitePage: React.FC = () => {
   const benefits = [
     {
       icon: <Zap className="w-8 h-8" />,
-      title: "Blitzschnelle Performance",
+      title: 'Blitzschnelle Performance',
       description:
-        "Optimale Ladezeiten durch modernste Entwicklungstechnologien",
+        'Optimale Ladezeiten durch modernste Entwicklungstechnologien',
     },
     {
       icon: <Smartphone className="w-8 h-8" />,
-      title: "Responsive Design",
+      title: 'Responsive Design',
       description:
-        "Perfekte Darstellung auf allen Geräten und Bildschirmgrößen",
+        'Perfekte Darstellung auf allen Geräten und Bildschirmgrößen',
     },
     {
       icon: <Layout className="w-8 h-8" />,
-      title: "Moderne Benutzeroberflächen",
-      description: "Intuitive und ansprechende User Interfaces",
+      title: 'Moderne Benutzeroberflächen',
+      description: 'Intuitive und ansprechende User Interfaces',
     },
     {
       icon: <Gauge className="w-8 h-8" />,
-      title: "Optimierte Performance",
-      description: "Schnelle Ladezeiten und effiziente Ressourcennutzung",
+      title: 'Optimierte Performance',
+      description: 'Schnelle Ladezeiten und effiziente Ressourcennutzung',
     },
-  ];
+  ]
 
   const projectTypes = [
     {
-      title: "Web-Applikationen",
+      title: 'Web-Applikationen',
       description:
-        "Maßgeschneiderte Webanwendungen für Ihre spezifischen Anforderungen",
+        'Maßgeschneiderte Webanwendungen für Ihre spezifischen Anforderungen',
       features: [
-        "Single Page Applications (SPA)",
-        "Progressive Web Apps (PWA)",
-        "Admin-Dashboards",
-        "E-Commerce Lösungen",
+        'Single Page Applications (SPA)',
+        'Progressive Web Apps (PWA)',
+        'Admin-Dashboards',
+        'E-Commerce Lösungen',
       ],
     },
     {
-      title: "Interaktive Websites",
-      description: "Dynamische Websites mit modernen Funktionen",
+      title: 'Interaktive Websites',
+      description: 'Dynamische Websites mit modernen Funktionen',
       features: [
-        "Animierte Benutzeroberflächen",
-        "Echtzeit-Updates",
-        "Formulare mit Validierung",
-        "Filterfunktionen",
+        'Animierte Benutzeroberflächen',
+        'Echtzeit-Updates',
+        'Formulare mit Validierung',
+        'Filterfunktionen',
       ],
     },
     {
-      title: "Backend Integration",
-      description: "Nahtlose Verbindung mit verschiedenen Datenquellen",
+      title: 'Backend Integration',
+      description: 'Nahtlose Verbindung mit verschiedenen Datenquellen',
       features: [
-        "REST API Integration",
-        "Echtzeit-Daten",
-        "Authentifizierung",
-        "Datenbankanbindung",
+        'REST API Integration',
+        'Echtzeit-Daten',
+        'Authentifizierung',
+        'Datenbankanbindung',
       ],
     },
-  ];
+  ]
 
   return (
     <div className="max-w-4xl mx-auto">
@@ -239,7 +239,7 @@ const ReactVitePage: React.FC = () => {
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ReactVitePage;
+export default ReactVitePage

@@ -1,16 +1,16 @@
 // src/layouts/default/Header.tsx
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { useContactNavigation } from "../../hooks/useContactNavigation";
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { useContactNavigation } from '../../hooks/useContactNavigation'
 
-const Header: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const handleContactClick = useContactNavigation();
+const Header: React.FC = (): React.JSX.Element => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const handleContactClick = useContactNavigation()
 
-  const handleMobileContactClick = (e: React.MouseEvent) => {
-    handleContactClick(e);
-    setIsMenuOpen(false);
-  };
+  const handleMobileContactClick = (e: React.MouseEvent): void => {
+    handleContactClick(e)
+    setIsMenuOpen(false)
+  }
 
   return (
     <header className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white sticky top-0 z-50">
@@ -23,7 +23,9 @@ const Header: React.FC = () => {
           {/* Mobile Menu Button */}
           <button
             className="md:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            onClick={() => {
+              setIsMenuOpen(!isMenuOpen)
+            }}
           >
             <svg
               className="w-6 h-6"
@@ -86,21 +88,27 @@ const Header: React.FC = () => {
               <Link
                 to="/technologies"
                 className="hover:text-blue-200 transition duration-300"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  setIsMenuOpen(false)
+                }}
               >
                 Leistungen
               </Link>
               <Link
                 to="/about"
                 className="hover:text-blue-200 transition duration-300"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  setIsMenuOpen(false)
+                }}
               >
                 Über mich
               </Link>
               <Link
                 to="/ja-zum-leben"
                 className="hover:text-blue-200 transition duration-300"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  setIsMenuOpen(false)
+                }}
               >
                 Ja zum Leben
               </Link>
@@ -116,7 +124,8 @@ const Header: React.FC = () => {
         )}
       </nav>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
+
