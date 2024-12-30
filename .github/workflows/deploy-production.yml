@@ -72,11 +72,10 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            # Prüfe ob der Link bereits existiert und entferne ihn gegebenenfalls
-            sudo rm -f /etc/nginx/sites-enabled/skit.sascha-kohler.at.conf
 
-            # Erstelle den neuen symbolischen Link
-            sudo ln -s /etc/nginx/sites-available/skit.sascha-kohler.at.production.conf /etc/nginx/sites-enabled/
+            # Aktiviere die Produktionskonfiguration
+            sudo cp /etc/nginx/sites-available/skit.sascha-kohler.at.production.conf /etc/nginx/sites-available/skit.sascha-kohler.at.conf
+
 
             # Teste die Nginx Konfiguration
             sudo nginx -t
