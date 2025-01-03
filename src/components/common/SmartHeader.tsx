@@ -1,6 +1,7 @@
+import { type PropsWithChildren } from 'react'
 import { useScrollDirection } from '../utils/useScrollDirection'
 
-export default function SmartHeader({ children }) {
+export default function SmartHeader({ children }: PropsWithChildren) {
   const { scrollDirection, isAtTop } = useScrollDirection()
 
   return (
