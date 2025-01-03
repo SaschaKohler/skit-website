@@ -83,7 +83,8 @@ const Hero: React.FC = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <button
+              <a
+                href="/about"
                 className="bg-white text-blue-600 px-6 md:px-8 py-3 rounded-lg font-semibold 
                          w-full sm:w-auto
                          transition duration-300 flex items-center justify-center gap-2
@@ -91,7 +92,7 @@ const Hero: React.FC = () => {
               >
                 Lernen Sie mich kennen
                 <ArrowRight className="w-5 h-5" />
-              </button>
+              </a>
               <a
                 href="#contact"
                 className="border border-white text-white px-6 md:px-8 py-3 rounded-lg 

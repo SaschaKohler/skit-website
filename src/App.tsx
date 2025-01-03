@@ -18,11 +18,12 @@ import Impressum from './pages/impressum'
 import Datenschutz from './pages/datenschutz'
 import AGB from './pages/agb'
 import PricingPage from './pages/packages'
+import ScrollToTop from './components/utils/ScrollToTop.tsx'
 
 const App: React.FC = () => {
   return (
     <Router>
-      {/* <ScrollToTop /> */}
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutPage />} />
