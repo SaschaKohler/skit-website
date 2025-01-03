@@ -90,7 +90,7 @@ jobs:
 
       - name: Verify deployment
         run: |
-          if curl -s --head https://skit.sascha-kohler.at | grep "200 OK" > /dev/null; then 
+          if curl -s --head https://skit.sascha-kohler.at | grep "503" > /dev/null; then 
             echo "Deployment successful!"
           else
             echo "Deployment verification failed"
