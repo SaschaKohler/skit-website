@@ -1,8 +1,11 @@
 import React from 'react'
-import { GraduationCap, Heart, Brain, Landmark } from 'lucide-react'
+import { GraduationCap, Heart, Brain, Landmark, MessageSquare } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { useContactNavigation } from '../../hooks/useContactNavigation'
 
 const About: React.FC = () => {
+  const handleContactClick = useContactNavigation()
+  
   const qualifications = [
     {
       icon: <Landmark className="w-6 h-6" />,
@@ -77,6 +80,17 @@ const About: React.FC = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Call to Action */}
+        <div className="text-center mb-16">
+          <button
+            onClick={handleContactClick}
+            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg 
+                     font-semibold hover:bg-blue-700 transition duration-300 gap-2"
+          >
+            Kontaktieren Sie mich <MessageSquare className="w-5 h-5" />
+          </button>
         </div>
 
         {/* Projekt "Ja zum Leben" */}

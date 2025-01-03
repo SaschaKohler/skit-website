@@ -5,6 +5,7 @@ import {
   Users,
   MessageSquare,
   ArrowRight,
+  MessagesSquare,
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
@@ -48,6 +49,13 @@ const BusinessTechStack: React.FC = () => {
       link: '/technologies/make',
     },
   ]
+
+  const scrollToContact = () => {
+    const contactElement = document.getElementById('contact')
+    if (contactElement) {
+      contactElement.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 
   return (
     <section className="w-full py-12">
@@ -112,6 +120,16 @@ const BusinessTechStack: React.FC = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="mt-12 text-center">
+        <button
+          onClick={scrollToContact}
+          className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold 
+                   hover:bg-blue-700 transition-all duration-300 gap-2"
+        >
+          Unverbindliches Beratungsgespräch <MessagesSquare className="w-5 h-5" />
+        </button>
       </div>
     </section>
   )

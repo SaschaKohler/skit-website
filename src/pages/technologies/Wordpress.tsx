@@ -1,8 +1,10 @@
 // src/pages/technologies/WordPress.tsx
 import React from 'react'
 import { Code, Layout, Shield, Zap } from 'lucide-react'
+import { useContactNavigation } from '../../hooks/useContactNavigation'
 
 const WordPress: React.FC = () => {
+  const handleContactClick = useContactNavigation()
   const features = [
     {
       icon: <Layout className="w-8 h-8" />,
@@ -78,6 +80,7 @@ const WordPress: React.FC = () => {
           pflegen und aktualisieren - ich zeige Ihnen wie.
         </p>
         <button
+          onClick={handleContactClick}
           className="bg-white text-blue-600 px-6 py-2 rounded-lg font-semibold 
           hover:bg-blue-50 transition duration-300"
         >

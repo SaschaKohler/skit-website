@@ -8,9 +8,13 @@ import {
   Gauge,
   Settings,
   RefreshCw,
+  ArrowRight,
 } from 'lucide-react'
+import { useContactNavigation } from '../../hooks/useContactNavigation'
 
 const ReactVitePage: React.FC = () => {
+  const handleContactClick = useContactNavigation()
+
   const benefits = [
     {
       icon: <Zap className="w-8 h-8" />,
@@ -232,10 +236,11 @@ const ReactVitePage: React.FC = () => {
           </div>
         </div>
         <button
+          onClick={handleContactClick}
           className="mt-8 bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold 
-          hover:bg-blue-700 transition duration-300"
+          hover:bg-blue-700 transition duration-300 inline-flex items-center gap-2"
         >
-          Projekt besprechen
+          Projekt besprechen <ArrowRight className="w-5 h-5" />
         </button>
       </div>
     </div>
