@@ -1,8 +1,10 @@
 import React from 'react'
 import DefaultLayout from '../../layouts/default/DefaultLayout'
 import { Info, Check } from 'lucide-react'
+import { useContactNavigation } from '../../hooks/useContactNavigation'
 
 const PricingPage: React.FC = () => {
+  const handleContactClick = useContactNavigation()
   const mainPackages = [
     {
       name: 'Starter',
@@ -236,13 +238,13 @@ const PricingPage: React.FC = () => {
               Lassen Sie uns in einem unverbindlichen Gespräch herausfinden,
               welches Paket am besten zu Ihren Bedürfnissen passt.
             </p>
-            <a
-              href="#contact"
+            <button
+              onClick={handleContactClick}
               className="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold 
                      transition duration-300 hover:bg-blue-50"
             >
               Kostenloses Erstgespräch vereinbaren
-            </a>
+            </button>
           </div>
         </div>
       </div>
