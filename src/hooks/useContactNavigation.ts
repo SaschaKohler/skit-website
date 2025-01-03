@@ -1,20 +1,20 @@
 import { useCallback } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 
-export const useContactNavigation = () => {
+export const useContactNavigation = (): ((e?: React.MouseEvent) => void) => {
   const navigate = useNavigate()
   const location = useLocation()
 
-  return useCallback((e?: React.MouseEvent) => {
+  return useCallback((e?: React.MouseEvent): void => {
     if (e) {
       e.preventDefault()
     }
 
-    const scrollToContact = () => {
+    const scrollToContact = (): void => {
       setTimeout(() => {
         const contactElement = document.getElementById('contact')
         if (contactElement) {
-          contactElement.scrollIntoView({ 
+          void contactElement.scrollIntoView({ 
             behavior: 'smooth',
             block: 'start'
           })
@@ -24,9 +24,10 @@ export const useContactNavigation = () => {
 
     // Wenn wir nicht auf der Home-Page sind, navigieren wir erst dorthin
     if (location.pathname !== '/') {
-      navigate('/', { replace: true })
-      // Warten auf Navigation, bevor wir scrollen
-      setTimeout(scrollToContact, 100)
+      void Promise.resolve(navigate('/', { replace: true })).then(() => {
+        // Warten auf Navigation, bevor wir scrollen
+        setTimeout(scrollToContact, 100)
+      })
     } else {
       scrollToContact()
     }
