@@ -14,7 +14,7 @@ export const useContactNavigation = (): ((e?: React.MouseEvent) => void) => {
       setTimeout(() => {
         const contactElement = document.getElementById('contact')
         if (contactElement) {
-          void contactElement.scrollIntoView({ 
+          contactElement.scrollIntoView({ 
             behavior: 'smooth',
             block: 'start'
           })

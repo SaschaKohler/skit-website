@@ -5,11 +5,11 @@ export function useScrollDirection() {
   const [isAtTop, setIsAtTop] = useState(true)
 
   useEffect(() => {
-    let lastScrollY = window.pageYOffset
+    let lastScrollY = window.scrollY
     const threshold = 10 // Minimale Scroll-Distanz bevor Richtung aktualisiert wird
 
     const updateScrollDirection = () => {
-      const scrollY = window.pageYOffset
+      const scrollY = window.scrollY
       setIsAtTop(scrollY < 10)
 
       if (Math.abs(scrollY - lastScrollY) < threshold) {

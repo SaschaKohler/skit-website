@@ -9,7 +9,7 @@ export default function ScrollButton() {
       // Reduziere Schwelle für mobile Geräte
       const scrollThreshold = window.innerWidth <= 768 ? 200 : 300
 
-      if (window.pageYOffset > scrollThreshold) {
+      if (window.scrollY > scrollThreshold) {
         setIsVisible(true)
       } else {
         setIsVisible(false)
