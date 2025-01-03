@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Globe, Workflow, Mail, Code, Brain } from 'lucide-react'
+import PricingPackages from '../../components/sections/PricingPackages'
 
 const TechnologyOverview: React.FC = () => {
   const technologies = [
@@ -112,7 +113,7 @@ const TechnologyOverview: React.FC = () => {
           </Link>
         ))}
       </div>
-
+      <PricingPackages />
       <div
         className="mt-12 bg-gradient-to-r from-blue-600 to-indigo-700 text-white 
         rounded-xl p-8 text-center"
