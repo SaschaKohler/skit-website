@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import {
   Code2,
   Wrench,
@@ -148,3 +147,4 @@ const Services: React.FC = () => {
 }
 
 export default Services
+
