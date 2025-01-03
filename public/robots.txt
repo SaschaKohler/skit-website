@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+Sitemap: https://skit.sascha-kohler.at/sitemap.xml
+
+# Block access to admin areas
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+
+# Block specific file types
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.txt$
+
+# Allow static assets
+Allow: /static/
+Allow: /images/
+Allow: /css/
+Allow: /js/
+Allow: /assets/
