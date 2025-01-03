@@ -6,6 +6,7 @@ import {
   ArrowDown,
   ArrowRight,
 } from 'lucide-react'
+import { useContactNavigation } from '../../hooks/useContactNavigation'
 
 interface Step {
   title: string;
@@ -13,6 +14,8 @@ interface Step {
 }
 
 const MakePage: React.FC = (): React.JSX.Element => {
+  const handleContactClick = useContactNavigation()
+
   const benefits = [
     {
       icon: <Clock className="w-8 h-8" />,
@@ -129,6 +132,7 @@ const MakePage: React.FC = (): React.JSX.Element => {
           Lassen Sie uns gemeinsam Ihre Prozesse optimieren
         </p>
         <button 
+          onClick={handleContactClick}
           className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold inline-flex items-center hover:bg-gray-100 transition duration-300"
         >
           Gespräch vereinbaren

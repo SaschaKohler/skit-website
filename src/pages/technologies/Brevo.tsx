@@ -1,7 +1,9 @@
 import React from 'react'
 import { Mail, MessageCircle, Users, Target, Send, Clock } from 'lucide-react'
+import { useContactNavigation } from '../../hooks/useContactNavigation'
 
 const BrevoPage: React.FC = (): React.JSX.Element => {
+  const handleContactClick = useContactNavigation()
   const features = [
     {
       icon: <Mail className="w-8 h-8" />,
@@ -190,6 +192,7 @@ const BrevoPage: React.FC = (): React.JSX.Element => {
           </div>
         </div>
         <button
+          onClick={handleContactClick}
           className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold 
           hover:bg-blue-700 transition duration-300"
         >
@@ -201,4 +204,3 @@ const BrevoPage: React.FC = (): React.JSX.Element => {
 }
 
 export default BrevoPage
-

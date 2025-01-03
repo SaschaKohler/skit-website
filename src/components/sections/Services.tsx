@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import {
   Code2,
   Wrench,
@@ -95,6 +96,13 @@ const Services: React.FC = () => {
     },
   ]
 
+  const scrollToContact = () => {
+    const contactElement = document.getElementById('contact')
+    if (contactElement) {
+      contactElement.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
     <section id="services" className="relative py-20 bg-gray-50">
       <div className="container mx-auto px-6">
@@ -126,9 +134,10 @@ const Services: React.FC = () => {
             effiziente Umsetzung zum vereinbarten Festpreis.
           </p>
           <button
+            onClick={scrollToContact}
             className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold 
-                         transition-all duration-300 inline-flex items-center gap-2
-                         hover:bg-gray-100"
+                       transition-all duration-300 inline-flex items-center gap-2
+                       hover:bg-gray-100 cursor-pointer"
           >
             Projekt besprechen <MessagesSquare className="w-5 h-5" />
           </button>
