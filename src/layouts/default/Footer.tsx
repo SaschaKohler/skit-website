@@ -4,14 +4,6 @@ import { Link } from 'react-router-dom'
 const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-900 text-white">
-      <div className="w-full border-t border-gray-200">
-        <div className="container mx-auto px-4 py-2">
-          <p className="text-center text-sm text-gray-600 bg-slate-50">
-            Diese Website verwendet keine Cookies und speichert keine
-            persönlichen Daten.
-          </p>
-        </div>
-      </div>
       <div className="container mx-auto px-6 py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Kontakt Info */}
