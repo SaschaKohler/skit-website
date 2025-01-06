@@ -1,7 +1,7 @@
 import { ArrowRight, Calendar, Users, HeartHandshake } from 'lucide-react'
 
 const JaZumLebenSection = (): React.JSX.Element => {
-  const nextCourseDate = '04.02.25'
+  const nextCourseDate = '29.04.25'
 
   const features = [
     {
@@ -93,4 +93,3 @@ const JaZumLebenSection = (): React.JSX.Element => {
 }
 
 export default JaZumLebenSection
-
