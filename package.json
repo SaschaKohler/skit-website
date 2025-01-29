@@ -10,7 +10,8 @@
     "format": "prettier --write \"src/**/*.{ts,tsx,css,md}\"",
     "type-check": "tsc --noEmit",
     "preview": "vite preview",
-    "pre-commit": "npm run lint && npm run type-check"
+    "pre-commit": "npm run lint && npm run type-check",
+    "start": "vite preview --host 0.0.0.0 --port 3000"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
