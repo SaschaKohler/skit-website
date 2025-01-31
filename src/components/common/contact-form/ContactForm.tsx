@@ -247,6 +247,7 @@ const ContactForm = (): React.JSX.Element => {
 
         <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-lg">
           <UI.StepIndicator currentStep={step} />
+
           <form onSubmit={onSubmit} className="p-4 md:p-8">
             {step === 1 && (
               <UI.ServiceSelection
@@ -262,6 +263,7 @@ const ContactForm = (): React.JSX.Element => {
             {step === 2 && renderProjectDetails()}
             {step === 3 && renderContactDetails()}
           </form>
+
           {/* Service Summary Sidebar */}
           {step > 1 && formData.selectedServices.length > 0 && (
             <div className="border-t p-4 md:p-8 bg-gray-50">
@@ -275,23 +277,21 @@ const ContactForm = (): React.JSX.Element => {
               </ul>
             </div>
           )}
-          {status === 'error' && errorMessage && (
+
+          {status === 'error' && (
             <div className="px-4 md:px-8 pb-4 md:pb-8">
               <div className="p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg">
-                {errorMessage}
-                {errorMessage.includes('Systemkonfigurationsfehler') && (
-                  <div className="mt-2">
-                    <a
-                      href="mailto:office@sascha-kohler.at"
-                      className="text-blue-600 hover:text-blue-800 underline"
-                    >
-                      office@sascha-kohler.at
-                    </a>
-                  </div>
-                )}
+                Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später
+                erneut oder kontaktieren Sie uns direkt per E-Mail.
+                <a
+                  href="mailto:office@sascha-kohler.at"
+                  className="text-blue-600 hover:text-blue-800 underline"
+                >
+                  office@sascha-kohler.at
+                </a>
               </div>
             </div>
-          )}{' '}
+          )}
         </div>
       </div>
     </div>
