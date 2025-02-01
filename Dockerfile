@@ -13,10 +13,9 @@ COPY . .
 
 # Build the application
 RUN VITE_WEBHOOK_URL=https://hook.eu2.make.com/jlwmk5crl8yhvtiq2h3pyd6a6aogstwa npm run build
-
+RUN apk add --no-cache vim
 # Use nginx for serving static files
 FROM nginx:alpine
-
 # Copy the built app from builder stage
 COPY --from=builder /app/dist /usr/share/nginx/html
 
