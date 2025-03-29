@@ -1,0 +1,255 @@
+/* Base theme variables - Light Mode (Default) */
+:root {
+  /* Primary Colors */
+  --color-primary: #f43f5e;
+  --color-primary-hover: #e11d48;
+  --color-primary-light: #fff1f2;
+  
+  /* Secondary Colors */
+  --color-secondary: #f59e0b;
+  --color-secondary-hover: #d97706;
+  --color-secondary-light: #fef3c7;
+  
+  /* Text Colors */
+  --color-text: #4b5563;
+  --color-text-dark: #1f2937;
+  --color-text-light: #9ca3af;
+  --color-text-inverse: #f9fafb;
+  
+  /* Background Colors */
+  --color-background: #fffbf5;
+  --color-background-offset: #f8f8f8;
+  
+  /* UI Element Colors */
+  --color-ui-dark: #ffffff;
+  --color-ui-medium: #f3f4f6;
+  --color-ui-light: #f9fafb;
+  
+  /* Border Colors */
+  --color-border: #e5e7eb;
+  --color-border-light: #f3f4f6;
+  
+  /* Shadow Colors */
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  --color-shadow-strong: rgba(0, 0, 0, 0.15);
+  
+  /* Card Colors */
+  --color-card-bg: #ffffff;
+  --color-card-border: #e5e7eb;
+  
+  /* Button Colors */
+  --color-button-text: #ffffff;
+  --color-button-bg: #f43f5e;
+  --color-button-bg-hover: #e11d48;
+  
+  /* Form Colors */
+  --color-input-bg: #ffffff;
+  --color-input-border: #d1d5db;
+  --color-input-text: #4b5563;
+}
+
+/* Dark Theme */
+.dark {
+  /* Primary Colors - Brighter in dark mode for better contrast */
+  --color-primary: #fb7185;
+  --color-primary-hover: #f43f5e;
+  --color-primary-light: #31161e;
+  
+  /* Secondary Colors - Adjusted for dark mode */
+  --color-secondary: #fbbf24;
+  --color-secondary-hover: #f59e0b;
+  --color-secondary-light: #3f2f0c;
+  
+  /* Text Colors */
+  --color-text: #e5e7eb;
+  --color-text-dark: #f9fafb;
+  --color-text-light: #9ca3af;
+  --color-text-inverse: #1f2937;
+  
+  /* Background Colors - Dark, elegant backgrounds */
+  --color-background: #0f172a;
+  --color-background-offset: #1e293b;
+  
+  /* UI Element Colors */
+  --color-ui-dark: #1e293b;
+  --color-ui-medium: #334155;
+  --color-ui-light: #475569;
+  
+  /* Border Colors */
+  --color-border: #334155;
+  --color-border-light: #1e293b;
+  
+  /* Shadow Colors */
+  --color-shadow: rgba(0, 0, 0, 0.5);
+  --color-shadow-strong: rgba(0, 0, 0, 0.7);
+  
+  /* Card Colors */
+  --color-card-bg: #1e293b;
+  --color-card-border: #334155;
+  
+  /* Button Colors */
+  --color-button-text: #ffffff;
+  --color-button-bg: #f43f5e;
+  --color-button-bg-hover: #e11d48;
+  
+  /* Form Colors */
+  --color-input-bg: #1e293b;
+  --color-input-border: #475569;
+  --color-input-text: #e5e7eb;
+}
+
+/* Transition for smooth theme changing */
+body, .bg-transition, a, button, input, textarea, select {
+  transition-property: background-color, color, border-color, fill, stroke, opacity, box-shadow;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}
+
+/* Dark Mode Styling for Common Elements */
+
+/* Header & Navigation */
+.dark header {
+  background-color: var(--color-ui-dark);
+  color: var(--color-text);
+}
+
+.dark nav a {
+  color: var(--color-text);
+}
+
+.dark nav a:hover {
+  color: var(--color-primary);
+}
+
+/* Footer */
+.dark footer {
+  background-color: var(--color-ui-dark);
+  color: var(--color-text);
+  border-top-color: var(--color-border);
+}
+
+/* Cards */
+.dark .bg-white,
+.dark [class*="bg-gray-50"],
+.dark [class*="bg-gray-100"] {
+  background-color: var(--color-card-bg);
+  border-color: var(--color-card-border);
+}
+
+/* Text Color Adjustments */
+.dark .text-gray-500,
+.dark .text-gray-600,
+.dark .text-gray-700 {
+  color: var(--color-text);
+}
+
+.dark .text-gray-800,
+.dark .text-gray-900,
+.dark .text-black {
+  color: var(--color-text-dark);
+}
+
+.dark .text-gray-400,
+.dark .text-gray-300 {
+  color: var(--color-text-light);
+}
+
+/* Borders */
+.dark .border,
+.dark .border-gray-200,
+.dark .border-gray-300 {
+  border-color: var(--color-border);
+}
+
+/* Main Content Background */
+.dark main,
+.dark .bg-gray-50,
+.dark .bg-gray-100 {
+  background-color: var(--color-background-offset);
+}
+
+/* Shadows */
+.dark .shadow-sm,
+.dark .shadow,
+.dark .shadow-md {
+  box-shadow: 0 4px 6px var(--color-shadow);
+}
+
+.dark .shadow-lg,
+.dark .shadow-xl {
+  box-shadow: 0 10px 15px var(--color-shadow-strong);
+}
+
+/* Cards and Containers */
+.dark [class*="rounded"] {
+  background-color: var(--color-card-bg);
+  border-color: var(--color-card-border);
+}
+
+/* Form Elements */
+.dark input,
+.dark textarea,
+.dark select {
+  background-color: var(--color-input-bg);
+  border-color: var(--color-input-border);
+  color: var(--color-input-text);
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: var(--color-text-light);
+}
+
+/* Buttons */
+.dark .btn,
+.dark [class*="bg-rose-500"],
+.dark [class*="bg-rose-600"] {
+  background-color: var(--color-button-bg);
+  color: var(--color-button-text);
+}
+
+.dark .btn:hover,
+.dark [class*="hover:bg-rose-600"]:hover,
+.dark [class*="hover:bg-rose-700"]:hover {
+  background-color: var(--color-button-bg-hover);
+}
+
+/* Text-specific adjustments for common elements */
+.dark h1, 
+.dark h2, 
+.dark h3, 
+.dark h4, 
+.dark h5, 
+.dark h6 {
+  color: var(--color-text-dark);
+}
+
+.dark p, 
+.dark span, 
+.dark div {
+  color: var(--color-text);
+}
+
+/* Hero sections */
+.dark [class*="hero"], 
+.dark [class*="banner"] {
+  background-color: var(--color-background-offset);
+}
+
+/* Fix specific components like pricing cards, feature boxes */
+.dark .feature-card,
+.dark .pricing-card,
+.dark .testimonial-card {
+  background-color: var(--color-card-bg);
+  border-color: var(--color-border);
+}
+
+/* SVG graphics and icons */
+.dark svg {
+  fill: currentColor;
+}
+
+/* Logo adjustments */
+.dark .logo-text {
+  color: var(--color-text-dark);
+}
