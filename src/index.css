@@ -7,7 +7,7 @@
 @tailwind utilities;
 
 :root {
-  /* Warmes Farbschema */
+  /* Light Theme: Warmes Farbschema */
   --color-primary: #f43f5e; /* Rose-500 */
   --color-primary-hover: #e11d48; /* Rose-600 */
   --color-primary-light: #fff1f2; /* Rose-50 */
@@ -15,20 +15,57 @@
   --color-secondary-light: #fef3c7; /* Amber-50 */
   --color-text: #4b5563; /* Gray-600 */
   --color-text-dark: #1f2937; /* Gray-800 */
-  --color-background: #fffbf5; /* Warmes Weiß */
+  --color-text-light: #9ca3af; /* Gray-400 */
+  --color-text-inverse: #ffffff;
+  --color-background: #ffffff;
+  --color-background-offset: #f9fafb; /* Gray-50 */
+  --color-ui-dark: #ffffff;
+  --color-ui-medium: #f3f4f6; /* Gray-100 */
+  --color-ui-light: #e5e7eb; /* Gray-200 */
+  --color-border: #e5e7eb; /* Gray-200 */
+  --color-border-light: #f3f4f6; /* Gray-100 */
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  --color-shadow-strong: rgba(0, 0, 0, 0.15);
+
+  /* Container max-width */
+  --container-max-width: 1280px;
+  --container-padding: 1rem;
 
   /* Schriftarten-Definitionen */
   --font-heading: 'Italiana', serif;
   --font-subheading: 'Cormorant Garamond', serif;
   --font-body: 'Montserrat', sans-serif;
 }
-/* Grundlegende Stile für den Dark Mode */
+
+[data-theme='dark'] {
+  /* Dark Theme: Elegantes dunkles Farbschema */
+  --color-primary: #fb7185; /* Rose-400 - etwas heller für besseren Kontrast im Dark Mode */
+  --color-primary-hover: #f43f5e; /* Rose-500 */
+  --color-primary-light: #31191e; /* Dunkles Rose für Hintergründe */
+  --color-secondary: #fbbf24; /* Amber-400 - etwas heller für besseren Kontrast */
+  --color-secondary-light: #332711; /* Dunkles Amber für Hintergründe */
+  --color-text: #d1d5db; /* Gray-300 */
+  --color-text-dark: #f3f4f6; /* Gray-100 */
+  --color-text-light: #9ca3af; /* Gray-400 */
+  --color-text-inverse: #1f2937; /* Gray-800 */
+  --color-background: #121212; /* Tiefes Schwarz */
+  --color-background-offset: #1e1e1e; /* Etwas helleres Schwarz */
+  --color-ui-dark: #1e1e1e; /* Ersatz für weiße Kästen */
+  --color-ui-medium: #2c2c2c; /* Mittlerer Grauton für UI */
+  --color-ui-light: #3a3a3a; /* Hellerer Grauton für UI */
+  --color-border: #3a3a3a; /* Dunkelgrau */
+  --color-border-light: #2c2c2c; /* Etwas dunkleres Grau */
+  --color-shadow: rgba(0, 0, 0, 0.5);
+  --color-shadow-strong: rgba(0, 0, 0, 0.7);
+}
+/* Dark Mode Overrides */
+/* Basis */
 [data-theme='dark'] body {
   background-color: var(--color-background);
   color: var(--color-text);
 }
 
-/* Überschriften im Dark Mode */
+/* Typografie */
 [data-theme='dark'] h1,
 [data-theme='dark'] h2,
 [data-theme='dark'] h3,
@@ -38,16 +75,50 @@
   color: var(--color-text-dark);
 }
 
-/* Karten und Container im Dark Mode */
-[data-theme='dark'] .bg-white {
-  background-color: var(--color-ui-dark);
+[data-theme='dark'] .text-gray-500 {
+  color: var(--color-text-light);
 }
 
-[data-theme='dark'] .border-gray-200 {
-  border-color: var(--color-ui-medium);
+[data-theme='dark'] .text-gray-600 {
+  color: var(--color-text);
 }
 
-/* Formulare im Dark Mode */
+[data-theme='dark'] .text-gray-700 {
+  color: var(--color-text);
+}
+
+[data-theme='dark'] .text-gray-800,
+[data-theme='dark'] .text-gray-900 {
+  color: var(--color-text-dark);
+}
+
+/* UI Elemente */
+[data-theme='dark'] .bg-white,
+[data-theme='dark'] .bg-white-100,
+[data-theme='dark'] section.bg-white,
+[data-theme='dark'] section[class*="bg-white"] {
+  background-color: var(--color-ui-dark) !important;
+}
+
+[data-theme='dark'] .bg-gray-50 {
+  background-color: var(--color-background-offset);
+}
+
+[data-theme='dark'] .bg-gray-100 {
+  background-color: var(--color-ui-medium);
+}
+
+/* Borders */
+[data-theme='dark'] .border-gray-100 {
+  border-color: var(--color-border-light);
+}
+
+[data-theme='dark'] .border-gray-200,
+[data-theme='dark'] .border-gray-300 {
+  border-color: var(--color-border);
+}
+
+/* Formulare */
 [data-theme='dark'] input,
 [data-theme='dark'] select,
 [data-theme='dark'] textarea {
@@ -56,7 +127,34 @@
   color: var(--color-text);
 }
 
-/* Gradient Hintergründe im Dark Mode */
+/* Buttons */
+[data-theme='dark'] .bg-rose-500 {
+  background-color: var(--color-primary);
+}
+
+[data-theme='dark'] .hover\:bg-rose-600:hover {
+  background-color: var(--color-primary-hover);
+}
+
+[data-theme='dark'] .text-rose-500,
+[data-theme='dark'] .text-rose-600 {
+  color: var(--color-primary);
+}
+
+[data-theme='dark'] .border-rose-200 {
+  border-color: var(--color-primary-light);
+}
+
+/* Schatten */
+[data-theme='dark'] .shadow-sm,
+[data-theme='dark'] .shadow,
+[data-theme='dark'] .shadow-md,
+[data-theme='dark'] .shadow-lg,
+[data-theme='dark'] .shadow-xl {
+  --tw-shadow-color: var(--color-shadow);
+}
+
+/* Gradients */
 [data-theme='dark'] .bg-gradient-to-r.from-rose-50.to-amber-50 {
   background: linear-gradient(
     to right,
@@ -65,11 +163,13 @@
   );
 }
 
-[data-theme='dark'] .bg-gradient-to-b.from-rose-50.to-amber-50 {
+[data-theme='dark'] .bg-gradient-to-b.from-rose-50.to-amber-50,
+[data-theme='dark'] .bg-gradient-to-b.from-white.to-rose-50,
+[data-theme='dark'] .bg-gradient-to-b.from-rose-50.to-white {
   background: linear-gradient(
     to bottom,
-    var(--color-primary-light),
-    var(--color-secondary-light)
+    var(--color-ui-dark),
+    var(--color-primary-light)
   );
 }
 
@@ -81,17 +181,10 @@
   );
 }
 
-/* Auffällige Text-Container im Dark Mode */
-[data-theme='dark'] .text-gray-600 {
-  color: #b8b5b2; /* Leicht gedämpftes Weiß */
-}
-
-[data-theme='dark'] .text-gray-700 {
-  color: #ccc9c6; /* Etwas hellerer Grauton */
-}
-
-[data-theme='dark'] .text-gray-800 {
-  color: #e2e0dd; /* Noch hellerer Grauton */
+/* Text Outline */
+[data-theme='dark'] .text-outline-thin {
+  -webkit-text-stroke: 1px var(--color-text-dark);
+  text-stroke: 1px var(--color-text-dark);
 }
 
 /* Spezielle Anpassungen für Icons */
@@ -109,17 +202,17 @@
 
 /* Text-Shadow für bessere Lesbarkeit im Dark Mode */
 [data-theme='dark'] .text-shadow {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Gläserner Effekt für Karten im Dark Mode */
+/* Gläserner Effekt */
 [data-theme='dark'] .glass-effect {
-  background: rgba(45, 39, 36, 0.7);
+  background: rgba(30, 30, 30, 0.8);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Subtile Animation für Hover-Effekte im Dark Mode */
+/* Hover-Effekte */
 [data-theme='dark'] .hover-lift {
   transition:
     transform 0.3s ease,
@@ -129,8 +222,8 @@
 [data-theme='dark'] .hover-lift:hover {
   transform: translateY(-4px);
   box-shadow:
-    0 10px 25px rgba(0, 0, 0, 0.2),
-    0 6px 10px rgba(255, 107, 129, 0.1);
+    0 10px 25px rgba(0, 0, 0, 0.3),
+    0 6px 10px rgba(251, 113, 133, 0.15);
 }
 /* Grundlegende Typografie-Einstellungen */
 html,
@@ -141,6 +234,8 @@ body {
   scroll-behavior: smooth;
   font-weight: 400;
   line-height: 1.65;
+  min-height: 100%;
+  width: 100%;
 }
 
 h1 {
@@ -264,6 +359,13 @@ button {
 
 .gradient-text {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-rose-600 to-amber-600;
+}
+
+/* Textkontur für Überschriften im Stil von rittler&co */
+.text-outline-thin {
+  color: transparent;
+  -webkit-text-stroke: 1px #333;
+  text-stroke: 1px #333;
 }
 
 .gradient-bg {

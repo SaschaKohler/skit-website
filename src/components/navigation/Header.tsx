@@ -56,9 +56,9 @@ const Header: React.FC = () => {
         {/* Logo */}
         <Link to="/" className="flex items-center">
           <span className="font-heading text-xl">
-            <span className="text-[var(--color-primary)]">SK </span>
-            <span className="text-[var(--color-secondary)]">Web</span>
-            <span className="text-[var(--color-primary-hover)]">Design</span>
+            <span className="text-[var(--color-primary)]">sk.</span>
+            <span className="text-[var(--color-secondary)]">IT</span>
+            <span className="text-[var(--color-primary-hover)]"> Software</span>
           </span>
         </Link>
 

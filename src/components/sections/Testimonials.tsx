@@ -120,7 +120,7 @@ const Testimonials: React.FC = () => {
       <div className="absolute top-1/2 -left-4 transform -translate-y-1/2 z-10">
         <button
           onClick={goToPrevious}
-          className="bg-white rounded-full p-2 shadow-md hover:shadow-lg transition-all transform hover:scale-110 text-rose-500"
+          className="bg-[var(--color-ui-dark)] rounded-full p-2 shadow-md hover:shadow-lg transition-all transform hover:scale-110 text-[var(--color-primary)]"
           aria-label="Vorheriges Testimonial"
         >
           <ChevronLeft className="h-6 w-6" />
@@ -129,7 +129,7 @@ const Testimonials: React.FC = () => {
       <div className="absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
         <button
           onClick={goToNext}
-          className="bg-white rounded-full p-2 shadow-md hover:shadow-lg transition-all transform hover:scale-110 text-rose-500"
+          className="bg-[var(--color-ui-dark)] rounded-full p-2 shadow-md hover:shadow-lg transition-all transform hover:scale-110 text-[var(--color-primary)]"
           aria-label="Nächstes Testimonial"
         >
           <ChevronRight className="h-6 w-6" />
@@ -196,7 +196,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}
       transition={{ duration: 0.5 }}
-      className="bg-white rounded-xl p-6 shadow-lg flex flex-col h-full"
+      className="bg-[var(--color-ui-dark)] rounded-xl p-6 shadow-lg hover:shadow-xl transition-duration-300 flex flex-col h-full border border-[var(--color-border)]"
     >
       {/* Sternebewertung */}
       <div className="flex mb-4">
@@ -205,15 +205,15 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
             key={idx}
             className={`h-5 w-5 ${
               idx < testimonial.rating
-                ? 'text-amber-400 fill-amber-400'
-                : 'text-gray-200'
+                ? 'text-[var(--color-secondary)] fill-[var(--color-secondary)]'
+                : 'text-[var(--color-ui-light)]'
             }`}
           />
         ))}
       </div>
 
       {/* Testimonial Text */}
-      <p className="text-gray-700 mb-6 flex-grow">"{testimonial.content}"</p>
+      <p className="text-[var(--color-text)] mb-6 flex-grow">"{testimonial.content}"</p>
 
       {/* Autor */}
       <div className="flex items-center">
@@ -222,13 +222,13 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
             <img
               src={testimonial.image}
               alt={testimonial.name}
-              className="w-12 h-12 rounded-full object-cover border-2 border-rose-100"
+              className="w-12 h-12 rounded-full object-cover border-2 border-[var(--color-primary-light)]"
             />
           </div>
         )}
         <div>
-          <h4 className="font-semibold text-gray-800">{testimonial.name}</h4>
-          <p className="text-rose-500 text-sm">{testimonial.role}</p>
+          <h4 className="font-semibold text-[var(--color-text-dark)]">{testimonial.name}</h4>
+          <p className="text-[var(--color-primary)] text-sm">{testimonial.role}</p>
         </div>
       </div>
     </motion.div>

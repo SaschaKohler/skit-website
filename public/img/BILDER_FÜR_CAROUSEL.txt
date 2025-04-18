@@ -1,0 +1,26 @@
+HINWEIS FÜR BILDER IM SICHTBARKEITS-CAROUSEL:
+
+Bitte legen Sie in diesem Verzeichnis folgende Bilder zum Thema "Online-Sichtbarkeit" ab:
+
+1. visibility-1.jpg:
+   - Motiv: Unternehmerinnen/Selbständige mit Online-Präsenz 
+   - Zum Beispiel: Frau am Laptop, die ihre Website betrachtet
+   - Ideal: Professionelles Erscheinungsbild mit positivem Ausdruck
+
+2. visibility-2.jpg:
+   - Motiv: Erfolgreiche Webpräsenz/Sichtbarkeit 
+   - Zum Beispiel: Grafiken mit steigenden Besucherzahlen oder Person, die online gefunden wird
+   - Ideal: Visualisierung von Erfolg und Sichtbarkeit
+
+3. visibility-3.jpg:
+   - Motiv: "Von unsichtbar zu gefunden werden"
+   - Zum Beispiel: Transformation darstellen, etwa durch Split-Screen oder Vorher-Nachher-Darstellung
+   - Ideal: Visuell ansprechende Darstellung der Veränderung
+
+Technische Anforderungen:
+- Bildformat: JPG
+- Auflösung: Mindestens 1200x800 Pixel
+- Seitenverhältnis: 4:3 (wichtig für einheitliche Darstellung)
+- Hohe Qualität für professionellen Eindruck
+
+Falls keine passenden Bilder zur Hand sind, werden automatisch Platzhalter angezeigt.

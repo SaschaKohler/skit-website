@@ -98,8 +98,8 @@ const TechShowcase = (): React.JSX.Element => {
         <button
           onClick={prevSlide}
           disabled={isTransitioning}
-          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full 
-                   hover:bg-white disabled:opacity-50 transition-all duration-300
+          className="absolute left-4 top-1/2 -translate-y-1/2 bg-[var(--color-ui-dark)]/80 p-2 rounded-full 
+                   hover:bg-[var(--color-ui-dark)] disabled:opacity-50 transition-all duration-300
                    focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           <ChevronLeft className="w-6 h-6" />
@@ -107,8 +107,8 @@ const TechShowcase = (): React.JSX.Element => {
         <button
           onClick={nextSlide}
           disabled={isTransitioning}
-          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full 
-                   hover:bg-white disabled:opacity-50 transition-all duration-300
+          className="absolute right-4 top-1/2 -translate-y-1/2 bg-[var(--color-ui-dark)]/80 p-2 rounded-full 
+                   hover:bg-[var(--color-ui-dark)] disabled:opacity-50 transition-all duration-300
                    focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           <ChevronRight className="w-6 h-6" />
@@ -142,86 +142,86 @@ const TechShowcase = (): React.JSX.Element => {
 
       {/* Tech Stack Description */}
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div className="bg-white p-6 rounded-lg shadow-md">
+        <div className="bg-[var(--color-ui-dark)] p-6 rounded-lg shadow-md border border-[var(--color-border)]">
           <div className="flex items-center mb-4">
             <Layout className="w-8 h-8 text-blue-600 mr-3" />
-            <h3 className="text-xl font-semibold">WordPress Divi</h3>
+            <h3 className="text-xl font-semibold text-[var(--color-text-dark)]">WordPress Divi</h3>
           </div>
-          <p className="text-gray-600">
+          <p className="text-[var(--color-text)]">
             Professionelles Theme mit umfangreichen Gestaltungsmöglichkeiten und
             responsivem Design.
           </p>
         </div>
 
-        <div className="bg-white p-6 rounded-lg shadow-md">
+        <div className="bg-[var(--color-ui-dark)] p-6 rounded-lg shadow-md border border-[var(--color-border)]">
           <div className="flex items-center mb-4">
             <Lock className="w-8 h-8 text-blue-600 mr-3" />
-            <h3 className="text-xl font-semibold">Member Bereich</h3>
+            <h3 className="text-xl font-semibold text-[var(--color-text-dark)]">Member Bereich</h3>
           </div>
-          <p className="text-gray-600">
+          <p className="text-[var(--color-text)]">
             Geschützter Bereich für Videos, Dokumente und exklusive Inhalte mit
             automatisierter Zugangsverwaltung.
           </p>
         </div>
 
-        <div className="bg-white p-6 rounded-lg shadow-md">
+        <div className="bg-[var(--color-ui-dark)] p-6 rounded-lg shadow-md border border-[var(--color-border)]">
           <div className="flex items-center mb-4">
             <Users className="w-8 h-8 text-blue-600 mr-3" />
-            <h3 className="text-xl font-semibold">CMS System</h3>
+            <h3 className="text-xl font-semibold text-[var(--color-text-dark)]">CMS System</h3>
           </div>
-          <p className="text-gray-600">
+          <p className="text-[var(--color-text)]">
             Benutzerfreundliche Verwaltung durch Custom Fields und modularen
             Aufbau.
           </p>
         </div>
 
-        <div className="bg-white p-6 rounded-lg shadow-md">
+        <div className="bg-[var(--color-ui-dark)] p-6 rounded-lg shadow-md border border-[var(--color-border)]">
           <div className="flex items-center mb-4">
             <Mail className="w-8 h-8 text-blue-600 mr-3" />
-            <h3 className="text-xl font-semibold">Email Marketing</h3>
+            <h3 className="text-xl font-semibold text-[var(--color-text-dark)]">Email Marketing</h3>
           </div>
-          <p className="text-gray-600">
+          <p className="text-[var(--color-text)]">
             Eigener Mailserver mit automatisiertem Marketing und
             Kundenbetreuung.
           </p>
         </div>
 
-        <div className="bg-white p-6 rounded-lg shadow-md">
+        <div className="bg-[var(--color-ui-dark)] p-6 rounded-lg shadow-md border border-[var(--color-border)]">
           <div className="flex items-center mb-4">
             <Video className="w-8 h-8 text-blue-600 mr-3" />
-            <h3 className="text-xl font-semibold">Video Integration</h3>
+            <h3 className="text-xl font-semibold text-[var(--color-text-dark)]">Video Integration</h3>
           </div>
-          <p className="text-gray-600">
+          <p className="text-[var(--color-text)]">
             Optimierte Videoplattform für Kursinhalte und Schulungsmaterial.
           </p>
         </div>
 
-        <div className="bg-white p-6 rounded-lg shadow-md">
+        <div className="bg-[var(--color-ui-dark)] p-6 rounded-lg shadow-md border border-[var(--color-border)]">
           <div className="flex items-center mb-4">
             <FileText className="w-8 h-8 text-blue-600 mr-3" />
-            <h3 className="text-xl font-semibold">Dokumente</h3>
+            <h3 className="text-xl font-semibold text-[var(--color-text-dark)]">Dokumente</h3>
           </div>
-          <p className="text-gray-600">
+          <p className="text-[var(--color-text)]">
             Strukturiertes Dokumentenmanagement mit Download-Funktion.
           </p>
         </div>
 
-        <div className="bg-white p-6 rounded-lg shadow-md">
+        <div className="bg-[var(--color-ui-dark)] p-6 rounded-lg shadow-md border border-[var(--color-border)]">
           <div className="flex items-center mb-4">
             <Server className="w-8 h-8 text-blue-600 mr-3" />
-            <h3 className="text-xl font-semibold">Hosting</h3>
+            <h3 className="text-xl font-semibold text-[var(--color-text-dark)]">Hosting</h3>
           </div>
-          <p className="text-gray-600">
+          <p className="text-[var(--color-text)]">
             Professionelles Hosting mit SSL-Verschlüsselung und Backup-System.
           </p>
         </div>
 
-        <div className="bg-white p-6 rounded-lg shadow-md">
+        <div className="bg-[var(--color-ui-dark)] p-6 rounded-lg shadow-md border border-[var(--color-border)]">
           <div className="flex items-center mb-4">
             <Workflow className="w-8 h-8 text-blue-600 mr-3" />
-            <h3 className="text-xl font-semibold">Automation</h3>
+            <h3 className="text-xl font-semibold text-[var(--color-text-dark)]">Automation</h3>
           </div>
-          <p className="text-gray-600">
+          <p className="text-[var(--color-text)]">
             Automatisierte Workflows für Kundenbetreuung und Marketing mit
             make.com.
           </p>

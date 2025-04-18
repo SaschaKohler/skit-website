@@ -235,17 +235,17 @@ const ContactForm = (): React.JSX.Element => {
   }
 
   return (
-    <div id="contact" className="py-12 md:py-20 bg-gray-50">
-      <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-4 md:mb-6">
+    <div id="contact" className="py-12 md:py-20 bg-[var(--color-background-offset)] w-full">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-7xl">
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-4 md:mb-6 text-[var(--color-text-dark)]">
           Kontaktieren Sie mich
         </h2>
-        <p className="text-center text-gray-600 mb-8 md:mb-16 max-w-2xl mx-auto">
+        <p className="text-center text-[var(--color-text)] mb-8 md:mb-16 max-w-2xl mx-auto">
           Lassen Sie uns gemeinsam Ihr Projekt besprechen. Wählen Sie die
           gewünschten Services aus und teilen Sie mir Ihre Vorstellungen mit.
         </p>
 
-        <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-lg">
+        <div className="max-w-3xl mx-auto bg-[var(--color-ui-dark)] rounded-lg shadow-lg border border-[var(--color-border)]">
           <UI.StepIndicator currentStep={step} />
 
           <form onSubmit={onSubmit} className="p-4 md:p-8">
@@ -266,11 +266,11 @@ const ContactForm = (): React.JSX.Element => {
 
           {/* Service Summary Sidebar */}
           {step > 1 && formData.selectedServices.length > 0 && (
-            <div className="border-t p-4 md:p-8 bg-gray-50">
-              <h4 className="font-semibold mb-3 md:mb-4">Ihre Auswahl:</h4>
+            <div className="border-t border-[var(--color-border)] p-4 md:p-8 bg-[var(--color-background-offset)]">
+              <h4 className="font-semibold mb-3 md:mb-4 text-[var(--color-text-dark)]">Ihre Auswahl:</h4>
               <ul className="space-y-1 md:space-y-2">
                 {formData.selectedServices.map((service, index) => (
-                  <li key={index} className="text-sm text-gray-600">
+                  <li key={index} className="text-sm text-[var(--color-text)]">
                     • {service}
                   </li>
                 ))}

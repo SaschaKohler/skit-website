@@ -1,0 +1,52 @@
+<svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="600" height="400" fill="#f8fafc" rx="20" ry="20" />
+  
+  <!-- Code window background -->
+  <rect x="50" y="50" width="500" height="300" fill="#1e293b" rx="10" ry="10" />
+  
+  <!-- Window header -->
+  <rect x="50" y="50" width="500" height="40" fill="#0f172a" rx="10" ry="10" />
+  <circle cx="80" cy="70" r="7" fill="#ef4444" />
+  <circle cx="105" cy="70" r="7" fill="#f59e0b" />
+  <circle cx="130" cy="70" r="7" fill="#22c55e" />
+  
+  <!-- Code lines -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+    <!-- HTML structure lines -->
+    <path d="M80,120 L110,120 L140,120" stroke="#f43f5e" />
+    <path d="M100,140 L140,140 L160,140 L200,140" stroke="#60a5fa" />
+    <path d="M100,160 L200,160" stroke="#34d399" />
+    <path d="M80,180 L110,180 L140,180" stroke="#f43f5e" />
+    
+    <!-- CSS lines -->
+    <path d="M240,120 L280,120 L340,120" stroke="#a78bfa" />
+    <path d="M260,140 L300,140 L320,140" stroke="#f59e0b" />
+    <path d="M260,160 L320,160" stroke="#f59e0b" />
+    <path d="M240,180 L260,180 L300,180" stroke="#a78bfa" />
+    
+    <!-- JS lines -->
+    <path d="M80,220 L140,220 L180,220" stroke="#fcd34d" />
+    <path d="M100,240 L180,240 L220,240" stroke="#38bdf8" />
+    <path d="M100,260 L150,260" stroke="#38bdf8" />
+    <path d="M80,280 L120,280 L140,280" stroke="#fcd34d" />
+    
+    <!-- React component -->
+    <path d="M240,240 L340,240" stroke="#2dd4bf" />
+    <path d="M260,260 L300,260" stroke="#f472b6" />
+    <path d="M260,280 L320,280" stroke="#f472b6" />
+  </g>
+  
+  <!-- React symbol -->
+  <g transform="translate(420, 200) scale(0.8)">
+    <ellipse cx="0" cy="0" rx="40" ry="15" fill="none" stroke="#38bdf8" stroke-width="3" transform="rotate(0)" />
+    <ellipse cx="0" cy="0" rx="40" ry="15" fill="none" stroke="#38bdf8" stroke-width="3" transform="rotate(60)" />
+    <ellipse cx="0" cy="0" rx="40" ry="15" fill="none" stroke="#38bdf8" stroke-width="3" transform="rotate(120)" />
+    <circle cx="0" cy="0" r="7" fill="#38bdf8" />
+  </g>
+  
+  <!-- Modern UI elements -->
+  <rect x="370" y="120" width="120" height="10" rx="5" ry="5" fill="#a78bfa" />
+  <rect x="370" y="140" width="80" height="10" rx="5" ry="5" fill="#38bdf8" />
+  <rect x="370" y="160" width="100" height="10" rx="5" ry="5" fill="#f472b6" />
+</svg>

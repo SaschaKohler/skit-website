@@ -1,0 +1,11 @@
+HINWEIS:
+
+Für den Hero-Bereich wird eine Bilddatei mit dem Namen "hero-image.jpg" benötigt.
+Bitte legen Sie hier ein passendes Bild mit diesem Namen ab.
+
+Das Bild sollte:
+- Hochwertig und professionell sein
+- Idealerweise eine Auflösung von mindestens 1200x800 Pixeln haben
+- Einen ansprechenden Bezug zu den Themen Webentwicklung, Design oder Digitales Marketing haben
+
+Falls kein Bild gefunden wird, wird automatisch ein Platzhalterbild angezeigt.

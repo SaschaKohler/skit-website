@@ -9,7 +9,7 @@ export const SuccessMessage: React.FC<SuccessMessageProps> = ({
   selectedServices,
   onReset,
 }): React.JSX.Element => (
-  <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-8 text-center">
+  <div className="max-w-2xl mx-auto bg-[var(--color-ui-dark)] rounded-lg shadow-lg p-8 text-center border border-[var(--color-border)]">
     <div className="mb-8">
       <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
         <svg
@@ -27,14 +27,14 @@ export const SuccessMessage: React.FC<SuccessMessageProps> = ({
         </svg>
       </div>
     </div>
-    <h2 className="text-2xl font-bold mb-4">Danke für Ihre Anfrage!</h2>
-    <p className="text-gray-600 mb-6">
+    <h2 className="text-2xl font-bold mb-4 text-[var(--color-text-dark)]">Danke für Ihre Anfrage!</h2>
+    <p className="text-[var(--color-text)] mb-6">
       Ich werde mich innerhalb von 30 Minuten bei Ihnen melden.
     </p>
     {selectedServices.length > 0 && (
-      <div className="bg-blue-50 p-4 rounded-lg mb-6">
-        <h3 className="font-semibold mb-2">Ausgewählte Dienste:</h3>
-        <ul className="text-gray-600">
+      <div className="bg-[var(--color-ui-medium)] p-4 rounded-lg mb-6 border border-[var(--color-border)]">
+        <h3 className="font-semibold mb-2 text-[var(--color-text-dark)]">Ausgewählte Dienste:</h3>
+        <ul className="text-[var(--color-text)]">
           {selectedServices.map((service, index) => (
             <li key={index} className="mb-1">
               • {service}

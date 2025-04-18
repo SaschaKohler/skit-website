@@ -1,16 +1,11 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import {
-  ArrowRight,
-  Heart,
-  Calendar,
-  Zap,
-  Star,
-} from 'lucide-react';
-import HeroSection from '../components/sections/HeroSection';
-import PricingPackages from '../components/sections/PricingPackages';
-import Testimonials from '../components/sections/Testimonials';
+import React from 'react'
+import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
+import { ArrowRight, Heart, Calendar, Zap, Star } from 'lucide-react'
+import HeroSection from '../components/sections/HeroSection'
+import PricingPackages from '../components/sections/PricingPackages'
+import Testimonials from '../components/sections/Testimonials'
+import ClientJourneySection from '../components/sections/ClientJourneySection'
 
 const HomePage: React.FC = () => {
   return (
@@ -19,8 +14,8 @@ const HomePage: React.FC = () => {
       <HeroSection />
 
       {/* Vorteile-Teaser mit Icons */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4 sm:px-6">
+      <section className="py-12 bg-[var(--color-ui-dark)] w-full">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-7xl">
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
@@ -41,7 +36,7 @@ const HomePage: React.FC = () => {
             ].map((item, idx) => (
               <motion.div
                 key={idx}
-                className="bg-gradient-to-r from-rose-50 to-amber-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-all"
+                className="bg-gradient-to-r black gray border-gray-200 border rounded-xl p-6 shadow-sm hover:shadow-lg transition-all"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -51,20 +46,23 @@ const HomePage: React.FC = () => {
                 <h3 className="text-xl font-subheading font-semibold mb-2 text-gray-800">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 font-body">
-                  {item.desc}
-                </p>
+                <p className="text-gray-600 font-body">{item.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* Client Journey Visualization */}
+      <ClientJourneySection />
+
       {/* Kundenbewertungen Vorschau */}
-      <section className="py-16 bg-gradient-to-b from-white to-rose-50">
-        <div className="container mx-auto px-4 sm:px-6">
+      <section className="py-16 bg-gradient-to-b from-[var(--color-ui-dark)] to-[var(--color-primary-light)] w-full">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-7xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-subheading font-bold mb-4">Was unsere Kunden sagen</h2>
+            <h2 className="text-3xl font-subheading font-bold mb-4">
+              Was unsere Kunden sagen
+            </h2>
             <div className="flex justify-center space-x-1 mb-3">
               {[1, 2, 3, 4, 5].map(star => (
                 <Star
@@ -89,8 +87,8 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* CTA-Section */}
-      <section className="py-16 px-4 sm:px-6 bg-white">
-        <div className="container mx-auto">
+      <section className="py-16 bg-[var(--color-ui-dark)] w-full">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-7xl">
           <motion.div
             className="max-w-4xl mx-auto bg-gradient-to-r from-rose-400 to-amber-500 rounded-xl overflow-hidden shadow-xl"
             initial={{ opacity: 0, y: 50 }}
@@ -120,7 +118,8 @@ const HomePage: React.FC = () => {
         </div>
       </section>
     </div>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default HomePage
+

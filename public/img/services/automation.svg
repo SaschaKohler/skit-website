@@ -1,0 +1,60 @@
+<svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="600" height="400" fill="#f8fafc" rx="20" ry="20" />
+  
+  <!-- Main gear -->
+  <g transform="translate(300, 200)">
+    <!-- Big gear -->
+    <path d="M0,-90 L15,-87 L25,-60 L50,-75 L60,-65 L45,-40 L75,-30 L75,-10 L45,0 L75,10 L75,30 L45,40 L60,65 L50,75 L25,60 L15,87 L-15,87 L-25,60 L-50,75 L-60,65 L-45,40 L-75,30 L-75,10 L-45,0 L-75,-10 L-75,-30 L-45,-40 L-60,-65 L-50,-75 L-25,-60 L-15,-87 Z" 
+          fill="#f59e0b" stroke="#f97316" stroke-width="2" />
+    <circle cx="0" cy="0" r="30" fill="#f8fafc" stroke="#f97316" stroke-width="2" />
+    <circle cx="0" cy="0" r="15" fill="#f97316" />
+  </g>
+  
+  <!-- Small gears -->
+  <g transform="translate(440, 120)">
+    <path d="M0,-30 L7,-29 L10,-20 L20,-25 L25,-20 L20,-10 L30,-5 L30,5 L20,10 L25,20 L20,25 L10,20 L5,29 L-5,29 L-10,20 L-20,25 L-25,20 L-20,10 L-30,5 L-30,-5 L-20,-10 L-25,-20 L-20,-25 L-10,-20 L-5,-29 Z" 
+          fill="#a855f7" stroke="#9333ea" stroke-width="2" />
+    <circle cx="0" cy="0" r="10" fill="#f8fafc" stroke="#9333ea" stroke-width="2" />
+    <circle cx="0" cy="0" r="5" fill="#9333ea" />
+  </g>
+  
+  <g transform="translate(440, 280)">
+    <path d="M0,-30 L7,-29 L10,-20 L20,-25 L25,-20 L20,-10 L30,-5 L30,5 L20,10 L25,20 L20,25 L10,20 L5,29 L-5,29 L-10,20 L-20,25 L-25,20 L-20,10 L-30,5 L-30,-5 L-20,-10 L-25,-20 L-20,-25 L-10,-20 L-5,-29 Z" 
+          fill="#60a5fa" stroke="#3b82f6" stroke-width="2" />
+    <circle cx="0" cy="0" r="10" fill="#f8fafc" stroke="#3b82f6" stroke-width="2" />
+    <circle cx="0" cy="0" r="5" fill="#3b82f6" />
+  </g>
+  
+  <g transform="translate(160, 120)">
+    <path d="M0,-30 L7,-29 L10,-20 L20,-25 L25,-20 L20,-10 L30,-5 L30,5 L20,10 L25,20 L20,25 L10,20 L5,29 L-5,29 L-10,20 L-20,25 L-25,20 L-20,10 L-30,5 L-30,-5 L-20,-10 L-25,-20 L-20,-25 L-10,-20 L-5,-29 Z" 
+          fill="#34d399" stroke="#10b981" stroke-width="2" />
+    <circle cx="0" cy="0" r="10" fill="#f8fafc" stroke="#10b981" stroke-width="2" />
+    <circle cx="0" cy="0" r="5" fill="#10b981" />
+  </g>
+  
+  <g transform="translate(160, 280)">
+    <path d="M0,-30 L7,-29 L10,-20 L20,-25 L25,-20 L20,-10 L30,-5 L30,5 L20,10 L25,20 L20,25 L10,20 L5,29 L-5,29 L-10,20 L-20,25 L-25,20 L-20,10 L-30,5 L-30,-5 L-20,-10 L-25,-20 L-20,-25 L-10,-20 L-5,-29 Z" 
+          fill="#f43f5e" stroke="#e11d48" stroke-width="2" />
+    <circle cx="0" cy="0" r="10" fill="#f8fafc" stroke="#e11d48" stroke-width="2" />
+    <circle cx="0" cy="0" r="5" fill="#e11d48" />
+  </g>
+  
+  <!-- Connection lines -->
+  <line x1="210" y1="120" x2="250" y2="150" stroke="#94a3b8" stroke-width="3" stroke-linecap="round" />
+  <line x1="210" y1="280" x2="250" y2="250" stroke="#94a3b8" stroke-width="3" stroke-linecap="round" />
+  <line x1="390" y1="150" x2="350" y2="120" stroke="#94a3b8" stroke-width="3" stroke-linecap="round" />
+  <line x1="390" y1="250" x2="350" y2="280" stroke="#94a3b8" stroke-width="3" stroke-linecap="round" />
+  
+  <!-- Automation workflow arrows -->
+  <path d="M140,200 C100,200 100,160 160,160" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6,3" />
+  <path d="M300,140 C300,100 360,100 360,160" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6,3" />
+  <path d="M460,200 C500,200 500,240 440,240" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6,3" />
+  <path d="M300,260 C300,300 240,300 240,240" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6,3" />
+  
+  <!-- Small arrows -->
+  <polygon points="157,160 167,155 162,165" fill="#94a3b8" />
+  <polygon points="360,157 365,167 355,162" fill="#94a3b8" />
+  <polygon points="443,240 433,245 438,235" fill="#94a3b8" />
+  <polygon points="240,243 235,233 245,238" fill="#94a3b8" />
+</svg>

@@ -15,14 +15,14 @@ const Footer: React.FC = () => {
           <div className="md:col-span-1">
             <Link to="/" className="inline-block mb-4">
               <span className="font-bold text-2xl">
-                <span className="text-[var(--color-primary)]">SK </span>
-                <span className="text-[var(--color-secondary)]">Web</span>
-                <span className="text-[var(--color-primary-hover)]">Design</span>
+                <span className="text-[var(--color-primary)]">sk.</span>
+                <span className="text-[var(--color-secondary)]">IT</span>
+                <span className="text-[var(--color-primary-hover)]"> Software</span>
               </span>
             </Link>
             <p className="text-[var(--color-text)] mb-4">
-              Ihre professionelle WordPress-Website in nur 14 Tagen online.
-              Persönlich, schnell und unkompliziert.
+              Professionelle Softwarelösungen und IT-Dienstleistungen.
+              Persönlich, kompetent und zuverlässig.
             </p>
             <div className="flex space-x-3 mb-4">
               <a
@@ -65,6 +65,8 @@ const Footer: React.FC = () => {
                 { name: 'Services', path: '/services' },
                 { name: 'WordPress Website', path: '/#pricing' },
                 { name: 'Kontakt', path: '/contact' },
+                { name: 'Impressum', path: '/impressum' },
+                { name: 'Datenschutz', path: '/datenschutz' },
               ].map(link => (
                 <li key={link.path}>
                   <Link
@@ -83,19 +85,19 @@ const Footer: React.FC = () => {
             <h3 className="font-semibold text-[var(--color-text-dark)] mb-4">Services</h3>
             <ul className="space-y-2">
               {[
-                'WordPress Websites',
-                'Responsive Design',
-                'Buchungssysteme',
-                'Content Management',
-                'Website Pflege',
-                'Performance Optimierung',
+                { name: 'Web-Entwicklung', path: '/services/web-development' },
+                { name: 'Automatisierung', path: '/services/automation' },
+                { name: 'API-Integration', path: '/services/api-integration' },
+                { name: 'Mobile Anwendungen', path: '/services/mobile-apps' },
+                { name: 'E-Commerce Lösungen', path: '/services' },
+                { name: 'Technical Consulting', path: '/services' },
               ].map((service, idx) => (
                 <li key={idx}>
                   <Link
-                    to="/services"
+                    to={service.path}
                     className="text-[var(--color-text)] hover:text-[var(--color-primary)] transition-colors"
                   >
-                    {service}
+                    {service.name}
                   </Link>
                 </li>
               ))}

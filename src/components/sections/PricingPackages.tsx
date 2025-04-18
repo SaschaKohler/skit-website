@@ -179,7 +179,7 @@ const PricingPackages: React.FC = () => {
 
   return (
     <section
-      className="py-20 bg-gradient-to-b from-rose-50 to-white"
+      className="py-20 bg-gradient-to-b from-[var(--color-primary-light)] to-[var(--color-ui-dark)] w-full"
       ref={pricingRef}
     >
       <div className="container mx-auto px-4 sm:px-6">
@@ -210,35 +210,39 @@ const PricingPackages: React.FC = () => {
         >
           {/* Hauptpaket Card mit Animation */}
           <motion.div
-            className="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg mb-12 transition-all duration-300 hover:shadow-xl relative overflow-hidden"
+            className="bg-[var(--color-ui-dark)] rounded-2xl p-8 border border-[var(--color-border)] shadow-lg mb-12 transition-all duration-300 hover:shadow-xl relative overflow-hidden"
             variants={cardVariants}
           >
             {/* Dekorative Elemente */}
-            <div className="absolute -right-10 -top-10 w-40 h-40 bg-gradient-to-br from-rose-200 to-amber-200 rounded-full opacity-20"></div>
-            <div className="absolute -left-10 -bottom-10 w-32 h-32 bg-gradient-to-tr from-amber-200 to-rose-200 rounded-full opacity-20"></div>
+            <div className="absolute -right-10 -top-10 w-40 h-40 bg-gradient-to-br rounded-full opacity-20"></div>
+            <div className="absolute -left-10 -bottom-10 w-32 h-32 bg-gradient-to-tr rounded-full opacity-20"></div>
 
             <div className="flex flex-col lg:flex-row relative z-10">
               <div className="lg:w-7/12 mb-8 lg:mb-0 lg:pr-8">
                 <div className="flex items-center mb-3">
-                  <Package className="h-6 w-6 text-rose-500 mr-2" />
-                  <h3 className="text-2xl font-bold">{mainPackage.name}</h3>
+                  <Package className="h-6 w-6 text-[var(--color-primary)] mr-2" />
+                  <h3 className="text-2xl font-bold text-[var(--color-text-dark)]">
+                    {mainPackage.name}
+                  </h3>
                 </div>
-                <p className="text-gray-700 mb-6">{mainPackage.description}</p>
+                <p className="text-[var(--color-text)] mb-6">
+                  {mainPackage.description}
+                </p>
 
                 {/* Zahlungsoption Tabs */}
                 <div className="mb-6">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-[var(--color-text)] mb-2">
                     Zahlungsweise wählen:
                   </label>
-                  <div className="inline-flex bg-gray-100 p-1 rounded-lg shadow-inner">
+                  <div className="inline-flex bg-[var(--color-ui-medium)] p-1 rounded-lg shadow-inner">
                     <button
                       onClick={() => {
                         setBillingCycle('oneTime')
                       }}
                       className={`px-5 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                         billingCycle === 'oneTime'
-                          ? 'bg-rose-500 text-white shadow-sm transform -translate-y-0.5'
-                          : 'bg-transparent text-gray-700 hover:bg-gray-200'
+                          ? 'bg-[var(--color-primary)] text-white shadow-sm transform -translate-y-0.5'
+                          : 'bg-transparent text-[var(--color-text)] hover:bg-[var(--color-ui-light)]'
                       }`}
                     >
                       <CreditCard className="inline-block h-4 w-4 mr-1" />
@@ -250,8 +254,8 @@ const PricingPackages: React.FC = () => {
                       }}
                       className={`px-5 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                         billingCycle === 'monthly'
-                          ? 'bg-rose-500 text-white shadow-sm transform -translate-y-0.5'
-                          : 'bg-transparent text-gray-700 hover:bg-gray-200'
+                          ? 'bg-[var(--color-primary)] text-white shadow-sm transform -translate-y-0.5'
+                          : 'bg-transparent text-[var(--color-text)] hover:bg-[var(--color-ui-light)]'
                       }`}
                     >
                       <Clock className="inline-block h-4 w-4 mr-1" />
@@ -264,7 +268,7 @@ const PricingPackages: React.FC = () => {
                 <div className="mb-4">
                   <div className="flex items-baseline">
                     <motion.span
-                      className="text-3xl font-bold text-rose-600"
+                      className="text-3xl font-bold text-[var(--color-primary)]"
                       key={billingCycle} // Key für Animation bei Änderung
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -274,7 +278,7 @@ const PricingPackages: React.FC = () => {
                         ? `${mainPackage.price.monthly}€`
                         : `${mainPackage.price.oneTime}€`}
                     </motion.span>
-                    <span className="text-sm font-normal text-gray-500 ml-2">
+                    <span className="text-sm font-normal text-[var(--color-text-light)] ml-2">
                       {billingCycle === 'monthly' ? '/Monat' : ' einmalig'}
                     </span>
                   </div>
@@ -317,9 +321,9 @@ const PricingPackages: React.FC = () => {
               </div>
 
               {/* Features Liste */}
-              <div className="lg:w-5/12 bg-gradient-to-br from-rose-50 to-amber-50 rounded-xl p-6">
-                <h4 className="font-semibold text-gray-800 mb-4 flex items-center">
-                  <CheckCircle2 className="h-5 w-5 text-rose-500 mr-2" />
+              <div className="lg:w-5/12 bg-gradient-to-br from-[var(--color-primary-light)] to-[var(--color-secondary-light)] rounded-xl p-6">
+                <h4 className="font-semibold text-[var(--color-text-dark)] mb-4 flex items-center">
+                  <CheckCircle2 className="h-5 w-5 text-[var(--color-primary)] mr-2" />
                   Inklusive:
                 </h4>
                 <motion.ul
@@ -335,7 +339,9 @@ const PricingPackages: React.FC = () => {
                       variants={featureItemVariants}
                     >
                       <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="text-gray-700">{feature}</span>
+                      <span className="text-[var(--color-text)]">
+                        {feature}
+                      </span>
                     </motion.li>
                   ))}
                 </motion.ul>
@@ -487,43 +493,45 @@ const PricingPackages: React.FC = () => {
 
           {/* WordPress-Vorteile mit Animation */}
           <motion.div
-            className="bg-white border border-gray-200 rounded-xl p-6 mb-12 hover:shadow-md transition-all duration-300"
+            className="bg-[var(--color-ui-dark)] border border-[var(--color-border)] rounded-xl p-6 mb-12 hover:shadow-md transition-all duration-300"
             variants={cardVariants}
           >
-            <h3 className="text-lg font-bold text-gray-800 mb-4 flex items-center">
-              <Zap className="h-5 w-5 text-rose-500 mr-2" />
+            <h3 className="text-lg font-bold text-[var(--color-text-dark)] mb-4 flex items-center">
+              <Zap className="h-5 w-5 text-[var(--color-primary)] mr-2" />
               Vorteile einer WordPress-Website
             </h3>
             <div className="grid md:grid-cols-3 gap-4">
               <motion.div
-                className="bg-gradient-to-br from-rose-50 to-amber-50 p-4 rounded-lg transition-all duration-300 hover:shadow-sm transform hover:translate-y-[-2px]"
+                className="bg-gradient-to-br from-[var(--color-primary-light)] to-[var(--color-secondary-light)] p-4 rounded-lg transition-all duration-300 hover:shadow-sm transform hover:translate-y-[-2px]"
                 whileHover={{ scale: 1.03 }}
               >
-                <h4 className="font-medium text-rose-700 mb-2">
+                <h4 className="font-medium text-[var(--color-primary)] mb-2">
                   Einfache Bedienung
                 </h4>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-[var(--color-text)]">
                   Sie können Inhalte selbst aktualisieren, ohne
                   Programmierkenntnisse.
                 </p>
               </motion.div>
               <motion.div
-                className="bg-gradient-to-br from-rose-50 to-amber-50 p-4 rounded-lg transition-all duration-300 hover:shadow-sm transform hover:translate-y-[-2px]"
+                className="bg-gradient-to-br from-[var(--color-primary-light)] to-[var(--color-secondary-light)] p-4 rounded-lg transition-all duration-300 hover:shadow-sm transform hover:translate-y-[-2px]"
                 whileHover={{ scale: 1.03 }}
               >
-                <h4 className="font-medium text-rose-700 mb-2">Erweiterbar</h4>
-                <p className="text-sm text-gray-600">
+                <h4 className="font-medium text-[var(--color-primary)] mb-2">
+                  Erweiterbar
+                </h4>
+                <p className="text-sm text-[var(--color-text)]">
                   Tausende Plugins für zusätzliche Funktionen verfügbar.
                 </p>
               </motion.div>
               <motion.div
-                className="bg-gradient-to-br from-rose-50 to-amber-50 p-4 rounded-lg transition-all duration-300 hover:shadow-sm transform hover:translate-y-[-2px]"
+                className="bg-gradient-to-br from-[var(--color-primary-light)] to-[var(--color-secondary-light)] p-4 rounded-lg transition-all duration-300 hover:shadow-sm transform hover:translate-y-[-2px]"
                 whileHover={{ scale: 1.03 }}
               >
-                <h4 className="font-medium text-rose-700 mb-2">
+                <h4 className="font-medium text-[var(--color-primary)] mb-2">
                   Zukunftssicher
                 </h4>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-[var(--color-text)]">
                   WordPress wird ständig weiterentwickelt und aktualisiert.
                 </p>
               </motion.div>
@@ -532,10 +540,10 @@ const PricingPackages: React.FC = () => {
 
           {/* Service-Prozess Timeline */}
           <motion.div
-            className="bg-white border border-gray-200 rounded-xl p-6 mb-12"
+            className="bg-[var(--color-ui-dark)] border border-[var(--color-border)] rounded-xl p-6 mb-12"
             variants={cardVariants}
           >
-            <h3 className="text-lg font-bold text-gray-800 mb-4">
+            <h3 className="text-lg font-bold text-[var(--color-text-dark)] mb-4">
               So läuft Ihr Website-Projekt ab
             </h3>
             <div className="space-y-4">
@@ -582,9 +590,13 @@ const PricingPackages: React.FC = () => {
                       <div className="w-0.5 h-10 bg-gradient-to-b from-rose-100 to-amber-100 mt-1"></div>
                     )}
                   </div>
-                  <div className="bg-gradient-to-r from-rose-50 to-amber-50 rounded-lg p-3 flex-1 shadow-sm hover:shadow-md transition-all duration-300 hover:translate-x-1">
-                    <h4 className="font-medium text-rose-700">{step.title}</h4>
-                    <p className="text-sm text-gray-600">{step.desc}</p>
+                  <div className="bg-gradient-to-r from-[var(--color-primary-light)] to-[var(--color-secondary-light)] rounded-lg p-3 flex-1 shadow-sm hover:shadow-md transition-all duration-300 hover:translate-x-1">
+                    <h4 className="font-medium text-[var(--color-primary)]">
+                      {step.title}
+                    </h4>
+                    <p className="text-sm text-[var(--color-text)]">
+                      {step.desc}
+                    </p>
                   </div>
                 </motion.div>
               ))}
@@ -593,19 +605,19 @@ const PricingPackages: React.FC = () => {
 
           {/* Folgekosten */}
           <motion.div
-            className="bg-white border border-gray-200 rounded-xl p-6 mb-8"
+            className="bg-[var(--color-ui-dark)] border border-[var(--color-border)] rounded-xl p-6 mb-8"
             variants={cardVariants}
           >
-            <h3 className="text-lg font-bold text-gray-800 mb-3 flex items-center">
-              <Clock className="h-5 w-5 text-rose-500 mr-2" />
+            <h3 className="text-lg font-bold text-[var(--color-text-dark)] mb-3 flex items-center">
+              <Clock className="h-5 w-5 text-[var(--color-primary)] mr-2" />
               Nach dem ersten Jahr
             </h3>
-            <p className="text-gray-600 mb-3">
+            <p className="text-[var(--color-text)] mb-3">
               Für Hosting, Domain, WordPress-Updates und technischen Support:
             </p>
-            <div className="bg-gradient-to-r from-rose-50 to-amber-50 p-4 rounded-lg border border-rose-100">
+            <div className="bg-gradient-to-r from-[var(--color-primary-light)] to-[var(--color-secondary-light)] p-4 rounded-lg border border-[var(--color-primary-light)]">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between">
-                <div>
+                <div className="text-[var(--color-text-dark)]">
                   <span className="font-medium">19€/Monat</span> oder{' '}
                   <span className="font-medium">190€/Jahr</span> (2 Monate
                   gratis)
@@ -647,4 +659,3 @@ const PricingPackages: React.FC = () => {
 }
 
 export default PricingPackages
-

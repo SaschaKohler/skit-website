@@ -1,6 +1,16 @@
+# robots.txt für skit.sascha-kohler.at
+# Letzte Aktualisierung: 2025-04-10
+
 User-agent: *
 Allow: /
-Sitemap: https://skit.sascha-kohler.at/sitemap.xml
+
+# Wichtige Seiten
+Allow: /about
+Allow: /services
+Allow: /contact
+Allow: /impressum
+Allow: /datenschutz
+Allow: /agb
 
 # Block access to admin areas
 Disallow: /admin/
@@ -9,12 +19,25 @@ Disallow: /wp-login.php
 
 # Block specific file types
 Disallow: /*.json$
-Disallow: /*.xml$
-Disallow: /*.txt$
+Disallow: /*.log$
+Disallow: /sitemap.xml.gz$
+Disallow: /node_modules/
+
+# Wichtige Dateien zulassen
+Allow: /sitemap.xml
+Allow: /robots.txt
 
 # Allow static assets
 Allow: /static/
 Allow: /images/
+Allow: /img/
 Allow: /css/
 Allow: /js/
 Allow: /assets/
+Allow: /fonts/
+
+# Crawl-delay für bessere Server Performance
+Crawl-delay: 5
+
+# Sitemap
+Sitemap: https://skit.sascha-kohler.at/sitemap.xml

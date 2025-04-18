@@ -205,7 +205,7 @@ const AboutPage: React.FC = () => {
 
           <div className="grid md:grid-cols-2 gap-8">
             <motion.div
-              className="bg-gradient-to-br from-rose-50 to-amber-50 rounded-xl p-6"
+              className="bg-white from-rose-50 to-amber-50 rounded-xl p-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

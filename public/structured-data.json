@@ -1,0 +1,81 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "sk.IT Software - Sascha Kohler",
+  "description": "Professionelle Softwareentwicklung und IT-Dienstleistungen: Webentwicklung, Automatisierung, API-Integration & mobile Anwendungen.",
+  "url": "https://skit.sascha-kohler.at",
+  "logo": "https://skit.sascha-kohler.at/img/logo.png",
+  "image": "https://skit.sascha-kohler.at/img/og-image.jpg",
+  "telephone": "+4365090030372",
+  "email": "office@sascha-kohler.at",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "AT",
+    "addressRegion": "Österreich"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "48.2082",
+    "longitude": "16.3738"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "opens": "09:00",
+    "closes": "17:00"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/sascha-kohler/",
+    "https://facebook.com/skitsoftware",
+    "https://instagram.com/skitsoftware"
+  ],
+  "priceRange": "€€",
+  "serviceType": [
+    "Softwareentwicklung",
+    "Webentwicklung",
+    "Automatisierung",
+    "API-Integration",
+    "Mobile Apps"
+  ],
+  "founder": {
+    "@type": "Person",
+    "name": "Sascha Kohler",
+    "jobTitle": "Fullstack Entwickler"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "IT-Dienstleistungen",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Web-Entwicklung",
+          "description": "Maßgeschneiderte Webanwendungen und Portale für Ihre spezifischen Anforderungen."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Automatisierung",
+          "description": "Automatisieren Sie wiederkehrende Geschäftsprozesse und steigern Sie Ihre Effizienz."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "API Integration",
+          "description": "Verbinden Sie Ihre Systeme nahtlos mit externen Diensten und Plattformen."
+        }
+      }
+    ]
+  }
+}

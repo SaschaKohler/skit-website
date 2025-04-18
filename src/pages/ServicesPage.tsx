@@ -15,7 +15,11 @@ import {
   Heart,
 } from 'lucide-react'
 
-const ServicesPage: React.FC = () => {
+interface ServicesPageProps {
+  category?: 'web' | 'automation' | 'api' | 'mobile';
+}
+
+const ServicesPage: React.FC<ServicesPageProps> = ({ category }) => {
   // Animation Varianten
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -53,8 +57,8 @@ const ServicesPage: React.FC = () => {
   }) => (
     <motion.div
       variants={itemVariants}
-      className={`bg-white rounded-xl p-6 shadow-lg border ${
-        isPrimary ? 'border-rose-200' : 'border-gray-200'
+      className={`bg-[var(--color-ui-dark)] rounded-xl p-6 shadow-lg border ${
+        isPrimary ? 'border-[var(--color-primary-light)]' : 'border-[var(--color-border)]'
       } transition-all duration-300 hover:shadow-xl ${
         isPrimary ? 'relative' : ''
       }`}
@@ -82,13 +86,13 @@ const ServicesPage: React.FC = () => {
           {name}
         </h3>
 
-        <p className="text-gray-600 mb-5">{description}</p>
+        <p className="text-[var(--color-text)] mb-5">{description}</p>
 
         <ul className="space-y-3 mb-6 flex-grow">
           {features.map((feature, idx) => (
             <li key={idx} className="flex items-start">
               <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-              <span className="text-gray-700">{feature}</span>
+              <span className="text-[var(--color-text)]">{feature}</span>
             </li>
           ))}
         </ul>
@@ -122,7 +126,16 @@ const ServicesPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Unsere <span className="text-rose-500">Services</span>
+            {category ? (
+              <>
+                {category === 'web' && 'Web-Entwicklung'} 
+                {category === 'automation' && 'Automatisierung'} 
+                {category === 'api' && 'API-Integration'} 
+                {category === 'mobile' && 'Mobile Anwendungen'}
+              </>
+            ) : (
+              <>Unsere <span className="text-rose-500">Services</span></>
+            )}
           </motion.h1>
           <motion.p
             className="text-gray-600 text-lg max-w-2xl mx-auto"
@@ -130,8 +143,17 @@ const ServicesPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Von der professionellen WordPress-Website bis zu individuellen
-            Erweiterungen – alles mit persönlicher Betreuung.
+            {category ? (
+              <>
+                {category === 'web' && 'Maßgeschneiderte Webanwendungen und Portale für Ihre spezifischen Anforderungen. Von einfachen Websites bis zu komplexen Applikationen.'}
+                {category === 'automation' && 'Automatisieren Sie wiederkehrende Geschäftsprozesse und steigern Sie Ihre Effizienz durch intelligente Workflows und Datenverarbeitung.'}
+                {category === 'api' && 'Verbinden Sie Ihre Systeme nahtlos mit externen Diensten und Plattformen. Entwicklung, Integration und Optimierung von APIs.'}
+                {category === 'mobile' && 'Native und hybride Apps für iOS und Android mit fokussierter Nutzererfahrung. Cross-Platform-Entwicklung mit modernsten Technologien.'}
+              </>
+            ) : (
+              <>Von maßgeschneiderten Softwarelösungen bis zu komplexen 
+              Automatisierungen – alles mit persönlicher Betreuung.</>
+            )}
           </motion.p>
         </div>
 
@@ -143,87 +165,99 @@ const ServicesPage: React.FC = () => {
           animate="visible"
         >
           <ServiceCard
-            icon={<LayoutGrid className="h-7 w-7" />}
-            name="WordPress Website"
-            description="Ihre professionelle Website in nur 14 Tagen online – schnell, unkompliziert und persönlich betreut."
+            icon={<div className="flex items-center justify-center">
+              <img src="/img/services/web-development.svg" alt="Web-Entwicklung" className="h-48 w-auto" />
+            </div>}
+            name="Web-Entwicklung"
+            description="Maßgeschneiderte Webanwendungen und Portale für Ihre spezifischen Anforderungen."
             features={[
-              '4-Seiten Basis-Website',
-              'Responsive Design für alle Geräte',
-              'Content Management System',
-              'Domain & Hosting (1 Jahr inklusive)',
-              'SEO-Grundeinrichtung',
-              'WordPress-Basisschulung',
+              'Responsive Single Page Applications',
+              'Progressive Web Apps (PWA)',
+              'Frontend mit React/TypeScript',
+              'Moderne UI/UX Design',
+              'Backend-Entwicklung mit Node.js',
+              'Datenbankanbindung',
             ]}
             isPrimary={true}
           />
 
           <ServiceCard
-            icon={<Calendar className="h-7 w-7" />}
-            name="Buchungssystem"
-            description="Erweitern Sie Ihre Website mit einem professionellen Online-Terminbuchungssystem."
+            icon={<div className="flex items-center justify-center">
+              <img src="/img/services/automation.svg" alt="Automatisierung" className="h-48 w-auto" />
+            </div>}
+            name="Automatisierung"
+            description="Automatisieren Sie wiederkehrende Geschäftsprozesse und steigern Sie Ihre Effizienz."
             features={[
-              'Automatische Terminverwaltung',
-              'Kalendersynchronisation',
-              'Zahlungsintegration möglich',
-              'E-Mail-Benachrichtigungen',
-              'Anpassbare Buchungsregeln',
-              'Mobil optimiert',
+              'Workflow-Automatisierung',
+              'Datenextraktion und -transformation',
+              'Integration unterschiedlicher Systeme',
+              'Benutzerdefinierte Skripte und Tools',
+              'Reporting-Automatisierung',
+              'Cloud-basierte Lösungen',
             ]}
           />
 
           <ServiceCard
-            icon={<Smartphone className="h-7 w-7" />}
-            name="Mobile Optimierung"
-            description="Machen Sie Ihre Website perfekt auf allen Geräten – vom Smartphone bis zum Desktop."
+            icon={<div className="flex items-center justify-center">
+              <img src="/img/services/mobile-apps.svg" alt="Mobile Anwendungen" className="h-48 w-auto" />
+            </div>}
+            name="Mobile Anwendungen"
+            description="Native und hybride Apps für iOS und Android mit fokussierter Nutzererfahrung."
             features={[
-              'Responsive Design',
-              'Touch-optimierte Elemente',
-              'Schnelle Ladezeiten auf Mobilgeräten',
-              'Google Mobile Test bestehen',
-              'Optimierte Bilder für mobile Nutzer',
-              'Mobile-First Ansatz',
+              'Cross-Platform-Entwicklung',
+              'Native App-Entwicklung',
+              'React Native Apps',
+              'Push-Benachrichtigungen',
+              'Offline-Funktionalität',
+              'App Store Veröffentlichung',
             ]}
           />
 
           <ServiceCard
-            icon={<Search className="h-7 w-7" />}
-            name="SEO-Optimierung"
-            description="Verbessern Sie Ihre Sichtbarkeit in Google und anderen Suchmaschinen."
+            icon={<div className="flex items-center justify-center">
+              <img src="/img/services/api-integration.svg" alt="API Integration" className="h-48 w-auto" />
+            </div>}
+            name="API Integration"
+            description="Verbinden Sie Ihre Systeme nahtlos mit externen Diensten und Plattformen."
             features={[
-              'Keyword-Recherche',
-              'On-Page Optimierung',
-              'Meta-Daten Einrichtung',
-              'Google My Business Optimierung',
-              'Technische SEO-Optimierung',
-              'Monatliche Performance-Berichte',
+              'REST API Entwicklung',
+              'GraphQL Implementierung',
+              'Drittanbieter-API Integration',
+              'OAuth und Authentifizierung',
+              'API Gateway Lösungen',
+              'Skalierbare Microservices',
             ]}
           />
 
           <ServiceCard
-            icon={<ShoppingCart className="h-7 w-7" />}
-            name="E-Commerce Integration"
-            description="Erweitern Sie Ihre Website um einen Online-Shop und verkaufen Sie Ihre Produkte online."
+            icon={<div className="flex items-center justify-center">
+              <img src="/img/services/e-commerce.svg" alt="E-Commerce Lösungen" className="h-48 w-auto" />
+            </div>}
+            name="E-Commerce Lösungen"
+            description="Maßgeschneiderte Online-Shop-Lösungen und E-Commerce Plattformen."
             features={[
-              'WooCommerce Integration',
-              'Produkt-Katalog Einrichtung',
-              'Zahlungsanbieter-Integration',
-              'Steuerliche Einstellungen',
-              'Versand-Module',
-              'Shop-Schulung',
+              'Individuelle Shop-Systeme',
+              'Payment Gateway Integration',
+              'Produktkatalog-Management',
+              'Bestellabwicklung-Automation',
+              'CRM-Integration',
+              'Skalierbare Architektur',
             ]}
           />
 
           <ServiceCard
-            icon={<Users className="h-7 w-7" />}
-            name="Mitgliederbereich"
-            description="Erstellen Sie exklusive Inhalte für angemeldete Benutzer oder verkaufen Sie Mitgliedschaften."
+            icon={<div className="flex items-center justify-center">
+              <img src="/img/services/devops.svg" alt="DevOps & Infrastruktur" className="h-48 w-auto" />
+            </div>}
+            name="DevOps & Infrastruktur"
+            description="Professionelles Deployment und Betrieb Ihrer Software-Lösungen."
             features={[
-              'Geschützter Bereich für Mitglieder',
-              'Verschiedene Zugriffsebenen',
-              'Abonnement-Modelle möglich',
-              'Integration von Zahlungsanbieter',
-              'E-Mail-Automatisierung',
-              'Mitglieder-Dashboard',
+              'Container-Orchestrierung (K8s)',
+              'CI/CD Pipeline-Einrichtung',
+              'Cloud-Infrastruktur-Management',
+              'Monitoring und Logging',
+              'Hochverfügbarkeits-Setup',
+              'Backup- und Recovery-Strategien',
             ]}
           />
         </motion.div>
@@ -237,34 +271,34 @@ const ServicesPage: React.FC = () => {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                icon: <Settings className="h-6 w-6 text-rose-500" />,
-                title: 'Website-Wartung',
-                desc: 'Regelmäßige Updates und technischer Support für Ihre Website.',
+                icon: <Users className="h-6 w-6 text-rose-500" />,
+                title: 'IT-Beratung',
+                desc: 'Strategische Beratung zu Technologie-Stack und Softwarearchitektur.',
               },
               {
                 icon: <Zap className="h-6 w-6 text-amber-500" />,
-                title: 'Performance-Optimierung',
-                desc: 'Beschleunigen Sie Ihre Website für bessere Nutzerfreundlichkeit und SEO.',
+                title: 'Legacy-System-Migration',
+                desc: 'Modernisierung und Migration von Altsystemen auf zukunftssichere Technologien.',
               },
               {
                 icon: <Heart className="h-6 w-6 text-rose-500" />,
-                title: 'Individuelle Anpassungen',
-                desc: 'Maßgeschneiderte Funktionen für Ihre speziellen Anforderungen.',
+                title: 'Wartung & Support',
+                desc: 'Langfristige Betreuung und Support für Ihre Softwarelösungen.',
               },
             ].map((service, idx) => (
               <motion.div
                 key={idx}
-                className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all"
+                className="bg-[var(--color-ui-dark)] border border-[var(--color-border)] rounded-xl p-6 shadow-sm hover:shadow-md transition-all"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
               >
                 <div className="mb-4">{service.icon}</div>
-                <h3 className="text-lg font-semibold mb-2 text-gray-800">
+                <h3 className="text-lg font-semibold mb-2 text-[var(--color-text-dark)]">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 mb-4">{service.desc}</p>
+                <p className="text-[var(--color-text)] mb-4">{service.desc}</p>
                 <Link
                   to="/contact"
                   className="text-rose-500 hover:text-rose-600 font-medium inline-flex items-center"
@@ -285,33 +319,33 @@ const ServicesPage: React.FC = () => {
             {[
               {
                 step: 1,
-                title: 'Beratung',
-                desc: 'Wir besprechen Ihre Anforderungen und Ziele.',
+                title: 'Analyse',
+                desc: 'Wir analysieren Ihre Anforderungen und Geschäftsprozesse.',
               },
               {
                 step: 2,
-                title: 'Konzept',
-                desc: 'Wir erstellen ein individuelles Konzept für Ihre Website.',
+                title: 'Konzeption',
+                desc: 'Wir erstellen ein detailliertes Konzept für Ihre Softwarelösung.',
               },
               {
                 step: 3,
-                title: 'Design',
-                desc: 'Wir gestalten das Layout und Design Ihrer Website.',
+                title: 'Entwicklung',
+                desc: 'Wir entwickeln Ihre Lösung mit modernsten Technologien.',
               },
               {
                 step: 4,
-                title: 'Umsetzung',
-                desc: 'Wir setzen Ihre Website technisch um und integrieren Inhalte.',
+                title: 'Testing',
+                desc: 'Umfangreiche Tests stellen die Qualität und Sicherheit sicher.',
               },
               {
                 step: 5,
-                title: 'Launch',
-                desc: 'Ihre Website geht online und wir schulen Sie in der Bedienung.',
+                title: 'Deployment',
+                desc: 'Wir implementieren die Lösung und integrieren sie in Ihre bestehende Infrastruktur.',
               },
             ].map((step, idx) => (
               <motion.div
                 key={idx}
-                className="bg-white rounded-lg p-5 shadow-sm relative"
+                className="bg-[var(--color-ui-dark)] rounded-lg p-5 shadow-sm relative border border-[var(--color-border)]"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -320,10 +354,10 @@ const ServicesPage: React.FC = () => {
                 <div className="w-10 h-10 rounded-full bg-rose-500 text-white flex items-center justify-center font-bold absolute -top-5 left-5">
                   {step.step}
                 </div>
-                <h3 className="font-semibold text-gray-800 mt-4 mb-2">
+                <h3 className="font-semibold text-[var(--color-text-dark)] mt-4 mb-2">
                   {step.title}
                 </h3>
-                <p className="text-sm text-gray-600">{step.desc}</p>
+                <p className="text-sm text-[var(--color-text)]">{step.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -337,11 +371,11 @@ const ServicesPage: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-2xl font-bold mb-3">
-            Bereit für Ihren perfekten Webauftritt?
+            Bereit für Ihre individuelle Softwarelösung?
           </h2>
           <p className="mb-6 max-w-2xl mx-auto">
-            In nur 14 Tagen zu Ihrer professionellen WordPress-Website.
-            Vereinbaren Sie jetzt ein kostenloses Beratungsgespräch.
+            Lassen Sie uns gemeinsam Ihre Anforderungen besprechen und eine maßgeschneiderte 
+            Lösung entwickeln. Vereinbaren Sie jetzt ein kostenloses Beratungsgespräch.
           </p>
           <Link
             to="/contact"

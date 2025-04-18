@@ -22,8 +22,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 }) => {
   return (
     <div
-      className="bg-white rounded-xl shadow-md p-8 transition-all duration-300 
-                  hover:shadow-lg hover:bg-gray-50"
+      className="bg-[var(--color-ui-dark)] rounded-xl shadow-md p-8 transition-all duration-300 
+                  hover:shadow-lg hover:bg-[var(--color-ui-medium)] border border-[var(--color-border)]"
     >
       <div
         className="text-blue-600 mb-6 transition-transform duration-300 
@@ -37,10 +37,10 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       >
         {title}
       </h3>
-      <p className="text-gray-600 mb-6">{description}</p>
+      <p className="text-[var(--color-text)] mb-6">{description}</p>
       <ul className="space-y-3 mb-6">
         {features.map((feature, index) => (
-          <li key={index} className="flex items-start gap-2 text-gray-600">
+          <li key={index} className="flex items-start gap-2 text-[var(--color-text)]">
             <span
               className="text-blue-600 mt-1 transition-transform duration-300
                          group-hover:translate-x-1"

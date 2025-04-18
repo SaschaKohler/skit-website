@@ -48,13 +48,13 @@ const TechStack = () => {
           {sections.map((section, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
+              className="bg-[var(--color-ui-dark)] rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border border-[var(--color-border)]"
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-3 bg-blue-100 rounded-lg text-blue-600">
                   {section.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900">
+                <h3 className="text-xl font-semibold text-[var(--color-text-dark)]">
                   {section.title}
                 </h3>
               </div>
@@ -63,7 +63,7 @@ const TechStack = () => {
                 {section.features.map((feature, fIndex) => (
                   <li
                     key={fIndex}
-                    className="flex items-center gap-2 text-gray-600"
+                    className="flex items-center gap-2 text-[var(--color-text)]"
                   >
                     <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
                     {feature}
@@ -77,7 +77,7 @@ const TechStack = () => {
                     {section.tools.map((tool, tIndex) => (
                       <div
                         key={tIndex}
-                        className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-100 rounded-full text-sm text-gray-700"
+                        className="flex items-center gap-1.5 px-3 py-1.5 bg-[var(--color-ui-medium)] rounded-full text-sm text-[var(--color-text)]"
                       >
                         {tool.icon}
                         {tool.name}

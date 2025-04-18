@@ -10,9 +10,9 @@ interface ServiceCardProps {
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ title, items, link }) => {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-lg">
-      <h3 className="text-xl font-semibold mb-4">{title}</h3>
-      <ul className="space-y-2 mb-4">
+    <div className="bg-[var(--color-ui-dark)] p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-[var(--color-border)]">
+      <h3 className="text-xl font-semibold mb-4 text-[var(--color-text-dark)]">{title}</h3>
+      <ul className="space-y-2 mb-4 text-[var(--color-text)]">
         {items.map((item, index) => (
           <li key={index}>{item}</li>
         ))}
@@ -20,7 +20,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, items, link }) => {
       {link && (
         <Link
           to={link}
-          className="inline-block mt-4 text-blue-600 hover:text-blue-800 font-medium"
+          className="inline-block mt-4 text-[var(--color-primary)] hover:text-[var(--color-primary-hover)] font-medium transition-colors"
         >
           Mehr erfahren →
         </Link>
