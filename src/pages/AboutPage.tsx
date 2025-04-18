@@ -68,9 +68,9 @@ const AboutPage: React.FC = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-rose-300 to-amber-300 transform rotate-3 rounded-2xl"></div>
               <img
-                src="https://i.pravatar.cc/600?img=82"
+                src="images/about/me.png"
                 alt="Sascha Kohler"
-                className="relative z-10 object-cover w-full h-full rounded-2xl shadow-xl"
+                className="relative z-10  rounded-2xl shadow-xl"
               />
 
               <div className="absolute -bottom-5 -right-5 bg-white rounded-lg shadow-lg p-4 z-20">
@@ -83,7 +83,7 @@ const AboutPage: React.FC = () => {
                   ))}
                 </div>
                 <p className="text-sm font-medium mt-1">
-                  100+ zufriedene Kunden
+                  100% zufriedene Kunden
                 </p>
               </div>
             </div>
@@ -123,7 +123,7 @@ const AboutPage: React.FC = () => {
                 },
                 {
                   icon: <Users className="h-5 w-5 text-rose-500" />,
-                  text: '100+ zufriedene Kunden',
+                  text: '100% zufriedene Kunden',
                 },
                 {
                   icon: <Heart className="h-5 w-5 text-rose-500" />,

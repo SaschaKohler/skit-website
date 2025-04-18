@@ -17,6 +17,56 @@ interface JourneyStep {
   description: string
   color: string
 }
+const journeySteps: JourneyStep[] = [
+  {
+    icon: <EyeOff className="w-10 h-10" />,
+    title: 'Unsichtbar',
+    description:
+      'Ohne professionelle Webpräsenz bleiben Ihre Angebote unentdeckt und Potenzial ungenutzt.',
+    color: 'bg-gray-200',
+  },
+  {
+    icon: <Eye className="w-10 h-10" />,
+    title: 'Sichtbar',
+    description:
+      'Mit einer ansprechenden Website werden Sie von Ihrer Zielgruppe wahrgenommen.',
+    color: 'bg-rose-100',
+  },
+  {
+    icon: <Search className="w-10 h-10" />,
+    title: 'Auffindbar',
+    description:
+      'Durch SEO-Optimierung erscheinen Sie in Suchergebnissen und werden aktiv gefunden.',
+    color: 'bg-rose-200',
+  },
+  {
+    icon: <Users className="w-10 h-10" />,
+    title: 'Ansprechend',
+    description:
+      'Ihr einzigartiges Design spricht Ihre idealen Kunden an und baut Vertrauen auf.',
+    color: 'bg-rose-300',
+  },
+  {
+    icon: <ShoppingCart className="w-10 h-10" />,
+    title: 'Überzeugend',
+    description:
+      'Klar strukturierte Angebote führen zu Anfragen und Buchungen.',
+    color: 'bg-rose-400',
+  },
+  {
+    icon: <Heart className="w-10 h-10" />,
+    title: 'Verbindend',
+    description: 'Sie bauen nachhaltige Beziehungen zu Ihrer Zielgruppe auf.',
+    color: 'bg-rose-500',
+  },
+  {
+    icon: <TrendingUp className="w-10 h-10 text-white" />,
+    title: 'Erfolgsreich',
+    description:
+      'Ihre digitale Präsenz wird zum entscheidenden Wachstumsfaktor Ihres Unternehmens.',
+    color: 'bg-rose-600',
+  },
+]
 
 const ClientJourneySection: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(0)
@@ -33,59 +83,7 @@ const ClientJourneySection: React.FC = () => {
     return () => {
       clearInterval(timer)
     }
-  }, [isInView])
-
-  const journeySteps: JourneyStep[] = [
-    {
-      icon: <EyeOff className="w-10 h-10" />,
-      title: 'Unsichtbar',
-      description:
-        'Ohne professionelle Webpräsenz bleiben Ihre Angebote unentdeckt und Potenzial ungenutzt.',
-      color: 'bg-gray-200',
-    },
-    {
-      icon: <Eye className="w-10 h-10" />,
-      title: 'Sichtbar',
-      description:
-        'Mit einer ansprechenden Website werden Sie von Ihrer Zielgruppe wahrgenommen.',
-      color: 'bg-rose-100',
-    },
-    {
-      icon: <Search className="w-10 h-10" />,
-      title: 'Auffindbar',
-      description:
-        'Durch SEO-Optimierung erscheinen Sie in Suchergebnissen und werden aktiv gefunden.',
-      color: 'bg-rose-200',
-    },
-    {
-      icon: <Users className="w-10 h-10" />,
-      title: 'Ansprechend',
-      description:
-        'Ihr einzigartiges Design spricht Ihre idealen Kunden an und baut Vertrauen auf.',
-      color: 'bg-rose-300',
-    },
-    {
-      icon: <ShoppingCart className="w-10 h-10" />,
-      title: 'Überzeugend',
-      description:
-        'Klar strukturierte Angebote führen zu Anfragen und Buchungen.',
-      color: 'bg-rose-400',
-    },
-    {
-      icon: <Heart className="w-10 h-10" />,
-      title: 'Verbindend',
-      description: 'Sie bauen nachhaltige Beziehungen zu Ihrer Zielgruppe auf.',
-      color: 'bg-rose-500',
-    },
-    {
-      icon: <TrendingUp className="w-10 h-10 text-white" />,
-      title: 'Erfolgsreich',
-      description:
-        'Ihre digitale Präsenz wird zum entscheidenden Wachstumsfaktor Ihres Unternehmens.',
-      color: 'bg-rose-600',
-    },
-  ]
-
+  })
   return (
     <section className="py-20 bg-[var(--color-ui-dark)] w-full">
       <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-7xl">
@@ -118,7 +116,7 @@ const ClientJourneySection: React.FC = () => {
                   key={index}
                   className={`w-12 h-12 rounded-full flex items-center justify-center cursor-pointer ${
                     index <= currentStep ? step.color : 'bg-gray-200'
-                  } transition-all duration-300`}
+                  } transition-all r.duration-300`}
                   onClick={() => {
                     setCurrentStep(index)
                   }}
@@ -140,10 +138,10 @@ const ClientJourneySection: React.FC = () => {
                   >
                     {step.icon}
                   </motion.div>
-
-                  <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap font-medium text-sm">
-                    {step.title}
-                  </div>
+                  {/**/}
+                  {/*   <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap font-medium text-sm"> */}
+                  {/*     {index === currentStep ? step.title : ''} */}
+                  {/*   </div> */}
                 </motion.div>
               ))}
             </div>
@@ -159,11 +157,11 @@ const ClientJourneySection: React.FC = () => {
             transition={{ duration: 0.5 }}
           >
             <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
-              <div
-                className={`${journeySteps[currentStep].color} p-5 rounded-xl`}
-              >
-                {journeySteps[currentStep].icon}
-              </div>
+              {/* <div */}
+              {/*   className={`${journeySteps[currentStep].color} p-5 rounded-xl`} */}
+              {/* > */}
+              {/*   {journeySteps[currentStep].icon} */}
+              {/* </div> */}
 
               <div className="flex-1">
                 <h3 className="text-2xl font-bold mb-2">
@@ -227,4 +225,3 @@ const ClientJourneySection: React.FC = () => {
 }
 
 export default ClientJourneySection
-
