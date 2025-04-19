@@ -1,7 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Header from '../navigation/Header'
-import Footer from '../navigation/Footer'
 
 interface LegalLayoutProps {
   title: string

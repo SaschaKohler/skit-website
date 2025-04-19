@@ -1,4 +1,3 @@
-import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import Header from './components/navigation/Header'
@@ -31,10 +30,22 @@ function App() {
                 <Route path="/" element={<HomePage />} />
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/services" element={<ServicesPage />} />
-                <Route path="/services/web-development" element={<ServicesPage category="web" />} />
-                <Route path="/services/automation" element={<ServicesPage category="automation" />} />
-                <Route path="/services/api-integration" element={<ServicesPage category="api" />} />
-                <Route path="/services/mobile-apps" element={<ServicesPage category="mobile" />} />
+                <Route
+                  path="/services/web-development"
+                  element={<ServicesPage category="web" />}
+                />
+                <Route
+                  path="/services/automation"
+                  element={<ServicesPage category="automation" />}
+                />
+                <Route
+                  path="/services/api-integration"
+                  element={<ServicesPage category="api" />}
+                />
+                <Route
+                  path="/services/mobile-apps"
+                  element={<ServicesPage category="mobile" />}
+                />
                 <Route path="/contact" element={<ContactPage />} />
                 {/* Rechtliche Seiten */}
                 <Route path="/impressum" element={<Impressum />} />
@@ -51,3 +62,4 @@ function App() {
 }
 
 export default App
+

@@ -1,22 +1,10 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import {
-  ArrowRight,
-  Check,
-  LayoutGrid,
-  Smartphone,
-  Search,
-  ShoppingCart,
-  Users,
-  Calendar,
-  Zap,
-  Settings,
-  Heart,
-} from 'lucide-react'
+import { ArrowRight, Check, Users, Calendar, Zap, Heart } from 'lucide-react'
 
 interface ServicesPageProps {
-  category?: 'web' | 'automation' | 'api' | 'mobile';
+  category?: 'web' | 'automation' | 'api' | 'mobile'
 }
 
 const ServicesPage: React.FC<ServicesPageProps> = ({ category }) => {
@@ -58,7 +46,9 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ category }) => {
     <motion.div
       variants={itemVariants}
       className={`bg-[var(--color-ui-dark)] rounded-xl p-6 shadow-lg border ${
-        isPrimary ? 'border-[var(--color-primary-light)]' : 'border-[var(--color-border)]'
+        isPrimary
+          ? 'border-[var(--color-primary-light)]'
+          : 'border-[var(--color-border)]'
       } transition-all duration-300 hover:shadow-xl ${
         isPrimary ? 'relative' : ''
       }`}
@@ -128,13 +118,15 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ category }) => {
           >
             {category ? (
               <>
-                {category === 'web' && 'Web-Entwicklung'} 
-                {category === 'automation' && 'Automatisierung'} 
-                {category === 'api' && 'API-Integration'} 
+                {category === 'web' && 'Web-Entwicklung'}
+                {category === 'automation' && 'Automatisierung'}
+                {category === 'api' && 'API-Integration'}
                 {category === 'mobile' && 'Mobile Anwendungen'}
               </>
             ) : (
-              <>Unsere <span className="text-rose-500">Services</span></>
+              <>
+                Unsere <span className="text-rose-500">Services</span>
+              </>
             )}
           </motion.h1>
           <motion.p
@@ -145,14 +137,20 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ category }) => {
           >
             {category ? (
               <>
-                {category === 'web' && 'Maßgeschneiderte Webanwendungen und Portale für Ihre spezifischen Anforderungen. Von einfachen Websites bis zu komplexen Applikationen.'}
-                {category === 'automation' && 'Automatisieren Sie wiederkehrende Geschäftsprozesse und steigern Sie Ihre Effizienz durch intelligente Workflows und Datenverarbeitung.'}
-                {category === 'api' && 'Verbinden Sie Ihre Systeme nahtlos mit externen Diensten und Plattformen. Entwicklung, Integration und Optimierung von APIs.'}
-                {category === 'mobile' && 'Native und hybride Apps für iOS und Android mit fokussierter Nutzererfahrung. Cross-Platform-Entwicklung mit modernsten Technologien.'}
+                {category === 'web' &&
+                  'Maßgeschneiderte Webanwendungen und Portale für Ihre spezifischen Anforderungen. Von einfachen Websites bis zu komplexen Applikationen.'}
+                {category === 'automation' &&
+                  'Automatisieren Sie wiederkehrende Geschäftsprozesse und steigern Sie Ihre Effizienz durch intelligente Workflows und Datenverarbeitung.'}
+                {category === 'api' &&
+                  'Verbinden Sie Ihre Systeme nahtlos mit externen Diensten und Plattformen. Entwicklung, Integration und Optimierung von APIs.'}
+                {category === 'mobile' &&
+                  'Native und hybride Apps für iOS und Android mit fokussierter Nutzererfahrung. Cross-Platform-Entwicklung mit modernsten Technologien.'}
               </>
             ) : (
-              <>Von maßgeschneiderten Softwarelösungen bis zu komplexen 
-              Automatisierungen – alles mit persönlicher Betreuung.</>
+              <>
+                Von maßgeschneiderten Softwarelösungen bis zu komplexen
+                Automatisierungen – alles mit persönlicher Betreuung.
+              </>
             )}
           </motion.p>
         </div>
@@ -165,9 +163,15 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ category }) => {
           animate="visible"
         >
           <ServiceCard
-            icon={<div className="flex items-center justify-center">
-              <img src="/img/services/web-development.svg" alt="Web-Entwicklung" className="h-48 w-auto" />
-            </div>}
+            icon={
+              <div className="flex items-center justify-center">
+                <img
+                  src="/img/services/web-development.svg"
+                  alt="Web-Entwicklung"
+                  className="h-48 w-auto"
+                />
+              </div>
+            }
             name="Web-Entwicklung"
             description="Maßgeschneiderte Webanwendungen und Portale für Ihre spezifischen Anforderungen."
             features={[
@@ -182,9 +186,15 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ category }) => {
           />
 
           <ServiceCard
-            icon={<div className="flex items-center justify-center">
-              <img src="/img/services/automation.svg" alt="Automatisierung" className="h-48 w-auto" />
-            </div>}
+            icon={
+              <div className="flex items-center justify-center">
+                <img
+                  src="/img/services/automation.svg"
+                  alt="Automatisierung"
+                  className="h-48 w-auto"
+                />
+              </div>
+            }
             name="Automatisierung"
             description="Automatisieren Sie wiederkehrende Geschäftsprozesse und steigern Sie Ihre Effizienz."
             features={[
@@ -198,9 +208,15 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ category }) => {
           />
 
           <ServiceCard
-            icon={<div className="flex items-center justify-center">
-              <img src="/img/services/mobile-apps.svg" alt="Mobile Anwendungen" className="h-48 w-auto" />
-            </div>}
+            icon={
+              <div className="flex items-center justify-center">
+                <img
+                  src="/img/services/mobile-apps.svg"
+                  alt="Mobile Anwendungen"
+                  className="h-48 w-auto"
+                />
+              </div>
+            }
             name="Mobile Anwendungen"
             description="Native und hybride Apps für iOS und Android mit fokussierter Nutzererfahrung."
             features={[
@@ -214,9 +230,15 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ category }) => {
           />
 
           <ServiceCard
-            icon={<div className="flex items-center justify-center">
-              <img src="/img/services/api-integration.svg" alt="API Integration" className="h-48 w-auto" />
-            </div>}
+            icon={
+              <div className="flex items-center justify-center">
+                <img
+                  src="/img/services/api-integration.svg"
+                  alt="API Integration"
+                  className="h-48 w-auto"
+                />
+              </div>
+            }
             name="API Integration"
             description="Verbinden Sie Ihre Systeme nahtlos mit externen Diensten und Plattformen."
             features={[
@@ -230,9 +252,15 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ category }) => {
           />
 
           <ServiceCard
-            icon={<div className="flex items-center justify-center">
-              <img src="/img/services/e-commerce.svg" alt="E-Commerce Lösungen" className="h-48 w-auto" />
-            </div>}
+            icon={
+              <div className="flex items-center justify-center">
+                <img
+                  src="/img/services/e-commerce.svg"
+                  alt="E-Commerce Lösungen"
+                  className="h-48 w-auto"
+                />
+              </div>
+            }
             name="E-Commerce Lösungen"
             description="Maßgeschneiderte Online-Shop-Lösungen und E-Commerce Plattformen."
             features={[
@@ -246,9 +274,15 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ category }) => {
           />
 
           <ServiceCard
-            icon={<div className="flex items-center justify-center">
-              <img src="/img/services/devops.svg" alt="DevOps & Infrastruktur" className="h-48 w-auto" />
-            </div>}
+            icon={
+              <div className="flex items-center justify-center">
+                <img
+                  src="/img/services/devops.svg"
+                  alt="DevOps & Infrastruktur"
+                  className="h-48 w-auto"
+                />
+              </div>
+            }
             name="DevOps & Infrastruktur"
             description="Professionelles Deployment und Betrieb Ihrer Software-Lösungen."
             features={[
@@ -374,8 +408,9 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ category }) => {
             Bereit für Ihre individuelle Softwarelösung?
           </h2>
           <p className="mb-6 max-w-2xl mx-auto">
-            Lassen Sie uns gemeinsam Ihre Anforderungen besprechen und eine maßgeschneiderte 
-            Lösung entwickeln. Vereinbaren Sie jetzt ein kostenloses Beratungsgespräch.
+            Lassen Sie uns gemeinsam Ihre Anforderungen besprechen und eine
+            maßgeschneiderte Lösung entwickeln. Vereinbaren Sie jetzt ein
+            kostenloses Beratungsgespräch.
           </p>
           <Link
             to="/contact"

@@ -46,7 +46,7 @@ const HeartAnimation: React.FC = () => {
       transition: {
         duration: 1.5,
         repeat: Infinity,
-        repeatType: 'reverse',
+        repeatType: 'reverse' as "reverse",
       },
     },
   }
@@ -81,6 +81,7 @@ const HeartAnimation: React.FC = () => {
             >
               <motion.div
                 variants={pulseVariants}
+                initial="initial"
                 animate="pulse"
                 className="text-rose-500 opacity-20"
               >

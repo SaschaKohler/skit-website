@@ -99,15 +99,6 @@ const Testimonials: React.FC = () => {
   }
 
   // Erstellen eines Teilarrays der aktuell sichtbaren Testimonials (für Desktop 3, für mobil 1)
-  const getVisibleTestimonials = () => {
-    const result = []
-    const testimonialCount = testimonials.length
-    for (let i = 0; i < (window.innerWidth >= 768 ? 3 : 1); i++) {
-      const index = (currentIndex + i) % testimonialCount
-      result.push(testimonials[index])
-    }
-    return result
-  }
 
   return (
     <div
@@ -213,7 +204,9 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
       </div>
 
       {/* Testimonial Text */}
-      <p className="text-[var(--color-text)] mb-6 flex-grow">"{testimonial.content}"</p>
+      <p className="text-[var(--color-text)] mb-6 flex-grow">
+        "{testimonial.content}"
+      </p>
 
       {/* Autor */}
       <div className="flex items-center">
@@ -227,8 +220,12 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
           </div>
         )}
         <div>
-          <h4 className="font-semibold text-[var(--color-text-dark)]">{testimonial.name}</h4>
-          <p className="text-[var(--color-primary)] text-sm">{testimonial.role}</p>
+          <h4 className="font-semibold text-[var(--color-text-dark)]">
+            {testimonial.name}
+          </h4>
+          <p className="text-[var(--color-primary)] text-sm">
+            {testimonial.role}
+          </p>
         </div>
       </div>
     </motion.div>

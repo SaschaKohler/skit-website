@@ -24,7 +24,7 @@ const PricingPackages: React.FC = () => {
   )
   const [showAllFeatures, setShowAllFeatures] = useState(false)
   const [selectedUpgrades, setSelectedUpgrades] = useState<string[]>([])
-  const [totalPrice, setTotalPrice] = useState<number>(0)
+  const [, setTotalPrice] = useState<number>(0)
 
   const pricingRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(pricingRef, { once: true, amount: 0.2 })

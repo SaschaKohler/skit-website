@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Heart, Calendar, Zap, Star } from 'lucide-react'
+import { Heart, Calendar, Zap, Star } from 'lucide-react'
 import HeroSection from '../components/sections/HeroSection'
 import PricingPackages from '../components/sections/PricingPackages'
 import Testimonials from '../components/sections/Testimonials'
@@ -122,4 +122,3 @@ const HomePage: React.FC = () => {
 }
 
 export default HomePage
-

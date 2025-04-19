@@ -1,5 +1,5 @@
 # robots.txt für skit.sascha-kohler.at
-# Letzte Aktualisierung: 2025-04-10
+# Letzte Aktualisierung: 2025-04-19
 
 User-agent: *
 Allow: /
