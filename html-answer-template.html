@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vielen Dank für Ihre Anfrage</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+      body {
+        font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+      }
+
+      .email-container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .email-header {
+        background: linear-gradient(135deg, #f43f5e 0%, #f97316 100%);
+        color: white;
+        padding: 30px;
+        text-align: center;
+      }
+
+      .logo {
+        margin-bottom: 20px;
+        width: 150px;
+      }
+
+      .email-header h1 {
+        margin: 0;
+        font-size: 28px;
+        font-weight: 600;
+      }
+
+      .email-body {
+        padding: 40px 30px;
+        color: #4b5563;
+      }
+
+      .email-body h2 {
+        color: #f43f5e;
+        font-size: 20px;
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+
+      .email-body p {
+        margin-bottom: 20px;
+        font-size: 16px;
+      }
+
+      .highlight {
+        background-color: #fef2f2;
+        border-left: 4px solid #f43f5e;
+        padding: 15px 20px;
+        margin-bottom: 25px;
+        border-radius: 0 4px 4px 0;
+      }
+
+      .button {
+        display: inline-block;
+        background-color: #f43f5e;
+        color: white;
+        text-decoration: none;
+        padding: 12px 30px;
+        border-radius: 50px;
+        font-weight: 500;
+        margin-top: 10px;
+        text-align: center;
+        transition: background-color 0.3s ease;
+      }
+
+      .button:hover {
+        background-color: #e11d48;
+      }
+
+      .steps {
+        margin: 30px 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .steps li {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 15px;
+      }
+
+      .steps li:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 5px;
+        width: 20px;
+        height: 20px;
+        background-color: #f43f5e;
+        border-radius: 50%;
+        color: white;
+        text-align: center;
+        line-height: 20px;
+        font-size: 12px;
+      }
+
+      .steps li:nth-child(1):before {
+        content: '1';
+      }
+      .steps li:nth-child(2):before {
+        content: '2';
+      }
+      .steps li:nth-child(3):before {
+        content: '3';
+      }
+
+      .contact-info {
+        background-color: #f9fafb;
+        padding: 20px;
+        border-radius: 6px;
+        margin-top: 30px;
+      }
+
+      .contact-info p {
+        margin: 10px 0;
+        font-size: 14px;
+      }
+
+      .contact-info a {
+        color: #f43f5e;
+        text-decoration: none;
+      }
+
+      .contact-info a:hover {
+        text-decoration: underline;
+      }
+
+      .social-links {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .social-icon {
+        display: inline-block;
+        margin: 0 5px;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background-color: #f43f5e;
+        color: white;
+        text-align: center;
+        line-height: 36px;
+        text-decoration: none;
+        font-size: 18px;
+      }
+
+      .email-footer {
+        background-color: #f3f4f6;
+        padding: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #6b7280;
+      }
+
+      @media screen and (max-width: 600px) {
+        .email-header,
+        .email-body,
+        .email-footer {
+          padding: 20px;
+        }
+
+        .email-header h1 {
+          font-size: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-container">
+      <div class="email-header">
+        <!-- <img src="https://yourwebsite.com/logo.png" alt="SK Webdesign Logo" class="logo"> -->
+        <h1>Vielen Dank für Ihre Anfrage!</h1>
+      </div>
+
+      <div class="email-body">
+        <h2>Hallo {{name}},</h2>
+
+        <p>
+          ich freue mich sehr über Ihr Interesse und Ihre Anfrage. Diese
+          Nachricht bestätigt, dass ich Ihre Anfrage erhalten habe und mich
+          schnellstmöglich bei Ihnen melden werde.
+        </p>
+
+        <div class="highlight">
+          <p>
+            <strong>Ihre Anfrage wurde erfolgreich übermittelt am:</strong
+            ><br />
+            {{date}} um {{time}} Uhr
+          </p>
+        </div>
+
+        <p>Hier sind die nächsten Schritte:</p>
+
+        <ul class="steps">
+          <li>
+            <strong>Bearbeitung Ihrer Anfrage:</strong> Ich prüfe alle Details
+            und bereite mich auf unser Gespräch vor.
+          </li>
+          <li>
+            <strong>Kontaktaufnahme:</strong> In der Regel melde ich mich
+            innerhalb von 24 Stunden bei Ihnen zurück.
+          </li>
+          <li>
+            <strong>Individuelle Beratung:</strong> Wir besprechen Ihre Wünsche
+            und Vorstellungen im Detail.
+          </li>
+        </ul>
+
+        <p>
+          Falls Sie weitere Fragen haben oder zusätzliche Informationen teilen
+          möchten, antworten Sie einfach auf diese E-Mail.
+        </p>
+
+        <a href="https://calendar.app.google/GrZy7UbwVco3zQhx5" class="button"
+          >Jetzt Beratungstermin buchen</a
+        >
+
+        <div class="contact-info">
+          <p><strong>Kontaktdaten:</strong></p>
+          <p>Telefon: <a href="tel:+4365090030372">+43 (0) 650 90 30 372</a></p>
+          <p>
+            E-Mail:
+            <a href="mailto:office@sascha-kohler.at">office@sascha-kohler.at</a>
+          </p>
+          <p>Bürozeiten: Mo-Fr: 9:00 - 17:00 Uhr</p>
+        </div>
+
+        <div class="social-links">
+          <a href="https://facebook.com/saschakohler1972" class="social-icon"
+            >f</a
+          >
+          <a href="https://instagram.com/klaremethode" class="social-icon">i</a>
+          <a href="https://linkedin.com/in/yourprofile" class="social-icon"
+            >in</a
+          >
+        </div>
+      </div>
+
+      <div class="email-footer">
+        <p>&copy; 2025 sk.IT - software Alle Rechte vorbehalten.</p>
+        <p>Sascha Kohler | Web-Entwicklung und Design | Austria</p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -46,12 +46,50 @@ const ContactPage: React.FC = () => {
     e.preventDefault()
     setFormStatus('submitting')
 
-    // Simuliere API-Anruf
-    setTimeout(() => {
+    try {
+      // Webhook URL aus der Umgebungsvariable oder als Fallback die hardcodierte URL
+      const webhookUrl = import.meta.env.VITE_WEBHOOK_URL || 'https://hook.eu2.make.com/jlwmk5crl8yhvtiq2h3pyd6a6aogstwa'
+      
+      // Erweitere die Daten mit Zusatzinformationen
+      const payloadData = {
+        ...formData,
+        timestamp: new Date().toISOString(),
+        source: 'website_contact_form',
+        page: window.location.href,
+        userAgent: navigator.userAgent
+      }
+
+      // Sende die Daten an den Webhook
+      const response = await fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payloadData),
+      })
+
+      if (!response.ok) {
+        throw new Error(`Fehler beim Senden: ${response.status}`)
+      }
+
+      // Erfolgreiche Übermittlung
+      console.log('Form submitted successfully:', formData)
       setFormStatus('success')
-      console.log('Form submitted:', formData)
-      // In einer realen Anwendung würde hier der API-Aufruf stattfinden
-    }, 1500)
+      
+      // Formular zurücksetzen
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+        website: false,
+        pricing: 'oneTime',
+        bookingSystem: false,
+      })
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      setFormStatus('error')
+    }
   }
 
   return (
@@ -110,6 +148,27 @@ const ContactPage: React.FC = () => {
                     className="inline-flex items-center px-6 py-3 bg-rose-500 hover:bg-rose-600 text-white rounded-lg font-medium transition-all"
                   >
                     Neue Anfrage senden
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </button>
+                </div>
+              ) : formStatus === 'error' ? (
+                <div className="text-center py-10">
+                  <div className="inline-flex items-center justify-center w-20 h-20 bg-red-100 rounded-full mb-6">
+                    <span className="h-10 w-10 text-red-500">!</span>
+                  </div>
+                  <h2 className="text-2xl font-bold mb-3">
+                    Ein Fehler ist aufgetreten
+                  </h2>
+                  <p className="text-gray-600 mb-6">
+                    Leider konnte Ihre Anfrage nicht übermittelt werden. Bitte versuchen Sie es später erneut oder kontaktieren Sie uns direkt per E-Mail oder Telefon.
+                  </p>
+                  <button
+                    onClick={() => {
+                      setFormStatus('idle')
+                    }}
+                    className="inline-flex items-center px-6 py-3 bg-rose-500 hover:bg-rose-600 text-white rounded-lg font-medium transition-all"
+                  >
+                    Erneut versuchen
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </button>
                 </div>
