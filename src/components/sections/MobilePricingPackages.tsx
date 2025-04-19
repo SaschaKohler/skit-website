@@ -89,32 +89,32 @@ const MobilePricingPackages: React.FC = () => {
   }
 
   return (
-    <section className="py-12 bg-rose-50 w-full" id="mobile-pricing-section">
+    <section className="py-12 bg-rose-50 dark:bg-rose-950/20 w-full" id="mobile-pricing-section">
       <div className="container mx-auto px-4">
         {/* Seitenüberschrift */}
         <div className="text-center mb-8">
-          <span className="inline-block px-3 py-1 rounded-full bg-rose-100 text-rose-700 text-xs font-medium mb-2">
+          <span className="inline-block px-3 py-1 rounded-full bg-rose-100 dark:bg-rose-900/40 text-rose-700 dark:text-rose-300 text-xs font-medium mb-2">
             14-Tage Express-Website
           </span>
-          <h2 className="text-2xl font-bold mb-3">
-            Transparente <span className="text-rose-500">Preisgestaltung</span>
+          <h2 className="text-2xl font-bold mb-3 dark:text-white">
+            Transparente <span className="text-rose-500 dark:text-rose-400">Preisgestaltung</span>
           </h2>
-          <p className="text-gray-600 text-sm mb-4 max-w-md mx-auto">
+          <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 max-w-md mx-auto">
             Wählen Sie zwischen einmaliger Zahlung oder flexiblen Raten
           </p>
         </div>
 
         {/* Preis-Card */}
-        <div className="bg-white rounded-xl p-5 shadow-md mb-8 border border-gray-200">
-          <h3 className="text-xl font-bold text-gray-800 mb-2">
+        <div className="bg-white dark:bg-gray-800 rounded-xl p-5 shadow-md mb-8 border border-gray-200 dark:border-gray-700">
+          <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
             {mainPackage.name}
           </h3>
-          <p className="text-gray-600 text-sm mb-4">
+          <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
             {mainPackage.description}
           </p>
 
           {/* Zahlungsart-Tabs */}
-          <div className="mb-4 flex border border-gray-200 rounded-lg overflow-hidden">
+          <div className="mb-4 flex border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
             <button
               onClick={() => {
                 setBillingCycle('oneTime')
@@ -122,7 +122,7 @@ const MobilePricingPackages: React.FC = () => {
               className={`flex-1 py-2 px-3 text-xs font-medium ${
                 billingCycle === 'oneTime'
                   ? 'bg-rose-500 text-white'
-                  : 'bg-gray-50 text-gray-700'
+                  : 'bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
               }`}
             >
               <CreditCard className="inline-block h-3 w-3 mr-1" />
@@ -135,7 +135,7 @@ const MobilePricingPackages: React.FC = () => {
               className={`flex-1 py-2 px-3 text-xs font-medium ${
                 billingCycle === 'monthly'
                   ? 'bg-rose-500 text-white'
-                  : 'bg-gray-50 text-gray-700'
+                  : 'bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
               }`}
             >
               <Clock className="inline-block h-3 w-3 mr-1" />
@@ -144,18 +144,18 @@ const MobilePricingPackages: React.FC = () => {
           </div>
 
           {/* Preis */}
-          <div className="bg-rose-50 rounded-lg p-4 mb-4 text-center">
-            <span className="text-2xl font-bold text-rose-600">
+          <div className="bg-rose-50 dark:bg-rose-900/30 rounded-lg p-4 mb-4 text-center">
+            <span className="text-2xl font-bold text-rose-600 dark:text-rose-400">
               {billingCycle === 'monthly'
                 ? `${mainPackage.price.monthly}€`
                 : `${mainPackage.price.oneTime}€`}
             </span>
-            <span className="text-sm font-normal text-gray-500 ml-1">
+            <span className="text-sm font-normal text-gray-500 dark:text-gray-400 ml-1">
               {billingCycle === 'monthly' ? '/Monat' : ' einmalig'}
             </span>
 
             {billingCycle === 'monthly' && (
-              <p className="text-rose-700 text-xs mt-2">
+              <p className="text-rose-700 dark:text-rose-300 text-xs mt-2">
                 <span className="font-semibold">Startgebühr:</span>{' '}
                 {mainPackage.setup}€, dann 6 x {mainPackage.price.monthly}€
                 monatlich
@@ -163,7 +163,7 @@ const MobilePricingPackages: React.FC = () => {
             )}
 
             {billingCycle === 'oneTime' && (
-              <p className="text-rose-700 text-xs mt-2">
+              <p className="text-rose-700 dark:text-rose-300 text-xs mt-2">
                 <span className="font-semibold">Zahlungsplan:</span> 50%
                 Anzahlung, 50% bei Fertigstellung
               </p>
@@ -173,12 +173,12 @@ const MobilePricingPackages: React.FC = () => {
           {/* Features */}
           <div className="mb-4">
             <div className="flex items-center justify-between mb-2">
-              <h4 className="font-medium text-gray-800 text-sm">Inklusive:</h4>
+              <h4 className="font-medium text-gray-800 dark:text-white text-sm">Inklusive:</h4>
               <button
                 onClick={() => {
                   setExpandedFeatures(!expandedFeatures)
                 }}
-                className="text-xs text-rose-500 flex items-center"
+                className="text-xs text-rose-500 dark:text-rose-400 flex items-center"
               >
                 {expandedFeatures ? 'Weniger anzeigen' : 'Alle anzeigen'}
                 {expandedFeatures ? (
@@ -192,8 +192,8 @@ const MobilePricingPackages: React.FC = () => {
             <ul className="space-y-2">
               {displayedFeatures.map((feature, idx) => (
                 <li key={idx} className="flex items-start">
-                  <Check className="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700 text-sm">{feature}</span>
+                  <Check className="h-4 w-4 text-green-500 dark:text-green-400 mr-2 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700 dark:text-gray-300 text-sm">{feature}</span>
                 </li>
               ))}
             </ul>
@@ -210,13 +210,13 @@ const MobilePricingPackages: React.FC = () => {
 
         {/* Erweiterungen */}
         <div className="mb-8">
-          <h3 className="text-lg font-bold mb-4">Website-Erweiterungen</h3>
+          <h3 className="text-lg font-bold mb-4 dark:text-white">Website-Erweiterungen</h3>
 
           <div className="space-y-3">
             {upgrades.map(upgrade => (
               <div
                 key={upgrade.id}
-                className="bg-white border border-gray-200 rounded-lg overflow-hidden"
+                className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden"
               >
                 <div
                   className="p-3 flex justify-between items-center cursor-pointer"
@@ -225,22 +225,22 @@ const MobilePricingPackages: React.FC = () => {
                   }}
                 >
                   <div>
-                    <span className="font-medium text-gray-800">
+                    <span className="font-medium text-gray-800 dark:text-white">
                       {upgrade.name}
                     </span>
-                    <span className="text-rose-600 font-bold ml-2 text-sm">
+                    <span className="text-rose-600 dark:text-rose-400 font-bold ml-2 text-sm">
                       +{upgrade.price}€
                     </span>
                   </div>
                   <ChevronDown
-                    className={`h-5 w-5 text-gray-400 transition-transform ${
+                    className={`h-5 w-5 text-gray-400 dark:text-gray-500 transition-transform ${
                       selectedFeature === upgrade.id ? 'rotate-180' : ''
                     }`}
                   />
                 </div>
 
                 {selectedFeature === upgrade.id && (
-                  <div className="px-3 pb-3 pt-0 text-sm text-gray-600 border-t border-gray-100">
+                  <div className="px-3 pb-3 pt-0 text-sm text-gray-600 dark:text-gray-300 border-t border-gray-100 dark:border-gray-700">
                     {upgrade.description}
                   </div>
                 )}
@@ -250,8 +250,8 @@ const MobilePricingPackages: React.FC = () => {
         </div>
 
         {/* Schritte */}
-        <div className="bg-white rounded-lg p-4 mb-8 border border-gray-200">
-          <h3 className="text-lg font-bold mb-3">So läuft Ihr Projekt ab</h3>
+        <div className="bg-white dark:bg-gray-800 rounded-lg p-4 mb-8 border border-gray-200 dark:border-gray-700">
+          <h3 className="text-lg font-bold mb-3 dark:text-white">So läuft Ihr Projekt ab</h3>
 
           <div className="space-y-4">
             {[
@@ -262,33 +262,33 @@ const MobilePricingPackages: React.FC = () => {
               { day: 14, title: 'Fertigstellung & Launch' },
             ].map((step, idx) => (
               <div key={idx} className="flex items-center">
-                <div className="w-7 h-7 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center font-bold text-xs mr-3">
+                <div className="w-7 h-7 rounded-full bg-rose-100 dark:bg-rose-900/50 text-rose-600 dark:text-rose-300 flex items-center justify-center font-bold text-xs mr-3">
                   {step.day}
                 </div>
-                <span className="text-gray-800 font-medium">{step.title}</span>
+                <span className="text-gray-800 dark:text-white font-medium">{step.title}</span>
               </div>
             ))}
           </div>
         </div>
 
         {/* Folgekosten */}
-        <div className="bg-white rounded-lg p-4 mb-8 border border-gray-200">
-          <h3 className="text-lg font-bold mb-2">Nach dem ersten Jahr</h3>
-          <p className="text-gray-600 text-sm mb-3">
+        <div className="bg-white dark:bg-gray-800 rounded-lg p-4 mb-8 border border-gray-200 dark:border-gray-700">
+          <h3 className="text-lg font-bold mb-2 dark:text-white">Nach dem ersten Jahr</h3>
+          <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">
             Für Hosting, Domain, Updates und Support:
           </p>
-          <div className="bg-rose-50 p-3 rounded border border-rose-100 text-center">
-            <div className="text-gray-800 font-medium">
+          <div className="bg-rose-50 dark:bg-rose-900/30 p-3 rounded border border-rose-100 dark:border-rose-800/50 text-center">
+            <div className="text-gray-800 dark:text-white font-medium">
               19€/Monat oder 190€/Jahr
             </div>
-            <div className="text-xs text-gray-600 mt-1">
+            <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">
               Bei jährlicher Zahlung sparen Sie 2 Monate
             </div>
           </div>
         </div>
 
         {/* CTA */}
-        <div className="bg-gradient-to-r from-rose-500 to-amber-500 rounded-lg p-5 text-white text-center">
+        <div className="bg-gradient-to-r from-rose-500 to-amber-500 dark:from-rose-600/80 dark:to-amber-600/80 rounded-lg p-5 text-white text-center">
           <h3 className="text-lg font-bold mb-2">
             Bereit für Ihren Webauftritt?
           </h3>
@@ -297,7 +297,7 @@ const MobilePricingPackages: React.FC = () => {
           </p>
           <Link
             to="/contact"
-            className="inline-block bg-white text-rose-600 font-medium py-2 px-5 rounded-lg"
+            className="inline-block bg-white dark:bg-gray-800 text-rose-600 dark:text-rose-400 font-medium py-2 px-5 rounded-lg"
           >
             Jetzt starten
             <ArrowRight className="inline-block ml-1 h-4 w-4" />

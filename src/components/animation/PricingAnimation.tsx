@@ -58,7 +58,7 @@ const PricingAnimation: React.FC<PricingAnimationProps> = ({
 
   return (
     <div ref={ref} className="mt-6">
-      <p className="text-sm text-gray-500 mb-1 text-center">Gesamtpreis:</p>
+      <p className="text-sm text-gray-500 dark:text-gray-400 mb-1 text-center">Gesamtpreis:</p>
       <motion.div
         className="text-center"
         animate={controls}
@@ -68,7 +68,7 @@ const PricingAnimation: React.FC<PricingAnimationProps> = ({
           {priceDigits.map((digit, index) => (
             <motion.span
               key={index}
-              className="text-4xl font-bold text-rose-600"
+              className="text-4xl font-bold text-rose-600 dark:text-rose-400"
               variants={digitVariants}
               initial="hidden"
               animate="visible"
@@ -78,7 +78,7 @@ const PricingAnimation: React.FC<PricingAnimationProps> = ({
             </motion.span>
           ))}
           <motion.span
-            className="text-4xl font-bold text-rose-600 ml-1"
+            className="text-4xl font-bold text-rose-600 dark:text-rose-400 ml-1"
             variants={digitVariants}
             initial="hidden"
             animate="visible"
@@ -89,7 +89,7 @@ const PricingAnimation: React.FC<PricingAnimationProps> = ({
         </div>
 
         <motion.p
-          className="text-sm text-gray-500 mt-1"
+          className="text-sm text-gray-500 dark:text-gray-400 mt-1"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
@@ -103,12 +103,12 @@ const PricingAnimation: React.FC<PricingAnimationProps> = ({
       {/* Ausgewählte Upgrades Visuelle Darstellung */}
       {selectedUpgrades.length > 0 && (
         <motion.div
-          className="mt-4 bg-rose-50 p-3 rounded-lg"
+          className="mt-4 bg-rose-50 dark:bg-rose-900/30 p-3 rounded-lg"
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
           transition={{ duration: 0.3 }}
         >
-          <p className="text-sm font-medium text-rose-700 mb-2">
+          <p className="text-sm font-medium text-rose-700 dark:text-rose-300 mb-2">
             Ihre ausgewählten Erweiterungen:
           </p>
           <div className="flex flex-wrap gap-2">
@@ -117,7 +117,7 @@ const PricingAnimation: React.FC<PricingAnimationProps> = ({
               return upgrade ? (
                 <motion.span
                   key={id}
-                  className="inline-flex items-center bg-white px-2 py-1 rounded-full text-xs font-medium text-rose-600 border border-rose-200"
+                  className="inline-flex items-center bg-white dark:bg-gray-800 px-2 py-1 rounded-full text-xs font-medium text-rose-600 dark:text-rose-400 border border-rose-200 dark:border-rose-800/50"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.3 }}
