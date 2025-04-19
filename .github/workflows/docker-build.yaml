@@ -2,7 +2,7 @@ name: Build and Push Container
 
 on:
   push:
-    branches: [production]
+    branches: [skit-services]
 
 jobs:
   build:
@@ -21,4 +21,4 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: ghcr.io/saschakohler/skit-service:latest
+          tags: ghcr.io/saschakohler/skit-services:latest
