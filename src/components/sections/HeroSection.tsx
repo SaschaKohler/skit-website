@@ -12,7 +12,6 @@ const HeroSection: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false)
   const [currentSlide, setCurrentSlide] = useState(0)
 
-  // Stockfotos zum Thema "Sichtbarkeit im Internet"
   const carouselImages = [
     {
       url: '/img/unsichtbar.png',
@@ -27,13 +26,13 @@ const HeroSection: React.FC = () => {
     },
     {
       url: '/img/auffindbar.png',
-      alt: 'Weg von - unsichtbar | Hinzu - gefunden',
+      alt: 'Weg von - Unsichtbar | Hinzu - Sichtbar',
       fallback: 'https://via.placeholder.com/600x600?text=Online+Erfolg',
     },
 
     {
       url: '/img/erfolgreich.png',
-      alt: 'Hinzu - Erfolgreiche Unternehmerin',
+      alt: '-> Erfolgreiche Unternehmerin',
       fallback: 'https://via.placeholder.com/600x600?text=Online+Erfolg',
     },
   ]
@@ -186,7 +185,6 @@ const HeroSection: React.FC = () => {
             </motion.div>
           </div>
 
-          {/* Carousel für Stockfotos zur Online-Sichtbarkeit */}
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
