@@ -33,24 +33,24 @@ const images = {
   '/': [
     {
       loc: 'https://skit.sascha-kohler.at/img/hero-image.svg',
-      title: 'sk.IT Software - Professionelle IT-Dienstleistungen',
-      caption: 'Softwareentwicklung und IT-Dienstleistungen von Sascha Kohler'
+      title: 'WordPress Websites für mehr Online-Sichtbarkeit',
+      caption: 'Professionelle Webpräsenz in 14 Tagen von Sascha Kohler'
     }
   ],
   '/about': [
     {
       loc: 'https://skit.sascha-kohler.at/img/og-image.jpg',
-      title: 'Über Sascha Kohler - Fullstack Entwickler'
+      title: 'Sascha Kohler - WordPress Experte für Online-Sichtbarkeit'
     }
   ],
   '/services': [
     {
       loc: 'https://skit.sascha-kohler.at/img/services/web-development.svg',
-      title: 'Web-Entwicklung'
+      title: 'WordPress Website Entwicklung in 14 Tagen'
     },
     {
       loc: 'https://skit.sascha-kohler.at/img/services/automation.svg',
-      title: 'Automatisierung'
+      title: 'Online Marketing & Sichtbarkeit'
     }
   ]
 };
