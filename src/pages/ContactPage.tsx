@@ -48,15 +48,17 @@ const ContactPage: React.FC = () => {
 
     try {
       // Webhook URL aus der Umgebungsvariable oder als Fallback die hardcodierte URL
-      const webhookUrl = import.meta.env.VITE_WEBHOOK_URL || 'https://hook.eu2.make.com/jlwmk5crl8yhvtiq2h3pyd6a6aogstwa'
-      
+      const webhookUrl =
+        import.meta.env.VITE_WEBHOOK_URL ||
+        'https://hook.eu2.make.com/jlwmk5crl8yhvtiq2h3pyd6a6aogstwa'
+
       // Erweitere die Daten mit Zusatzinformationen
       const payloadData = {
         ...formData,
         timestamp: new Date().toISOString(),
         source: 'website_contact_form',
         page: window.location.href,
-        userAgent: navigator.userAgent
+        userAgent: navigator.userAgent,
       }
 
       // Sende die Daten an den Webhook
@@ -75,7 +77,7 @@ const ContactPage: React.FC = () => {
       // Erfolgreiche Übermittlung
       console.log('Form submitted successfully:', formData)
       setFormStatus('success')
-      
+
       // Formular zurücksetzen
       setFormData({
         name: '',
@@ -160,7 +162,9 @@ const ContactPage: React.FC = () => {
                     Ein Fehler ist aufgetreten
                   </h2>
                   <p className="text-gray-600 mb-6">
-                    Leider konnte Ihre Anfrage nicht übermittelt werden. Bitte versuchen Sie es später erneut oder kontaktieren Sie uns direkt per E-Mail oder Telefon.
+                    Leider konnte Ihre Anfrage nicht übermittelt werden. Bitte
+                    versuchen Sie es später erneut oder kontaktieren Sie uns
+                    direkt per E-Mail oder Telefon.
                   </p>
                   <button
                     onClick={() => {
@@ -428,7 +432,7 @@ const ContactPage: React.FC = () => {
                     Schnelle Terminvereinbarung
                   </h4>
                   <a
-                    href="https://calendly.com/skwebdesign/beratung"
+                    href="https://calendar.app.google/GrZy7UbwVco3zQhx5"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center px-5 py-2 bg-white text-rose-600 hover:bg-rose-100 rounded-lg font-medium transition-all w-full justify-center"
