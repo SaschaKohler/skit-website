@@ -216,7 +216,7 @@ const ClientJourneySection: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Jetzt Beratungsgespräch vereinbaren
+            <a href="/contact">Jetzt Beratungsgespräch vereinbaren</a>
           </motion.button>
         </div>
       </div>

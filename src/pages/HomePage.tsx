@@ -57,29 +57,29 @@ const HomePage: React.FC = () => {
       <ClientJourneySection />
 
       {/* Kundenbewertungen Vorschau */}
-      <section className="py-16 bg-gradient-to-b from-[var(--color-ui-dark)] to-[var(--color-primary-light)] w-full">
-        <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-7xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-subheading font-bold mb-4">
-              Was unsere Kunden sagen
-            </h2>
-            <div className="flex justify-center space-x-1 mb-3">
-              {[1, 2, 3, 4, 5].map(star => (
-                <Star
-                  key={star}
-                  className="h-6 w-6 text-amber-400 fill-amber-400"
-                />
-              ))}
-            </div>
-            <p className="text-gray-600 max-w-2xl mx-auto font-body">
-              Zufriedene Kunden sind unsere beste Referenz. Sehen Sie selbst,
-              was andere über unsere Websites sagen.
-            </p>
-          </div>
-
-          <Testimonials />
-        </div>
-      </section>
+      {/* <section className="py-16 bg-gradient-to-b from-[var(--color-ui-dark)] to-[var(--color-primary-light)] w-full"> */}
+      {/*   <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-7xl"> */}
+      {/*     <div className="text-center mb-12"> */}
+      {/*       <h2 className="text-3xl font-subheading font-bold mb-4"> */}
+      {/*         Was unsere Kunden sagen */}
+      {/*       </h2> */}
+      {/*       <div className="flex justify-center space-x-1 mb-3"> */}
+      {/*         {[1, 2, 3, 4, 5].map(star => ( */}
+      {/*           <Star */}
+      {/*             key={star} */}
+      {/*             className="h-6 w-6 text-amber-400 fill-amber-400" */}
+      {/*           /> */}
+      {/*         ))} */}
+      {/*       </div> */}
+      {/*       <p className="text-gray-600 max-w-2xl mx-auto font-body"> */}
+      {/*         Zufriedene Kunden sind unsere beste Referenz. Sehen Sie selbst, */}
+      {/*         was andere über unsere Websites sagen. */}
+      {/*       </p> */}
+      {/*     </div> */}
+      {/**/}
+      {/*     <Testimonials /> */}
+      {/*   </div> */}
+      {/* </section> */}
 
       {/* Hauptprodukt - Preisgestaltung */}
       <section id="pricing" className="scroll-mt-20">
