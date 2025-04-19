@@ -61,7 +61,7 @@ const Impressum: React.FC = () => {
           variants={itemVariants}
           className="grid grid-cols-1 md:grid-cols-2 gap-6"
         >
-          <div className="bg-gradient-to-br from-rose-50 to-amber-50 rounded-lg p-5 shadow-sm">
+          <div className="bg-white rounded-lg p-5 shadow-sm">
             <h3 className="font-semibold mb-3 flex items-center">
               <Phone className="h-5 w-5 text-rose-500 mr-2" />
               Kontakt
@@ -109,7 +109,7 @@ const Impressum: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-rose-50 to-amber-50 rounded-lg p-5 shadow-sm">
+          <div className="bg-white rounded-lg p-5 shadow-sm">
             <h3 className="font-semibold mb-3 flex items-center">
               <Building className="h-5 w-5 text-rose-500 mr-2" />
               Aufsichtsbehörde/Gewerbebehörde
@@ -132,7 +132,7 @@ const Impressum: React.FC = () => {
         </motion.section>
 
         <motion.section variants={itemVariants}>
-          <div className="bg-gradient-to-br from-rose-50 to-amber-50 rounded-lg p-5 shadow-sm">
+          <div className="bg-white rounded-lg p-5 shadow-sm">
             <h2 className="text-xl font-semibold mb-4 flex items-center">
               <Mail className="h-5 w-5 text-rose-500 mr-2" />
               Datenschutz

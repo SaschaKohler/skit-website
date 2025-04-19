@@ -39,7 +39,7 @@ const Datenschutz: React.FC = () => {
             <Info className="h-6 w-6 text-rose-500 mr-2" />
             Einleitung und Überblick
           </h2>
-          <div className="bg-gradient-to-br from-rose-50 to-amber-50 rounded-lg p-5 shadow-sm">
+          <div className="bg-white rounded-lg p-5 shadow-sm">
             <p className="text-gray-700">
               Wir haben diese Datenschutzerklärung verfasst, um Ihnen gemäß der
               Vorgaben der Datenschutz-Grundverordnung (EU) 2016/679 und
@@ -61,7 +61,7 @@ const Datenschutz: React.FC = () => {
               personenbezogener Daten haben, finden Sie nachfolgend die
               Kontaktdaten der verantwortlichen Person bzw. Stelle:
             </p>
-            <div className="bg-gradient-to-br from-rose-50 to-amber-50 rounded-lg p-4">
+            <div className="bg-white rounded-lg p-4">
               <p className="text-gray-700">
                 Sascha Kohler
                 <br />
@@ -109,7 +109,7 @@ const Datenschutz: React.FC = () => {
             <Shield className="h-6 w-6 text-rose-500 mr-2" />
             Rechte laut Datenschutz-Grundverordnung
           </h2>
-          <div className="bg-gradient-to-br from-rose-50 to-amber-50 rounded-lg p-5 shadow-sm">
+          <div className="bg-white rounded-lg p-5 shadow-sm">
             <p className="text-gray-700 mb-3">
               Gemäß Artikel 13, 14 DSGVO informieren wir Sie über die folgenden
               Rechte:
