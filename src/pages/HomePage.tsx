@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Heart, Calendar, Zap } from 'lucide-react'
 import HeroSection from '../components/sections/HeroSection'
-import PricingPackages from '../components/sections/PricingPackages'
+import ResponsivePricingPackages from '../components/sections/ResponsivePricingPackages'
 import ClientJourneySection from '../components/sections/ClientJourneySection'
 
 const HomePage: React.FC = () => {
@@ -82,7 +82,7 @@ const HomePage: React.FC = () => {
 
       {/* Hauptprodukt - Preisgestaltung */}
       <section id="pricing" className="scroll-mt-20">
-        <PricingPackages />
+        <ResponsivePricingPackages />
       </section>
 
       {/* CTA-Section */}
