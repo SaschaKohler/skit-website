@@ -12,7 +12,7 @@ RUN npm install
 COPY . .
 
 # Build the application
-npm run build
+RUN npm run build
 
 RUN apk add --no-cache vim
 # Use nginx for serving static files
