@@ -1,10 +1,9 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Heart, Calendar, Zap, Star } from 'lucide-react'
+import { Heart, Calendar, Zap } from 'lucide-react'
 import HeroSection from '../components/sections/HeroSection'
 import PricingPackages from '../components/sections/PricingPackages'
-import Testimonials from '../components/sections/Testimonials'
 import ClientJourneySection from '../components/sections/ClientJourneySection'
 
 const HomePage: React.FC = () => {
