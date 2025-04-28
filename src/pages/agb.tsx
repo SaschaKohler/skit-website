@@ -58,7 +58,7 @@ const AGB: React.FC = () => {
     {
       title: '4. Preise und Zahlungsbedingungen',
       content:
-        'Alle Preise verstehen sich in Euro und zuzüglich der gesetzlichen Mehrwertsteuer. Rechnungen sind innerhalb von 14 Tagen nach Rechnungsdatum ohne Abzug zur Zahlung fällig.',
+        'Alle Preise sind Netto/Brutto Preise es gilt die Kleinuntertehmerregelung d.h. Befreiung von der Umsatzsteuerpflicht. Rechnungen sind innerhalb von 14 Tagen nach Rechnungsdatum ohne Abzug zur Zahlung fällig.',
       icon: <CreditCard className="h-6 w-6 text-rose-500" />,
     },
     {

@@ -150,9 +150,9 @@ const PricingPage: React.FC = () => {
                   Wichtiger Hinweis zu unseren Preisen
                 </h3>
                 <p className="text-blue-700">
-                  Alle angegebenen Preise sind Nettopreise zzgl. der
-                  gesetzlichen MwSt. Die endgültigen Kosten werden individuell
-                  nach Ihren spezifischen Anforderungen kalkuliert.
+                  Alle angegebenen Preise sind Brutto/Nettopreise. Es gilt die
+                  Kleinunternehmer-Regelung. Die endgültigen Kosten werden
+                  individuell nach Ihren spezifischen Anforderungen kalkuliert.
                 </p>
               </div>
             </div>
