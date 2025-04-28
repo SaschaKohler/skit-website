@@ -197,12 +197,14 @@ const PricingPackages: React.FC = () => {
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 dark:text-white">
               Transparente{' '}
-              <span className="text-rose-500 dark:text-rose-400">Preisgestaltung</span>
+              <span className="text-rose-500 dark:text-rose-400">
+                Preisgestaltung
+              </span>
             </h2>
             <p className="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto mb-8">
               Wählen Sie zwischen flexiblen Abomodellen oder einer einmaligen
               Zahlung - ganz nach Ihren Bedürfnissen. Alle Preise sind
-              Nettopreise und verstehen sich zzgl. der gesetzlichen MwSt.
+              Brutto/Netto - Preise es gilt hier die Kleinunternehmer-Regelung.
             </p>
           </motion.div>
 
@@ -343,7 +345,9 @@ const PricingPackages: React.FC = () => {
                         variants={featureItemVariants}
                       >
                         <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700 dark:text-gray-300">{feature}</span>
+                        <span className="text-gray-700 dark:text-gray-300">
+                          {feature}
+                        </span>
                       </motion.li>
                     ))}
                   </motion.ul>
@@ -596,7 +600,9 @@ const PricingPackages: React.FC = () => {
                       <h4 className="font-medium text-rose-600 dark:text-rose-400">
                         {step.title}
                       </h4>
-                      <p className="text-sm text-gray-700 dark:text-gray-300">{step.desc}</p>
+                      <p className="text-sm text-gray-700 dark:text-gray-300">
+                        {step.desc}
+                      </p>
                     </div>
                   </motion.div>
                 ))}
@@ -659,4 +665,3 @@ const PricingPackages: React.FC = () => {
   )
 }
 export default PricingPackages
-
