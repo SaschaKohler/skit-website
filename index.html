@@ -17,9 +17,9 @@
     />
     <meta name="author" content="Sascha Kohler" />
     <meta name="robots" content="index, follow" />
-    <meta name="geo.region" content="AT" />
-    <meta name="geo.position" content="48.2082;16.3738" />
-    <meta name="ICBM" content="48.2082, 16.3738" />
+    <meta name="geo.region" content="AT-4" />
+    <meta name="geo.position" content="48.2833;14.5167" />
+    <meta name="ICBM" content="48.2833, 14.5167" />
 
     <!-- Open Graph Meta Tags -->
     <meta
@@ -58,21 +58,47 @@
 
     <link rel="canonical" href="https://skit.sascha-kohler.at" />
     <title>
-      Endlich Online Sichtbar | Professionelle WordPress Websites in 14 Tagen - Sascha Kohler
+      Endlich Online Sichtbar | Professionelle WordPress Websites in 14 Tagen -
+      Sascha Kohler
     </title>
-    <script
-      id="Cookiebot"
-      src="https://consent.cookiebot.com/uc.js"
-      data-cbid="394e25f1-948e-4ec7-a1d0-f7066c924867"
-      type="text/javascript"
-    ></script>
-    <!-- Strukturierte Daten für Google Rich Snippets -->
+
+    <!-- Google Tag Manager mit Consent Mode V2 -->
+    <script>
+      // Google Consent Mode V2 - Default auf denied setzen
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      
+      // Consent Mode V2 Default State
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'functionality_storage': 'granted',
+        'personalization_storage': 'denied',
+        'security_storage': 'granted',
+        'wait_for_update': 500
+      });
+      
+      // Google Tag Manager
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-P7STZ72R');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Strukturierte Daten für Google Rich Snippets & AI Search -->
+    <!-- Organization Schema -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
-        "name": "WordPress Websites von Sascha Kohler",
-        "description": "Professionelle WordPress-Websites in 14 Tagen. Maßgeschneiderte Webpräsenz für Unternehmerinnen und Selbständige, die online sichtbar werden wollen.",
+        "@id": "https://skit.sascha-kohler.at/#organization",
+        "name": "sk.IT Software - WordPress Websites für Gründer:innen",
+        "alternateName": "WordPress Websites von Sascha Kohler",
+        "description": "Professionelle WordPress-Websites in 14 Tagen für Unternehmensgründer:innen und Einzelunternehmer:innen. Komplette digitale Grundausstattung: Website, Google Analytics, GDPR-Consent, Email-Marketing, Automatisierung. Als dipl. Lebens- und Sozialberater verstehe ich die Herausforderungen von Gründer:innen.",
         "url": "https://skit.sascha-kohler.at",
         "logo": "https://skit.sascha-kohler.at/img/logo.png",
         "image": "https://skit.sascha-kohler.at/img/og-image.jpg",
@@ -81,20 +107,225 @@
         "address": {
           "@type": "PostalAddress",
           "addressCountry": "AT",
-          "addressRegion": "Österreich"
+          "addressRegion": "Oberösterreich",
+          "addressLocality": "Schwertberg",
+          "postalCode": "4311",
+          "streetAddress": "Furth 6"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "48.2833",
+          "longitude": "14.5167"
         },
         "priceRange": "€€",
+        "areaServed": {
+          "@type": "Country",
+          "name": "Österreich"
+        },
         "serviceType": [
           "WordPress Entwicklung",
           "Webdesign",
           "Online Marketing",
           "SEO-Optimierung",
-          "Webhosting"
+          "SEO Management",
+          "GDPR-Compliance",
+          "Google Analytics Setup",
+          "Email-Marketing mit Brevo",
+          "Prozessautomatisierung mit make.com",
+          "Digitale Beratung für Gründer:innen"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "WordPress Website Pakete",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Starter Paket - WordPress Website",
+                "description": "Professionelle WordPress-Website mit bis zu 5 Seiten, GDPR-Compliance, Google Services Setup, responsives Design"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Business Paket - WordPress Website Plus",
+                "description": "Erweiterte WordPress-Website mit bis zu 10 Seiten, Email-Marketing Setup, erweiterte Automatisierung"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Premium Paket - Individuelle Entwicklung",
+                "description": "Maßgeschneiderte Webanwendungen mit React, TypeScript, WebGL, KI-Integration"
+              }
+            }
+          ]
+        },
+        "founder": {
+          "@type": "Person",
+          "@id": "https://skit.sascha-kohler.at/#founder",
+          "name": "Sascha Kohler",
+          "jobTitle": "Web Developer & Digitaler Mentor",
+          "description": "Web-Entwickler seit den frühen 90ern, spezialisiert auf WordPress, React, WebGL und KI-gestützte Anwendungen. Als dipl. Lebens- und Sozialberater, NLP-Trainer und Coach verstehe ich die Herausforderungen von Gründer:innen aus eigener Erfahrung.",
+          "url": "https://www.sascha-kohler.at",
+          "email": "office@sascha-kohler.at",
+          "telephone": "+4365090030372",
+          "knowsAbout": [
+            "WordPress Entwicklung",
+            "React",
+            "TypeScript",
+            "WebGL",
+            "Three.js",
+            "Künstliche Intelligenz",
+            "Google Analytics",
+            "GDPR Compliance",
+            "Email Marketing",
+            "Prozessautomatisierung",
+            "Lebens- und Sozialberatung",
+            "NLP",
+            "Coaching"
+          ],
+          "hasCredential": [
+            {
+              "@type": "EducationalOccupationalCredential",
+              "name": "Diplomierter Lebens- und Sozialberater"
+            },
+            {
+              "@type": "EducationalOccupationalCredential",
+              "name": "NLP-Trainer"
+            },
+            {
+              "@type": "EducationalOccupationalCredential",
+              "name": "Coach"
+            },
+            {
+              "@type": "EducationalOccupationalCredential",
+              "name": "Mentaltrainer"
+            }
+          ],
+          "sameAs": [
+            "https://www.sascha-kohler.at",
+            "https://www.ja-zum-leben.at",
+            "https://www.magazin.ja-zum-leben.at"
+          ]
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5",
+          "reviewCount": "12",
+          "bestRating": "5"
+        },
+        "slogan": "Ihr sicherer Start in die digitale Welt",
+        "knowsAbout": [
+          "WordPress für Unternehmensgründer:innen",
+          "Digitale Grundausstattung für Einzelunternehmen",
+          "AMS Unternehmer-Gründer-Programm",
+          "DSGVO-konforme Websites",
+          "Google Analytics und Tag Manager",
+          "Email-Marketing für Gründer:innen"
+        ]
+      }
+    </script>
+
+    <!-- FAQ Schema für AI Search -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Wie lange dauert es, bis meine Website online ist?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ihre professionelle WordPress-Website ist in nur 14 Tagen online. Das beinhaltet die komplette Einrichtung: Website, Google Analytics, GDPR-Consent Banner, Email-Marketing Setup und alle rechtlichen Seiten (Impressum, Datenschutz, AGB)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Brauche ich technische Vorkenntnisse für WordPress?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nein, Sie brauchen keinerlei technische Vorkenntnisse. Ich richte alles für Sie ein und zeige Ihnen in einer persönlichen Schulung, wie Sie Ihre Website einfach selbst pflegen können. WordPress ist speziell für Nicht-Techniker:innen entwickelt worden."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was kostet eine WordPress-Website für Gründer:innen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Die Preise beginnen beim Starter-Paket mit professioneller Website, Google Services und GDPR-Compliance. Alle Pakete beinhalten die komplette digitale Grundausstattung ohne versteckte Kosten. Im kostenlosen Erstgespräch besprechen wir, welches Paket am besten zu Ihnen passt."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ist meine Website DSGVO-konform?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja, absolut. Jede Website beinhaltet einen GDPR Consent V2 konformen Cookie-Banner, eine rechtssichere Datenschutzerklärung, ein Impressum und AGB. Sie können rechtssicher durchstarten ohne sich um Abmahnungen sorgen zu müssen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was unterscheidet sk.IT Software von anderen Webdesign-Agenturen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Die Kombination aus drei Elementen macht den Unterschied: 1) Technische Expertise seit den frühen 90ern in Web, React, WebGL und KI, 2) Digitale Kompetenz im WordPress- und Google-Ökosystem, 3) Menschliche Kompetenz als dipl. Lebens- und Sozialberater, NLP-Trainer und Coach. Als selbst Einzelunternehmer:in verstehe ich Ihre Gründungssituation aus eigener Erfahrung."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Welche Services sind im WordPress-Paket enthalten?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Das komplette Paket umfasst: Professionelle WordPress-Website mit responsivem Design, Google Analytics und Tag Manager Setup, Google Unternehmensprofil, Google Search Console, GDPR-konformer Cookie-Banner, Datenschutzerklärung, Impressum, AGB, Brevo Email-Marketing Setup, Newsletter-Integration, und persönliche Schulung. Optional: Prozessautomatisierung mit make.com."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Für wen ist sk.IT Software ideal?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ideal für Unternehmensgründer:innen und Einzelunternehmer:innen, speziell Teilnehmer:innen des AMS Unternehmer-Gründer-Programms in Österreich, frisch gegründete Einzelunternehmen, und Gründer:innen die wissen dass Online-Präsenz wichtig ist, aber keine Zeit für die technische Komplexität haben."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Bietet sk.IT Software auch individuelle Entwicklung an?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja, neben WordPress-Websites biete ich auch individuelle Entwicklung mit React, TypeScript, WebGL (Three.js), KI-gestützte Features und maßgeschneiderte Webanwendungen. 'Anything is possible' - für komplexere Anforderungen finden wir immer eine Lösung."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Gibt es Mentoring und Beratung über die technische Umsetzung hinaus?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja, als dipl. Lebens- und Sozialberater, NLP-Trainer, Coach und Mentaltrainer biete ich ganzheitliche Begleitung. Ich verstehe die Herausforderungen der Gründungsphase aus eigener Erfahrung und unterstütze nicht nur technisch, sondern auch menschlich und strategisch."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie läuft das kostenlose Erstgespräch ab?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Im kostenlosen Erstgespräch klären wir Ihre Bedürfnisse, Ihre Zielgruppe und Ihre digitalen Ziele. Ich zeige Ihnen, wie ich Sie bei Ihrem sicheren Start in die digitale Welt unterstützen kann. Es ist ein unverbindliches Kennenlernen ohne Verkaufsdruck - Sie entscheiden danach in Ruhe, ob Sie mit mir arbeiten möchten."
+            }
+          }
         ]
       }
     </script>
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7STZ72R"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
     <div id="root"></div>
     <script type="module" src="/src/main.tsx" defer></script>
   </body>

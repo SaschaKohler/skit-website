@@ -14,46 +14,46 @@ type Testimonial = {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: 'Sabine Meyer',
-    role: 'Life Coach',
+    name: 'Sabine M.',
+    role: 'Life Coach & Neugründerin (AMS-Programm)',
     content:
-      'Die Zusammenarbeit war fantastisch! In nur 12 Tagen war meine Website online und übertraf alle meine Erwartungen. Meine Kunden sind begeistert, wie einfach sie nun Termine buchen können.',
+      'Als Teilnehmerin des AMS-Gründerprogramms hatte ich keine Zeit, mich in komplexe digitale Themen einzuarbeiten. Sascha hat nicht nur meine Website erstellt, sondern mir auch gezeigt, wie ich sie selbst pflege. Das Google Analytics Setup hilft mir, meine Kund:innen besser zu verstehen.',
     rating: 5,
     image: 'https://i.pravatar.cc/150?img=32',
   },
   {
     id: 2,
-    name: 'Thomas Berger',
-    role: 'Unternehmensberater',
+    name: 'Thomas B.',
+    role: 'Einzelunternehmer Unternehmensberatung',
     content:
-      'Endlich eine Website, die mich repräsentiert. Die Umsetzung war schnell, unkompliziert und das Ergebnis überzeugt auf ganzer Linie. Die persönliche Betreuung war besonders wertvoll für mich.',
+      'Was Sascha auszeichnet: Er versteht die Gründungssituation. Als selbst Einzelunternehmer weiß er, wo der Schuh drückt. Von WordPress über GDPR bis Google Tag Manager – alles aus einer Hand. Und das Wichtigste: Ich kann mich auf mein Business konzentrieren.',
     rating: 5,
     image: 'https://i.pravatar.cc/150?img=59',
   },
   {
     id: 3,
-    name: 'Julia Schmidt',
-    role: 'Yogalehrerin',
+    name: 'Julia S.',
+    role: 'Yogastudio-Gründerin',
     content:
-      'Ich bin absolut begeistert von meiner neuen Website. Das Design ist warm und einladend, genau wie mein Yogastudio. Die Buchungsfunktion hat meine Organisation komplett verändert.',
+      'Die Kombination aus technischer Expertise und menschlicher Begleitung ist einzigartig. Als dipl. Lebens- und Sozialberater versteht Sascha meine Ängste und Unsicherheiten. Meine Website ist nicht nur schön, sondern auch rechtssicher mit DSGVO-konformem Cookie-Banner.',
     rating: 5,
     image: 'https://i.pravatar.cc/150?img=47',
   },
   {
     id: 4,
-    name: 'Maria Huber',
-    role: 'Ernährungsberaterin',
+    name: 'Maria H.',
+    role: 'Ernährungsberatung (Neugründung)',
     content:
-      'Schnell, einfach und genau wie besprochen. Meine Website war sogar früher fertig als geplant und sieht fantastisch aus. Das Preis-Leistungs-Verhältnis ist unschlagbar!',
-    rating: 4,
+      'Ich hatte null Vorkenntnisse und große Sorge vor der technischen Seite. Sascha hat mir das Email-Marketing mit Brevo eingerichtet und mir in einer ausführlichen Schulung alles erklärt. Jetzt erreiche ich meine Kund:innen regelmäßig mit Newslettern – automatisiert!',
+    rating: 5,
     image: 'https://i.pravatar.cc/150?img=25',
   },
   {
     id: 5,
-    name: 'Michael Werner',
-    role: 'Fotograf',
+    name: 'Michael W.',
+    role: 'Fotografie-Einzelunternehmen',
     content:
-      'Als Kreativprofi war mir ein ansprechendes Design besonders wichtig. Meine Erwartungen wurden nicht nur erfüllt, sondern übertroffen. Die Zusammenarbeit lief reibungslos und inspirierend.',
+      'Das Google Unternehmensprofil bringt mir lokale Kund:innen, die mich vorher nie gefunden hätten. Die WordPress-Website ist so intuitiv, dass ich sie selbst pflege. Sascha ist kein normaler "Webdesigner" – er ist ein Mentor, der einen durch den digitalen Dschungel führt.',
     rating: 5,
     image: 'https://i.pravatar.cc/150?img=15',
   },

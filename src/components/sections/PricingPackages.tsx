@@ -38,55 +38,55 @@ const PricingPackages: React.FC = () => {
 
   // Hauptpaket
   const mainPackage = {
-    name: 'WordPress Website',
-    description: 'Ihre professionelle Website in nur 14 Tagen online',
+    name: 'Gründer:innen Starter-Paket',
+    description: 'Ihr sicherer digitaler Start – rechtssicher, professionell und ohne Vorkenntnisse',
     price: {
       monthly: 99,
-      oneTime: 790,
+      oneTime: 890,
     },
     setup: 297, // Einmalige Anzahlung bei monatlicher Zahlungsweise
     features: [
       'Professionelle 4-Seiten WordPress-Website',
-      'Modernes, responsives Design',
-      'Kontaktformular',
-      'Content Management System (WordPress)',
-      'Domain & Hosting (1 Jahr inklusive)',
-      'SEO-Grundeinrichtung',
-      'Online in nur 14 Tagen',
-      'Mobil optimiert für alle Geräte',
-      'WordPress-Basisschulung (60 Min.)',
-      'SSL-Verschlüsselung (https)',
+      'Responsives Design für alle Geräte',
+      'Google Analytics & Tag Manager Setup',
+      'GDPR-konformer Cookie-Banner',
       'Rechtssichere Datenschutzerklärung & Impressum',
-      'Google Maps Integration (optional)',
-      'Social Media Links',
-      'Kontaktseite mit Anfahrt',
+      'Google Unternehmensprofil-Einrichtung',
+      'Basis SEO-Optimierung',
+      'Domain & Hosting (1 Jahr inklusive)',
+      'SSL-Verschlüsselung (https)',
+      'Kontaktformular mit DSGVO-Einwilligung',
+      'WordPress-Schulung (90 Min.)',
+      'Social Media Integration',
+      'Online in 14 Tagen',
+      'Persönliche Betreuung als Mentor',
     ],
   }
 
   // Mögliche Erweiterungen als Upgrades
   const upgrades = [
     {
-      id: 'booking',
-      name: 'Buchungssystem',
-      price: 290,
-      description: 'Online-Terminbuchung für Kunden',
-      popular: true,
-      icon: <Calendar className="h-5 w-5 text-rose-500" />,
-    },
-    {
-      id: 'blog',
-      name: 'Blog-Einrichtung',
+      id: 'email-marketing',
+      name: 'Email-Marketing Paket',
       price: 240,
-      description: 'Blogbereich inkl. Kategorien & Tags',
-      popular: false,
-      icon: <MessageCircle className="h-5 w-5 text-amber-500" />,
+      description: 'Brevo Setup, Newsletter-Integration, automatisierte Kampagnen',
+      popular: true,
+      icon: <MessageCircle className="h-5 w-5 text-rose-500" />,
     },
     {
-      id: 'premium',
-      name: 'Premium Theme',
-      price: 190,
-      description: 'Erweitertes Design mit mehr Funktionen',
+      id: 'booking',
+      name: 'Online-Terminbuchung',
+      price: 290,
+      description: 'Professionelles Buchungssystem für Ihre Kund:innen',
       popular: true,
+      icon: <Calendar className="h-5 w-5 text-amber-500" />,
+    },
+    {
+      id: 'automation',
+      name: 'Automatisierungs-Paket',
+      price: 340,
+      description: 'make.com Workflows für Prozessautomatisierung',
+      popular: false,
       icon: <Zap className="h-5 w-5 text-amber-500" />,
     },
     {
@@ -193,18 +193,18 @@ const PricingPackages: React.FC = () => {
             transition={{ duration: 0.6 }}
           >
             <span className="inline-block px-4 py-1 rounded-full bg-rose-100 dark:bg-rose-900/40 text-rose-700 dark:text-rose-300 text-sm font-medium mb-3">
-              14-Tage Express-Website
+              Speziell für Gründer:innen
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 dark:text-white">
-              Transparente{' '}
+              Ihr digitaler{' '}
               <span className="text-rose-500 dark:text-rose-400">
-                Preisgestaltung
+                Start ohne Risiko
               </span>
             </h2>
             <p className="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto mb-8">
-              Wählen Sie zwischen flexiblen Abomodellen oder einer einmaligen
-              Zahlung - ganz nach Ihren Bedürfnissen. Alle Preise sind
-              Brutto/Netto - Preise es gilt hier die Kleinunternehmer-Regelung.
+              Alles, was Sie für einen sicheren und rechtssicheren Online-Auftritt brauchen.
+              Flexible Zahlungsoptionen für Ihre Gründungssituation.
+              Alle Preise Brutto/Netto nach Kleinunternehmer-Regelung.
             </p>
           </motion.div>
 
@@ -321,7 +321,7 @@ const PricingPackages: React.FC = () => {
                     className="group inline-flex items-center justify-center w-full bg-rose-500 hover:bg-rose-600 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 transform hover:translate-y-[-2px] shadow-lg hover:shadow-xl"
                   >
                     <Calendar className="mr-2 h-5 w-5" />
-                    Kostenloses Beratungsgespräch
+                    Kostenloses Erstgespräch
                     <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
@@ -376,11 +376,11 @@ const PricingPackages: React.FC = () => {
             <motion.div className="mb-12" variants={cardVariants}>
               <h3 className="text-xl font-bold mb-2 flex items-center dark:text-white">
                 <PocketKnife className="h-5 w-5 mr-2 text-rose-500 dark:text-rose-400" />
-                Website-Erweiterungen
+                Digitale Erweiterungen
               </h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6">
-                Passen Sie Ihre Website mit zusätzlichen Funktionen an Ihre
-                Bedürfnisse an.
+                Erweitern Sie Ihre digitale Präsenz mit professionellen Tools,
+                die Ihnen Zeit sparen und Ihr Business voranbringen.
               </p>
 
               <div className="grid md:grid-cols-2 gap-4">

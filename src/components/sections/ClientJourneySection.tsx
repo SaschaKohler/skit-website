@@ -20,50 +20,50 @@ interface JourneyStep {
 const journeySteps: JourneyStep[] = [
   {
     icon: <EyeOff className="w-10 h-10" />,
-    title: 'Unsichtbar',
+    title: 'Gründungsphase',
     description:
-      'Ohne professionelle Webpräsenz bleiben Ihre Angebote unentdeckt und Potenzial ungenutzt.',
+      'Sie starten Ihr Einzelunternehmen – zwischen Business-Plan, Behördengängen und ersten Kund:innen bleibt die digitale Präsenz oft auf der Strecke.',
     color: 'bg-gray-200',
   },
   {
     icon: <Eye className="w-10 h-10" />,
-    title: 'Sichtbar',
+    title: 'Digitale Basis',
     description:
-      'Mit einer ansprechenden Website werden Sie von Ihrer Zielgruppe wahrgenommen.',
+      'Mit WordPress, Google-Services und GDPR-Compliance schaffen wir gemeinsam Ihre rechtssichere Online-Präsenz.',
     color: 'bg-rose-100',
   },
   {
     icon: <Search className="w-10 h-10" />,
     title: 'Auffindbar',
     description:
-      'Durch SEO-Optimierung erscheinen Sie in Suchergebnissen und werden aktiv gefunden.',
+      'Durch Google Unternehmensprofil und Basis-SEO werden potenzielle Kund:innen auf Sie aufmerksam.',
     color: 'bg-rose-200',
   },
   {
     icon: <Users className="w-10 h-10" />,
-    title: 'Ansprechend',
+    title: 'Professionell',
     description:
-      'Ihr einzigartiges Design spricht Ihre idealen Kunden an und baut Vertrauen auf.',
+      'Ihr professioneller Webauftritt vermittelt Vertrauen – auch als frisch gegründetes Unternehmen.',
     color: 'bg-rose-300',
   },
   {
     icon: <ShoppingCart className="w-10 h-10" />,
-    title: 'Überzeugend',
+    title: 'Automatisiert',
     description:
-      'Klar strukturierte Angebote führen zu Anfragen und Buchungen.',
+      'Mit Email-Marketing und Automatisierungen (make.com) sparen Sie wertvolle Zeit für Ihr Kerngeschäft.',
     color: 'bg-rose-400',
   },
   {
     icon: <Heart className="w-10 h-10" />,
-    title: 'Verbindend',
-    description: 'Sie bauen nachhaltige Beziehungen zu Ihrer Zielgruppe auf.',
+    title: 'Begleitet',
+    description: 'Als Mentor bleibe ich an Ihrer Seite – für Fragen, Anpassungen und Weiterentwicklungen.',
     color: 'bg-rose-500',
   },
   {
     icon: <TrendingUp className="w-10 h-10 text-white" />,
-    title: 'Erfolgsreich',
+    title: 'Erfolgreich',
     description:
-      'Ihre digitale Präsenz wird zum entscheidenden Wachstumsfaktor Ihres Unternehmens.',
+      'Ihre digitale Präsenz wächst mit Ihrem Business und wird zum Wachstumsmotor Ihrer Gründung.',
     color: 'bg-rose-600',
   },
 ]
@@ -89,11 +89,11 @@ const ClientJourneySection: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-7xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-heading mb-4">
-            Ihre Reise zur digitalen Sichtbarkeit
+            Von der Gründung zum digitalen Erfolg
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Von unsichtbar zu unübersehbar: Entdecken Sie, wie ich Ihre digitale
-            Transformation begleite.
+            So begleite ich Sie als Gründer:in von den ersten Schritten bis zur etablierten
+            Online-Präsenz – Schritt für Schritt, menschzentriert und verständlich.
           </p>
         </div>
 
@@ -205,18 +205,18 @@ const ClientJourneySection: React.FC = () => {
         {/* Call to Action */}
         <div className="text-center mt-16">
           <h3 className="text-2xl font-medium mb-4">
-            Bereit für Ihre eigene Erfolgsgeschichte?
+            Bereit für Ihren digitalen Start?
           </h3>
           <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
-            Lassen Sie uns gemeinsam Ihren digitalen Auftritt transformieren und
-            Ihre Sichtbarkeit erhöhen.
+            Als Gründer:in haben Sie genug zu tun. Lassen Sie mich die digitale Seite übernehmen,
+            damit Sie sich auf Ihr Kerngeschäft konzentrieren können.
           </p>
           <motion.button
             className="bg-rose-500 hover:bg-rose-600 text-white px-8 py-3 rounded-lg font-medium inline-flex items-center"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <a href="/contact">Jetzt Beratungsgespräch vereinbaren</a>
+            <a href="/contact">Kostenloses Erstgespräch vereinbaren</a>
           </motion.button>
         </div>
       </div>

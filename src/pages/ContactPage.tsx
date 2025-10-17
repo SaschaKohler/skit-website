@@ -110,7 +110,7 @@ const ContactPage: React.FC = () => {
               transition={{ duration: 0.5 }}
             >
               Lassen Sie uns{' '}
-              <span className="text-rose-500">zusammenarbeiten</span>
+              <span className="text-rose-500">gemeinsam starten</span>
             </motion.h1>
             <motion.p
               className="text-gray-600 text-lg max-w-2xl mx-auto"
@@ -118,8 +118,9 @@ const ContactPage: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              Vereinbaren Sie ein kostenloses Beratungsgespräch oder stellen Sie
-              direkt Ihre Anfrage.
+              Als Gründer:in brauchen Sie einen verlässlichen Partner an Ihrer Seite.
+              Vereinbaren Sie ein kostenloses Erstgespräch und wir besprechen,
+              wie ich Sie unterstützen kann.
             </motion.p>
           </div>
 
@@ -140,8 +141,8 @@ const ContactPage: React.FC = () => {
                     Vielen Dank für Ihre Anfrage!
                   </h2>
                   <p className="text-gray-600 mb-6">
-                    Ich werde mich schnellstmöglich bei Ihnen melden, in der
-                    Regel innerhalb von 24 Stunden.
+                    Ich melde mich schnellstmöglich bei Ihnen – in der
+                    Regel innerhalb von 24 Stunden. Ich freue mich auf unser Gespräch!
                   </p>
                   <button
                     onClick={() => {
@@ -442,7 +443,7 @@ const ContactPage: React.FC = () => {
                   </a>
                   <p className="text-sm mt-3 text-white/80">
                     Buchen Sie direkt einen Termin für ein kostenloses
-                    30-minütiges Beratungsgespräch.
+                    30-minütiges Erstgespräch – ganz unkompliziert und unverbindlich.
                   </p>
                 </div>
               </div>

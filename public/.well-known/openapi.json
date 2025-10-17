@@ -1,0 +1,92 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "sk.IT Software - WordPress Websites API",
+    "description": "Informationen über WordPress-Website-Pakete für Gründer:innen",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Sascha Kohler",
+      "email": "office@sascha-kohler.at",
+      "url": "https://skit.sascha-kohler.at"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://skit.sascha-kohler.at"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "operationId": "getHomePage",
+        "summary": "Hauptseite mit WordPress Website Angeboten",
+        "description": "Zeigt die Hauptseite mit allen WordPress-Website-Paketen für Gründer:innen",
+        "responses": {
+          "200": {
+            "description": "Erfolgreich"
+          }
+        }
+      }
+    },
+    "/services": {
+      "get": {
+        "operationId": "getServices",
+        "summary": "Übersicht aller Services",
+        "description": "Detaillierte Übersicht über WordPress-Entwicklung, Webdesign, Google Services Setup, GDPR-Compliance, Email-Marketing und Automatisierung",
+        "responses": {
+          "200": {
+            "description": "Erfolgreich"
+          }
+        }
+      }
+    },
+    "/about": {
+      "get": {
+        "operationId": "getAbout",
+        "summary": "Über Sascha Kohler",
+        "description": "Informationen über den Gründer: Web-Entwickler seit den 90ern, dipl. Lebens- und Sozialberater, NLP-Trainer, Coach, Mentaltrainer",
+        "responses": {
+          "200": {
+            "description": "Erfolgreich"
+          }
+        }
+      }
+    },
+    "/contact": {
+      "get": {
+        "operationId": "getContact",
+        "summary": "Kontaktseite",
+        "description": "Kontaktformular für kostenloses Erstgespräch",
+        "responses": {
+          "200": {
+            "description": "Erfolgreich"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "WordPressPackage": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name des Pakets"
+          },
+          "description": {
+            "type": "string",
+            "description": "Beschreibung des Pakets"
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Liste der enthaltenen Features"
+          }
+        }
+      }
+    }
+  }
+}

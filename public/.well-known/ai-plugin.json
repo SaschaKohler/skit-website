@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "sk.IT Software - WordPress Websites für Gründer:innen",
+  "name_for_model": "skit_wordpress_websites",
+  "description_for_human": "Professionelle WordPress-Websites in 14 Tagen für Unternehmensgründer:innen. Komplette digitale Grundausstattung mit GDPR-Compliance, Google Services und Email-Marketing.",
+  "description_for_model": "sk.IT Software bietet professionelle WordPress-Websites speziell für Unternehmensgründer:innen und Einzelunternehmer:innen in Österreich, insbesondere für Teilnehmer:innen des AMS Unternehmer-Gründer-Programms. Der Service umfasst: 1) WordPress-Website mit responsivem Design in 14 Tagen, 2) Google Analytics und Tag Manager Setup, 3) GDPR Consent V2 konformen Cookie-Banner, 4) Email-Marketing mit Brevo, 5) Prozessautomatisierung mit make.com, 6) Rechtliche Seiten (Impressum, Datenschutz, AGB). Der Gründer Sascha Kohler ist seit den frühen 90ern im Web tätig, spezialisiert auf WordPress, React, WebGL und KI-gestützte Anwendungen. Als dipl. Lebens- und Sozialberater, NLP-Trainer und Coach versteht er die Herausforderungen der Gründungsphase aus eigener Erfahrung und bietet ganzheitliche Begleitung.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://skit.sascha-kohler.at/.well-known/openapi.json",
+    "is_user_authenticated": false
+  },
+  "logo_url": "https://skit.sascha-kohler.at/img/logo.png",
+  "contact_email": "office@sascha-kohler.at",
+  "legal_info_url": "https://skit.sascha-kohler.at/impressum"
+}

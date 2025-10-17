@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Mail, Phone, Instagram, Facebook, Linkedin, Heart } from 'lucide-react'
+import { Mail, Phone, Facebook, Linkedin, Heart } from 'lucide-react'
 import { useTheme } from '../../context/ThemeContext'
 
 const Footer: React.FC = () => {
@@ -21,19 +21,10 @@ const Footer: React.FC = () => {
               </span>
             </Link>
             <p className="text-[var(--color-text)] mb-4">
-              Professionelle Softwarelösungen und IT-Dienstleistungen.
-              Persönlich, kompetent und zuverlässig.
+              Ihr digitaler Mentor für einen sicheren Start.
+              Spezialisiert auf Gründer:innen und Einzelunternehmer:innen.
             </p>
             <div className="flex space-x-3 mb-4">
-              <a
-                href="https://instagram.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-[var(--color-card-bg)] p-2 rounded-full text-[var(--color-primary)] hover:text-[var(--color-primary-hover)] hover:shadow-md transition-all"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
               <a
                 href="https://facebook.com/"
                 target="_blank"
@@ -85,12 +76,12 @@ const Footer: React.FC = () => {
             <h3 className="font-semibold text-[var(--color-text-dark)] mb-4">Services</h3>
             <ul className="space-y-2">
               {[
-                { name: 'Web-Entwicklung', path: '/services/web-development' },
-                { name: 'Automatisierung', path: '/services/automation' },
-                { name: 'API-Integration', path: '/services/api-integration' },
-                { name: 'Mobile Anwendungen', path: '/services/mobile-apps' },
-                { name: 'E-Commerce Lösungen', path: '/services' },
-                { name: 'Technical Consulting', path: '/services' },
+                { name: 'WordPress Website', path: '/services' },
+                { name: 'Google Services', path: '/services' },
+                { name: 'GDPR & Datenschutz', path: '/services' },
+                { name: 'Email-Marketing', path: '/services' },
+                { name: 'Automatisierung', path: '/services' },
+                { name: 'Mentoring & Beratung', path: '/services' },
               ].map((service, idx) => (
                 <li key={idx}>
                   <Link
@@ -131,7 +122,7 @@ const Footer: React.FC = () => {
                   to="/contact"
                   className="inline-flex items-center px-5 py-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white rounded-lg font-medium transition-all hover:shadow-md text-sm"
                 >
-                  Kostenloses Beratungsgespräch
+                  Kostenloses Erstgespräch
                 </Link>
               </li>
             </ul>

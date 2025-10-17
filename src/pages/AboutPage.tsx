@@ -52,8 +52,8 @@ const AboutPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Als leidenschaftlicher Webentwickler helfe ich meinen Kunden dabei,
-            online erfolgreich zu sein – schnell, persönlich und unkompliziert.
+            Als digitaler Mentor und dipl. Lebens- und Sozialberater unterstütze ich
+            Gründer:innen dabei, ihre Online-Präsenz sicher und professionell aufzubauen.
           </motion.p>
         </div>
 
@@ -96,38 +96,41 @@ const AboutPage: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h2 className="text-2xl font-bold mb-4 text-gray-800">
-              Hallo, ich bin Sascha
+              Ihr digitaler Begleiter in der Gründungsphase
             </h2>
             <p className="text-gray-600 mb-4">
-              Seit über 10 Jahren gestalte ich Webseiten für kleine Unternehmen,
-              Coaches und Berater. Meine Leidenschaft ist es, komplexe
-              Technologie einfach zugänglich zu machen und Ihnen zu helfen, im
-              digitalen Raum erfolgreich zu sein.
+              Seit den frühen 90er Jahren bin ich in der digitalen Welt zuhause – mit einer
+              Affinität, die fast schon Nerd-Charakter hat. Von WordPress über React-Frameworks
+              bis hin zu 3D mit WebGL und Three.js: <strong>Anything is possible</strong>.
+              Aber das Wichtigste für Sie als Gründer:in ist nicht die Technologie an sich,
+              sondern dass sie für Sie arbeitet.
             </p>
 
             <p className="text-gray-600 mb-6">
-              Als Ein-Personen-Unternehmen biete ich Ihnen persönliche Betreuung
-              vom ersten Gespräch bis zur fertigen Website – ohne komplizierte
-              Prozesse, direkte Kommunikation und mit schnellen Reaktionszeiten.
+              Als <strong>dipl. Lebens- und Sozialberater</strong> sowie selbst Einzelunternehmer:in
+              (Digitales Business, Mentaltrainer, Coach, NLP-Trainer) verstehe ich Ihre Situation
+              wie kaum ein anderer. Ich kenne nicht nur den pragmatischen Ansatz eines
+              Computerspezialisten, sondern stehe im <strong>wohlwollenden Verständnis</strong> als
+              Mentor an Ihrer Seite – eine Kombination, die Sie am Markt so nicht finden werden.
             </p>
 
             <div className="grid grid-cols-2 gap-4 mb-6">
               {[
                 {
                   icon: <Clock className="h-5 w-5 text-rose-500" />,
-                  text: '14 Tage bis zur fertigen Website',
+                  text: 'Seit Anfang der 90er im Web',
                 },
                 {
                   icon: <Calendar className="h-5 w-5 text-rose-500" />,
-                  text: '10+ Jahre Erfahrung',
+                  text: 'Dipl. Lebens- & Sozialberater',
                 },
                 {
                   icon: <Users className="h-5 w-5 text-rose-500" />,
-                  text: '100% zufriedene Kunden',
+                  text: 'Selbst Einzelunternehmer:in',
                 },
                 {
                   icon: <Heart className="h-5 w-5 text-rose-500" />,
-                  text: 'Persönliche Betreuung',
+                  text: 'KI & Automatisierungs-Expertise',
                 },
               ].map((item, idx) => (
                 <div key={idx} className="flex items-center">
@@ -160,19 +163,19 @@ const AboutPage: React.FC = () => {
           >
             {[
               {
-                icon: <Clock className="h-8 w-8 text-amber-500" />,
-                title: 'Schnelle Umsetzung',
-                desc: 'Zeit ist wertvoll. Deshalb arbeite ich effizient und zielgerichtet, um Ihre Website in nur 14 Tagen online zu bringen.',
-              },
-              {
                 icon: <Heart className="h-8 w-8 text-rose-500" />,
-                title: 'Persönliche Betreuung',
-                desc: 'Als Ein-Personen-Unternehmen bin ich Ihr direkter Ansprechpartner – ohne Umwege und mit schnellen Antworten.',
+                title: 'Ganzheitliches Verständnis',
+                desc: 'Als dipl. Lebens- und Sozialberater verstehe ich die Herausforderungen einer Gründung und begleite Sie mit Empathie und Kompetenz.',
               },
               {
                 icon: <CheckCircle className="h-8 w-8 text-amber-500" />,
-                title: 'Qualität & Einfachheit',
-                desc: 'Ich kombiniere technische Expertise mit benutzerfreundlichem Design, damit Sie Ihre Website selbst pflegen können.',
+                title: 'Komplexität einfach gemacht',
+                desc: 'Von WordPress über Google Analytics bis GDPR – ich übernehme die technische Komplexität, damit Sie sich auf Ihr Business konzentrieren können.',
+              },
+              {
+                icon: <Clock className="h-8 w-8 text-amber-500" />,
+                title: 'Mehr als nur Code',
+                desc: 'Mit Expertise in KI, Automatisierung und modernsten Technologien schaffe ich individuelle Lösungen – aber immer menschzentriert und verständlich.',
               },
             ].map((approach, idx) => (
               <motion.div
@@ -194,12 +197,12 @@ const AboutPage: React.FC = () => {
         <div className="mb-16">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-2xl font-bold mb-6 text-center">
-              Warum ich WordPress empfehle
+              WordPress – Die perfekte Basis für Gründer:innen
             </h2>
             <p className="text-gray-600 text-center mb-8">
-              WordPress bietet die perfekte Balance aus professionellen
-              Funktionen und einfacher Bedienung, ideal für kleine Unternehmen
-              und Selbstständige.
+              Als Gründer:in brauchen Sie eine Lösung, die professionell ist, aber ohne
+              Vorkenntnisse bedienbar bleibt. WordPress bietet genau diese Balance –
+              und ich richte es so ein, dass Sie sich sofort zurechtfinden.
             </p>
           </div>
 
@@ -275,36 +278,36 @@ const AboutPage: React.FC = () => {
         {/* Qualifikationen und Zertifizierungen */}
         <div className="mb-16">
           <h2 className="text-2xl font-bold mb-6 text-center">
-            Qualifikationen
+            Meine Expertise für Ihren Start
           </h2>
 
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                icon: '🎓',
-                title: 'Webentwicklung',
+                icon: '💻',
+                title: 'Technologien',
                 items: [
-                  'Full-Stack Entwicklung',
-                  'WordPress Expert',
-                  'Frontend Spezialist',
+                  'WordPress & React',
+                  'WebGL & Three.js',
+                  'KI-Integration',
                 ],
               },
               {
-                icon: '📱',
-                title: 'Design',
+                icon: '🎯',
+                title: 'Digitale Services',
                 items: [
-                  'Responsive Webdesign',
-                  'UI/UX Design',
-                  'Mobile-First Ansatz',
+                  'Google Analytics & Tag Manager',
+                  'Email-Marketing (Brevo)',
+                  'Automatisierung (make.com)',
                 ],
               },
               {
-                icon: '🔧',
-                title: 'Tools & Technologien',
+                icon: '🤝',
+                title: 'Persönliche Kompetenz',
                 items: [
-                  'WordPress & Divi',
-                  'HTML, CSS, JavaScript',
-                  'SEO & Web Performance',
+                  'Dipl. Lebens- & Sozialberater',
+                  'NLP-Trainer & Coach',
+                  'Mentaltrainer',
                 ],
               },
             ].map((qual, idx) => (
@@ -341,19 +344,19 @@ const AboutPage: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-2xl font-bold mb-3">
-            Lassen Sie uns zusammenarbeiten
+            Bereit für Ihren digitalen Start?
           </h2>
           <p className="mb-6 max-w-2xl mx-auto">
-            Bereit für Ihren professionellen Webauftritt? Vereinbaren Sie jetzt
-            ein kostenloses Beratungsgespräch und wir besprechen Ihre
-            individuellen Anforderungen.
+            Als Gründer:in haben Sie genug zu tun. Lassen Sie uns in einem kostenlosen
+            Erstgespräch herausfinden, wie ich Sie als digitaler Mentor und technischer
+            Partner optimal unterstützen kann.
           </p>
           <Link
             to="/contact"
             className="inline-flex items-center px-6 py-3 bg-white text-rose-600 hover:bg-rose-100 rounded-lg font-medium transition-all shadow-lg hover:shadow-xl"
           >
             <Calendar className="mr-2 h-5 w-5" />
-            Jetzt kennenlernen
+            Kostenloses Erstgespräch
           </Link>
         </motion.div>
       </div>

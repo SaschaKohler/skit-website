@@ -12,6 +12,8 @@ import AGB from './pages/agb'
 import ScrollToTop from './components/common/ScrollToTop'
 import Breadcrumbs from './components/common/Breadcrumbs'
 import SEOHelmet from './components/seo/SEOHelmet'
+import BreadcrumbSchema from './components/seo/BreadcrumbSchema'
+import CookieConsent from './components/common/CookieConsent'
 import { ThemeProvider } from './context/ThemeContext'
 import './App.css'
 
@@ -21,6 +23,7 @@ function App() {
       <Router>
         <ScrollToTop />
         <SEOHelmet />
+        <BreadcrumbSchema />
         <div className="flex flex-col min-h-screen bg-[var(--color-background)] text-[var(--color-text)] transition-colors duration-300">
           <Header />
           <Breadcrumbs />
@@ -55,6 +58,7 @@ function App() {
             </AnimatePresence>
           </main>
           <Footer />
+          <CookieConsent />
         </div>
       </Router>
     </ThemeProvider>

@@ -5,6 +5,8 @@ import { Heart, Calendar, Zap } from 'lucide-react'
 import HeroSection from '../components/sections/HeroSection'
 import ResponsivePricingPackages from '../components/sections/ResponsivePricingPackages'
 import ClientJourneySection from '../components/sections/ClientJourneySection'
+import WhyNotDIYSection from '../components/sections/WhyNotDIYSection'
+import FAQSection from '../components/sections/FAQSection'
 
 const HomePage: React.FC = () => {
   return (
@@ -19,18 +21,18 @@ const HomePage: React.FC = () => {
             {[
               {
                 icon: <Calendar className="h-8 w-8 text-rose-500" />,
-                title: 'Schnelle Umsetzung',
-                desc: 'In nur 14 Tagen ist Ihre Website fertig und online',
+                title: 'Alles aus einer Hand',
+                desc: 'WordPress, Google Analytics, GDPR-Consent, Email-Marketing – ich kümmere mich um Ihren kompletten digitalen Auftritt',
               },
               {
                 icon: <Zap className="h-8 w-8 text-amber-500" />,
-                title: 'Einfache Bedienung',
-                desc: 'WordPress macht die Verwaltung Ihrer Inhalte zum Kinderspiel',
+                title: 'Keine Vorkenntnisse nötig',
+                desc: 'Sie konzentrieren sich auf Ihr Business – ich übernehme die technische Komplexität',
               },
               {
                 icon: <Heart className="h-8 w-8 text-rose-500" />,
-                title: 'Persönliche Betreuung',
-                desc: 'Von der Idee bis zum fertigen Webauftritt an Ihrer Seite',
+                title: 'Mehr als nur Technik',
+                desc: 'Als dipl. Lebens- und Sozialberater verstehe ich Ihre Gründungssituation und begleite Sie wohlwollend',
               },
             ].map((item, idx) => (
               <motion.div
@@ -54,6 +56,9 @@ const HomePage: React.FC = () => {
 
       {/* Client Journey Visualization */}
       <ClientJourneySection />
+
+      {/* Why Not DIY - Story Section */}
+      <WhyNotDIYSection />
 
       {/* Kundenbewertungen Vorschau */}
       {/* <section className="py-16 bg-gradient-to-b from-[var(--color-ui-dark)] to-[var(--color-primary-light)] w-full"> */}
@@ -85,6 +90,9 @@ const HomePage: React.FC = () => {
         <ResponsivePricingPackages />
       </section>
 
+      {/* FAQ Section - wichtig für AI Search */}
+      <FAQSection />
+
       {/* CTA-Section */}
       <section className="py-16 bg-[var(--color-ui-dark)] w-full">
         <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-7xl">
@@ -98,11 +106,11 @@ const HomePage: React.FC = () => {
             <div className="relative px-6 py-12 sm:px-12 sm:py-16 text-center text-white">
               <div className="relative z-10">
                 <h2 className="text-2xl sm:text-3xl font-subheading font-bold mb-4">
-                  Bereit für Ihren erfolgreichen Webauftritt?
+                  Bereit für Ihren sicheren Start ins digitale Business?
                 </h2>
                 <p className="text-white/90 mb-8 max-w-2xl mx-auto font-body">
-                  Lassen Sie uns in einem unverbindlichen Gespräch herausfinden,
-                  wie Ihre perfekte Website aussehen könnte.
+                  Als Gründer:in haben Sie genug zu tun. Lassen Sie uns in einem kostenlosen
+                  Erstgespräch klären, wie ich Ihnen den digitalen Einstieg erleichtere.
                 </p>
                 <Link
                   to="/contact"

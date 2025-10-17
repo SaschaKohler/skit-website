@@ -15,25 +15,25 @@ const HeroSection: React.FC = () => {
   const carouselImages = [
     {
       url: '/img/unsichtbar.png',
-      alt: 'Online Sichtbarkeit für Unternehmerinnen',
+      alt: 'Ihr Partner für einen sicheren digitalen Start',
       fallback:
-        'https://via.placeholder.com/600x600?text=Digitale+Sichtbarkeit',
+        'https://via.placeholder.com/600x600?text=Digitaler+Start',
     },
     {
       url: '/img/sichtbar.png',
-      alt: 'Erfolgreiche Webpräsenz',
-      fallback: 'https://via.placeholder.com/600x600?text=Web+Präsenz',
+      alt: 'Von der Gründung bis zur erfolgreichen Online-Präsenz',
+      fallback: 'https://via.placeholder.com/600x600?text=Online+Präsenz',
     },
     {
       url: '/img/auffindbar.png',
-      alt: 'Weg von - Unsichtbar | Hinzu - Sichtbar',
-      fallback: 'https://via.placeholder.com/600x600?text=Online+Erfolg',
+      alt: 'WordPress, Google Analytics & mehr – alles aus einer Hand',
+      fallback: 'https://via.placeholder.com/600x600?text=Komplettservice',
     },
 
     {
       url: '/img/erfolgreich.png',
-      alt: '-> Erfolgreiche Unternehmerin',
-      fallback: 'https://via.placeholder.com/600x600?text=Online+Erfolg',
+      alt: 'Erfolgreich durchstarten mit professioneller Betreuung',
+      fallback: 'https://via.placeholder.com/600x600?text=Erfolgreicher+Start',
     },
   ]
 
@@ -124,7 +124,7 @@ const HeroSection: React.FC = () => {
               className="mb-4"
             >
               <h2 className="text-2xl sm:text-3xl font-medium text-rose-500 mb-2">
-                WERDEN SIE ENDLICH
+                FÜR GRÜNDER:INNEN & EINZELUNTERNEHMER:INNEN
               </h2>
             </motion.div>
 
@@ -135,11 +135,11 @@ const HeroSection: React.FC = () => {
               className="mb-8"
             >
               <h1
-                className="text-6xl sm:text-7xl md:text-8xl font-heading font-bold tracking-tight leading-none text-gray-900 uppercase"
+                className="text-5xl sm:text-6xl md:text-7xl font-heading font-bold tracking-tight leading-none text-gray-900"
                 style={{ letterSpacing: '-0.02em' }}
               >
-                <div className="text-outline-thin">ONLINE</div>
-                <div className="mt-2">SICHTBAR</div>
+                <div className="text-rose-600">Ihr sicherer Start</div>
+                <div className="mt-2">in die digitale Welt</div>
               </h1>
             </motion.div>
 
@@ -149,16 +149,15 @@ const HeroSection: React.FC = () => {
               variants={contentVariants}
               className="mb-8"
             >
-              <p className="text-lg sm:text-xl text-gray-700 max-w-xl">
-                Das größte Problem für Unternehmerinnen und Selbständige:
-                <strong className="text-rose-600">
-                  {' '}
-                  Nicht gefunden werden
+              <p className="text-lg sm:text-xl text-gray-700 max-w-xl leading-relaxed">
+                Sie gründen gerade Ihr Einzelunternehmen und wissen: An einer professionellen
+                Online-Präsenz führt kein Weg mehr vorbei. Aber zwischen Business-Plan,
+                Finanzierung und den ersten Kund:innen bleibt wenig Zeit für komplexe
+                digitale Themen.
+                <strong className="block mt-3 text-rose-600">
+                  Genau hier unterstütze ich Sie – als erfahrener Partner, der nicht nur
+                  die Technik beherrscht, sondern auch Ihre Herausforderungen als Gründer:in kennt.
                 </strong>
-                . Ich bin Sascha Kohler und helfe Ihnen, mit einer
-                maßgeschneiderten Website endlich sichtbar zu werden. Ohne
-                technischen Ballast, aber mit einer klaren Strategie für mehr
-                Reichweite und neue Kundinnen.
               </p>
             </motion.div>
 
@@ -172,14 +171,14 @@ const HeroSection: React.FC = () => {
                 to="/contact"
                 className="px-6 py-3 bg-rose-500 hover:bg-rose-600 text-white rounded-md font-medium transition-all hover:translate-y-[-2px] inline-flex items-center justify-center"
               >
-                Jetzt sichtbar werden
+                Kostenloses Erstgespräch
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
               <a
                 href="#pricing"
                 className="px-6 py-3 bg-white hover:bg-gray-100 text-gray-800 border border-gray-300 rounded-md font-medium transition-all inline-flex items-center justify-center"
               >
-                Wie ich helfe
+                Meine Services
                 <ExternalLink className="ml-2 h-5 w-5" />
               </a>
             </motion.div>
