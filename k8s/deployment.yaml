@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: skit-website
+  namespace: skit
+  labels:
+    app: skit-website
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: skit-website
+  template:
+    metadata:
+      labels:
+        app: skit-website
+    spec:
+      imagePullSecrets:
+        - name: ghcr-secret
+      containers:
+        - name: skit-website
+          image: ghcr.io/saschakohler/skit-services:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+              protocol: TCP
+          resources:
+            limits:
+              cpu: 194m
+              memory: 256Mi
+            requests:
+              cpu: 100m
+              memory: 128Mi
+          env:
+            - name: VITE_WEBHOOK_URL
+              valueFrom:
+                secretKeyRef:
+                  name: skit-secrets
+                  key: VITE_WEBHOOK_URL
