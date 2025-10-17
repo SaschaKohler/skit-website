@@ -8,6 +8,54 @@ interface CookiePreferences {
   marketing: boolean
 }
 
+type ConsentModeStatus = 'granted' | 'denied'
+
+type GTagConsentParams = {
+  analytics_storage: ConsentModeStatus
+  ad_storage: ConsentModeStatus
+  ad_user_data: ConsentModeStatus
+  ad_personalization: ConsentModeStatus
+  functionality_storage: ConsentModeStatus
+  personalization_storage: ConsentModeStatus
+  security_storage: ConsentModeStatus
+}
+
+type ConsentUpdateEvent = GTagConsentParams & {
+  event: 'consent_update'
+}
+
+type CookieConsentUpdateEvent = {
+  event: 'cookie_consent_update'
+  consent_analytics: boolean
+  consent_marketing: boolean
+  consent_necessary: boolean
+}
+
+type DataLayerEntry = ConsentUpdateEvent | CookieConsentUpdateEvent | Record<string, unknown>
+
+interface GTMWindow extends Window {
+  dataLayer?: DataLayerEntry[]
+  gtag?: (command: 'consent', action: 'update', params: GTagConsentParams) => void
+}
+
+const isCookiePreferences = (value: unknown): value is CookiePreferences => {
+  if (typeof value !== 'object' || value === null) {
+    return false
+  }
+  const prefs = value as Partial<Record<keyof CookiePreferences, unknown>>
+  const keys: (keyof CookiePreferences)[] = ['necessary', 'analytics', 'marketing']
+  return keys.every(key => typeof prefs[key] === 'boolean')
+}
+
+const parseCookiePreferences = (value: string): CookiePreferences | null => {
+  try {
+    const parsed = JSON.parse(value) as unknown
+    return isCookiePreferences(parsed) ? parsed : null
+  } catch {
+    return null
+  }
+}
+
 const CookieConsent: React.FC = () => {
   const [showBanner, setShowBanner] = useState(false)
   const [showSettings, setShowSettings] = useState(false)
@@ -23,73 +71,70 @@ const CookieConsent: React.FC = () => {
     const consent = localStorage.getItem('cookie-consent')
     if (!consent) {
       // Warte kurz bevor Banner angezeigt wird (bessere UX)
-      setTimeout(() => setShowBanner(true), 1000)
+      setTimeout(() => { setShowBanner(true); }, 1000)
     } else {
       // Lade gespeicherte Präferenzen
-      const savedPrefs = JSON.parse(consent)
-      setPreferences(savedPrefs)
-      setHasConsent(true)
-      // Setze Consent silent (ohne Event) beim initialen Load
-      updateGTMConsent(savedPrefs, true)
+      const savedPrefs = parseCookiePreferences(consent)
+      if (savedPrefs) {
+        setPreferences(savedPrefs)
+        setHasConsent(true)
+        // Setze Consent silent (ohne Event) beim initialen Load
+        updateGTMConsent(savedPrefs, true)
+      } else {
+        setTimeout(() => { setShowBanner(true); }, 1000)
+      }
     }
   }, [])
 
   // Google Tag Manager Consent Update
-  const updateGTMConsent = (prefs: CookiePreferences, silent: boolean = false) => {
-    if (typeof window !== 'undefined') {
-      const w = window as any
-      w.dataLayer = w.dataLayer || []
-      
-      // Prüfe ob gtag Funktion verfügbar ist
-      if (typeof w.gtag === 'function') {
-        // GTM Consent Mode V2 Update (offiziell)
-        w.gtag('consent', 'update', {
-          analytics_storage: prefs.analytics ? 'granted' : 'denied',
-          ad_storage: prefs.marketing ? 'granted' : 'denied',
-          ad_user_data: prefs.marketing ? 'granted' : 'denied',
-          ad_personalization: prefs.marketing ? 'granted' : 'denied',
-          functionality_storage: 'granted',
-          personalization_storage: prefs.analytics ? 'granted' : 'denied',
-          security_storage: 'granted',
-        })
-      } else {
-        // Fallback: DataLayer Push (falls gtag nicht verfügbar)
-        w.dataLayer.push({
-          event: 'consent_update',
-          analytics_storage: prefs.analytics ? 'granted' : 'denied',
-          ad_storage: prefs.marketing ? 'granted' : 'denied',
-          ad_user_data: prefs.marketing ? 'granted' : 'denied',
-          ad_personalization: prefs.marketing ? 'granted' : 'denied',
-          functionality_storage: 'granted',
-          personalization_storage: prefs.analytics ? 'granted' : 'denied',
-          security_storage: 'granted',
-        })
-      }
+  const updateGTMConsent = (prefs: CookiePreferences, silent: boolean = false): void => {
+    if (typeof window === 'undefined') {
+      return
+    }
+    const w = window as GTMWindow
+    if (!Array.isArray(w.dataLayer)) {
+      w.dataLayer = []
+    }
 
-      // Custom Event für GTM Trigger - NUR bei User-Aktionen (nicht beim initialen Load)
-      if (!silent) {
-        w.dataLayer.push({
-          event: 'cookie_consent_update',
-          consent_analytics: prefs.analytics,
-          consent_marketing: prefs.marketing,
-          consent_necessary: prefs.necessary,
-        })
+    const consentParams: GTagConsentParams = {
+      analytics_storage: prefs.analytics ? 'granted' : 'denied',
+      ad_storage: prefs.marketing ? 'granted' : 'denied',
+      ad_user_data: prefs.marketing ? 'granted' : 'denied',
+      ad_personalization: prefs.marketing ? 'granted' : 'denied',
+      functionality_storage: 'granted',
+      personalization_storage: prefs.analytics ? 'granted' : 'denied',
+      security_storage: 'granted',
+    }
 
-        // Debug-Log nur bei User-Aktion
-        console.log('✅ Cookie Consent updated:', {
-          analytics: prefs.analytics,
-          marketing: prefs.marketing,
-          method: typeof w.gtag === 'function' ? 'gtag()' : 'dataLayer',
-          dataLayer_events: w.dataLayer.length
-        })
-      } else {
-        // Silent Load - kein Event, nur Consent-Status setzen
-        console.log('🔄 Cookie Consent loaded from storage:', {
-          analytics: prefs.analytics,
-          marketing: prefs.marketing,
-          silent: true
-        })
-      }
+    if (typeof w.gtag === 'function') {
+      w.gtag('consent', 'update', consentParams)
+    } else {
+      w.dataLayer.push({
+        event: 'consent_update',
+        ...consentParams,
+      })
+    }
+
+    if (!silent) {
+      w.dataLayer.push({
+        event: 'cookie_consent_update',
+        consent_analytics: prefs.analytics,
+        consent_marketing: prefs.marketing,
+        consent_necessary: prefs.necessary,
+      })
+
+      console.warn('Cookie Consent updated:', {
+        analytics: prefs.analytics,
+        marketing: prefs.marketing,
+        method: typeof w.gtag === 'function' ? 'gtag()' : 'dataLayer',
+        dataLayer_events: w.dataLayer.length,
+      })
+    } else {
+      console.warn('Cookie Consent loaded from storage:', {
+        analytics: prefs.analytics,
+        marketing: prefs.marketing,
+        silent: true,
+      })
     }
   }
 
@@ -182,7 +227,7 @@ const CookieConsent: React.FC = () => {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
             transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-            onClick={() => setShowSettings(true)}
+            onClick={() => { setShowSettings(true); }}
             className="fixed bottom-6 left-6 z-40 w-14 h-14 bg-gradient-to-br from-rose-500 to-amber-500 hover:from-rose-600 hover:to-amber-600 rounded-full shadow-lg hover:shadow-xl flex items-center justify-center transition-all duration-300 hover:scale-110 group"
             aria-label="Cookie-Einstellungen öffnen"
             title="Cookie-Einstellungen"
@@ -243,7 +288,7 @@ const CookieConsent: React.FC = () => {
                       Nur Notwendige
                     </button>
                     <button
-                      onClick={() => setShowSettings(true)}
+                      onClick={() => { setShowSettings(true); }}
                       className="px-6 py-3 bg-white hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 border-2 border-gray-300 dark:border-gray-600 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 whitespace-nowrap"
                     >
                       <Settings className="w-5 h-5" />
@@ -267,7 +312,7 @@ const CookieConsent: React.FC = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50"
-              onClick={() => setShowSettings(false)}
+              onClick={() => { setShowSettings(false); }}
             />
 
             {/* Modal */}
@@ -282,7 +327,7 @@ const CookieConsent: React.FC = () => {
                 {/* Header */}
                 <div className="bg-gradient-to-r from-rose-500 to-amber-500 p-6 relative">
                   <button
-                    onClick={() => setShowSettings(false)}
+                    onClick={() => { setShowSettings(false); }}
                     className="absolute top-4 right-4 p-2 hover:bg-white/20 rounded-lg transition-colors"
                     aria-label="Schließen"
                   >
@@ -336,7 +381,7 @@ const CookieConsent: React.FC = () => {
                           ? 'border-rose-300 dark:border-rose-700 bg-rose-50 dark:bg-rose-900/20'
                           : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900/50'
                       }`}
-                      onClick={() => togglePreference('analytics')}
+                      onClick={() => { togglePreference('analytics'); }}
                     >
                       <div className="flex items-start justify-between gap-4">
                         <div className="flex-1">
@@ -372,7 +417,7 @@ const CookieConsent: React.FC = () => {
                           ? 'border-rose-300 dark:border-rose-700 bg-rose-50 dark:bg-rose-900/20'
                           : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900/50'
                       }`}
-                      onClick={() => togglePreference('marketing')}
+                      onClick={() => { togglePreference('marketing'); }}
                     >
                       <div className="flex items-start justify-between gap-4">
                         <div className="flex-1">

@@ -147,8 +147,8 @@ const MobilePricingPackages: React.FC = () => {
           <div className="bg-rose-50 dark:bg-rose-900/30 rounded-lg p-4 mb-4 text-center">
             <span className="text-2xl font-bold text-rose-600 dark:text-rose-400">
               {billingCycle === 'monthly'
-                ? `${mainPackage.price.monthly}€`
-                : `${mainPackage.price.oneTime}€`}
+                ? `${String(mainPackage.price.monthly)}€`
+                : `${String(mainPackage.price.oneTime)}€`}
             </span>
             <span className="text-sm font-normal text-gray-500 dark:text-gray-400 ml-1">
               {billingCycle === 'monthly' ? '/Monat' : ' einmalig'}

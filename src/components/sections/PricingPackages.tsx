@@ -32,7 +32,7 @@ const PricingPackages: React.FC = () => {
 
   useEffect(() => {
     if (isInView) {
-      controls.start('visible')
+      void controls.start('visible')
     }
   }, [isInView, controls])
 
@@ -112,6 +112,7 @@ const PricingPackages: React.FC = () => {
     }, 0)
 
     setTotalPrice(basePrice + upgradesPrice)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [billingCycle, selectedUpgrades])
 
   // Toggle Upgrade-Auswahl
@@ -281,8 +282,8 @@ const PricingPackages: React.FC = () => {
                         transition={{ duration: 0.4 }}
                       >
                         {billingCycle === 'monthly'
-                          ? `${mainPackage.price.monthly}€`
-                          : `${mainPackage.price.oneTime}€`}
+                          ? `${String(mainPackage.price.monthly)}€`
+                          : `${String(mainPackage.price.oneTime)}€`}
                       </motion.span>
                       <span className="text-sm font-normal text-gray-500 dark:text-gray-400 ml-2">
                         {billingCycle === 'monthly' ? '/Monat' : ' einmalig'}

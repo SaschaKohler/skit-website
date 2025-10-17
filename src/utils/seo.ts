@@ -147,7 +147,7 @@ const PAGE_METADATA: Record<string, PageMetadata> = {
  * @returns Die Metadaten für die Seite
  */
 export const getPageMetadata = (path: string): PageMetadata => {
-  return PAGE_METADATA[path] || DEFAULT_METADATA;
+  return PAGE_METADATA[path] ?? DEFAULT_METADATA;
 };
 
 /**

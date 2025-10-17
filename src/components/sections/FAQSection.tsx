@@ -102,7 +102,7 @@ const FAQSection: React.FC = () => {
             >
               {/* Question Button */}
               <button
-                onClick={() => toggleFAQ(index)}
+                onClick={() => { toggleFAQ(index); }}
                 className="w-full px-6 py-4 text-left flex items-center justify-between gap-4 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
                 aria-expanded={openIndex === index}
               >

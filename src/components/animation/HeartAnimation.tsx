@@ -60,7 +60,7 @@ const HeartAnimation: React.FC = () => {
         animate={isAnimating ? 'visible' : 'hidden'}
       >
         {/* Verschiedene Herzen im Hintergrund */}
-        {[...Array(12)].map((_, i) => {
+        {[...Array(12) as undefined[]].map((_, i) => {
           // Zufällige Positionen für die Herzen
           const x = Math.random() * 100
           const y = Math.random() * 100
@@ -72,9 +72,9 @@ const HeartAnimation: React.FC = () => {
               key={i}
               className="absolute"
               style={{
-                left: `${x}%`,
-                top: `${y}%`,
-                transform: `translateX(-50%) translateY(-50%) scale(${size})`,
+                left: `${String(x)}%`,
+                top: `${String(y)}%`,
+                transform: `translateX(-50%) translateY(-50%) scale(${String(size)})`,
               }}
               variants={heartVariants}
               transition={{ delay }}

@@ -71,11 +71,11 @@ const ContactPage: React.FC = () => {
       })
 
       if (!response.ok) {
-        throw new Error(`Fehler beim Senden: ${response.status}`)
+        throw new Error(`Fehler beim Senden: ${String(response.status)}`)
       }
 
       // Erfolgreiche Übermittlung
-      console.log('Form submitted successfully:', formData)
+      // Form submitted successfully
       setFormStatus('success')
 
       // Formular zurücksetzen
@@ -184,7 +184,7 @@ const ContactPage: React.FC = () => {
                     Ihre Anfrage
                   </h2>
 
-                  <form onSubmit={handleSubmit}>
+                  <form onSubmit={(e) => { void handleSubmit(e); }}>
                     <div className="grid gap-6 mb-6 md:grid-cols-2">
                       <div>
                         <label

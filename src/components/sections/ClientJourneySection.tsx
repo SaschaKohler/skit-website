@@ -196,7 +196,7 @@ const ClientJourneySection: React.FC = () => {
                 onClick={() => {
                   setCurrentStep(index)
                 }}
-                aria-label={`Go to step ${index + 1}`}
+                aria-label={`Go to step ${String(index + 1)}`}
               />
             ))}
           </div>

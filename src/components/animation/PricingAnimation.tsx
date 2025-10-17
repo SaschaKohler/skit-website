@@ -31,7 +31,7 @@ const PricingAnimation: React.FC<PricingAnimationProps> = ({
   // Animation beim Ändern des Preises
   useEffect(() => {
     if (isInView) {
-      controls.start({
+      void controls.start({
         opacity: 1,
         y: 0,
         scale: [1, 1.1, 1],

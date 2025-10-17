@@ -1,11 +1,14 @@
 import { useCallback } from 'react'
+import type { MouseEvent } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 
-export const useContactNavigation = (): ((e?: React.MouseEvent) => void) => {
+type ContactClickHandler = (event?: MouseEvent) => void
+
+export const useContactNavigation = (): ContactClickHandler => {
   const navigate = useNavigate()
   const location = useLocation()
 
-  return useCallback((e?: React.MouseEvent): void => {
+  return useCallback((e?: MouseEvent): void => {
     if (e) {
       e.preventDefault()
     }

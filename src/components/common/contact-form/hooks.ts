@@ -101,13 +101,14 @@ export const useContactForm = () => {
           )
         } else {
           throw new Error(
-            `Netzwerkfehler: ${response.status} ${response.statusText}`
+            `Netzwerkfehler: ${String(response.status)} ${response.statusText}`
           )
         }
       }
 
       const responseText = await response.text()
-      console.log('Erfolgreiche Antwort:', responseText)
+      // Erfolgreiche Antwort empfangen
+      void responseText
 
       setStatus('success')
       setErrorMessage('')

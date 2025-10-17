@@ -42,7 +42,7 @@ const SEOHelmet: React.FC = () => {
     });
 
     // Aktualisiere den kanonischen Link
-    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    const canonicalLink = document.querySelector('link[rel="canonical"]');
     if (canonicalLink) {
       canonicalLink.setAttribute('href', metadata.canonicalUrl || `https://skit.sascha-kohler.at${location.pathname}`);
     }

@@ -27,14 +27,14 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
     // In Browser-Umgebung
     if (typeof window !== 'undefined') {
       // Versuchen, gespeicherte Einstellung aus dem localStorage zu laden
-      const savedTheme = localStorage.getItem('theme') as Theme
+      const savedTheme = localStorage.getItem('theme')
       
-      if (savedTheme && (savedTheme === 'light' || savedTheme === 'dark')) {
-        return savedTheme
+      if (savedTheme === 'light' || savedTheme === 'dark') {
+        return savedTheme as Theme
       }
       
       // Falls keine Einstellung gespeichert ist, System-Präferenz prüfen
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         return 'dark'
       }
     }

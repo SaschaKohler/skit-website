@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+ 
 import { Mail, Phone, Facebook, Linkedin, Heart } from 'lucide-react'
 import { useTheme } from '../../context/ThemeContext'
 
@@ -32,6 +33,7 @@ const Footer: React.FC = () => {
                 className="bg-[var(--color-card-bg)] p-2 rounded-full text-[var(--color-primary)] hover:text-[var(--color-primary-hover)] hover:shadow-md transition-all"
                 aria-label="Facebook"
               >
+                {/* eslint-disable-next-line @typescript-eslint/no-deprecated */}
                 <Facebook className="h-5 w-5" />
               </a>
               <a
@@ -41,6 +43,7 @@ const Footer: React.FC = () => {
                 className="bg-[var(--color-card-bg)] p-2 rounded-full text-[var(--color-primary)] hover:text-[var(--color-primary-hover)] hover:shadow-md transition-all"
                 aria-label="LinkedIn"
               >
+                {/* eslint-disable-next-line @typescript-eslint/no-deprecated */}
                 <Linkedin className="h-5 w-5" />
               </a>
             </div>

@@ -244,7 +244,7 @@ const HeroSection: React.FC = () => {
                     className={`w-2 h-2 rounded-full transition-all ${
                       index === currentSlide ? 'bg-white w-6' : 'bg-white/50'
                     }`}
-                    aria-label={`Gehe zu Slide ${index + 1}`}
+                    aria-label={`Gehe zu Slide ${String(index + 1)}`}
                   />
                 ))}
               </div>
