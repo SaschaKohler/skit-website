@@ -26,9 +26,9 @@ const MobilePricingPackages: React.FC = () => {
     description: 'Ihre professionelle Website in nur 14 Tagen online',
     price: {
       monthly: 99,
-      oneTime: 790,
+      oneTime: 890,
     },
-    setup: 297, // Einmalige Anzahlung bei monatlicher Zahlungsweise
+    setup: 299, // Einmalige Anzahlung bei monatlicher Zahlungsweise
     features: [
       'Professionelle 4-Seiten WordPress-Website',
       'Modernes, responsives Design',
@@ -89,7 +89,10 @@ const MobilePricingPackages: React.FC = () => {
   }
 
   return (
-    <section className="py-12 bg-rose-50 dark:bg-rose-950/20 w-full" id="mobile-pricing-section">
+    <section
+      className="py-12 bg-rose-50 dark:bg-rose-950/20 w-full"
+      id="mobile-pricing-section"
+    >
       <div className="container mx-auto px-4">
         {/* Seitenüberschrift */}
         <div className="text-center mb-8">
@@ -97,7 +100,10 @@ const MobilePricingPackages: React.FC = () => {
             14-Tage Express-Website
           </span>
           <h2 className="text-2xl font-bold mb-3 dark:text-white">
-            Transparente <span className="text-rose-500 dark:text-rose-400">Preisgestaltung</span>
+            Transparente{' '}
+            <span className="text-rose-500 dark:text-rose-400">
+              Preisgestaltung
+            </span>
           </h2>
           <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 max-w-md mx-auto">
             Wählen Sie zwischen einmaliger Zahlung oder flexiblen Raten
@@ -173,7 +179,9 @@ const MobilePricingPackages: React.FC = () => {
           {/* Features */}
           <div className="mb-4">
             <div className="flex items-center justify-between mb-2">
-              <h4 className="font-medium text-gray-800 dark:text-white text-sm">Inklusive:</h4>
+              <h4 className="font-medium text-gray-800 dark:text-white text-sm">
+                Inklusive:
+              </h4>
               <button
                 onClick={() => {
                   setExpandedFeatures(!expandedFeatures)
@@ -193,7 +201,9 @@ const MobilePricingPackages: React.FC = () => {
               {displayedFeatures.map((feature, idx) => (
                 <li key={idx} className="flex items-start">
                   <Check className="h-4 w-4 text-green-500 dark:text-green-400 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700 dark:text-gray-300 text-sm">{feature}</span>
+                  <span className="text-gray-700 dark:text-gray-300 text-sm">
+                    {feature}
+                  </span>
                 </li>
               ))}
             </ul>
@@ -210,7 +220,9 @@ const MobilePricingPackages: React.FC = () => {
 
         {/* Erweiterungen */}
         <div className="mb-8">
-          <h3 className="text-lg font-bold mb-4 dark:text-white">Website-Erweiterungen</h3>
+          <h3 className="text-lg font-bold mb-4 dark:text-white">
+            Website-Erweiterungen
+          </h3>
 
           <div className="space-y-3">
             {upgrades.map(upgrade => (
@@ -251,7 +263,9 @@ const MobilePricingPackages: React.FC = () => {
 
         {/* Schritte */}
         <div className="bg-white dark:bg-gray-800 rounded-lg p-4 mb-8 border border-gray-200 dark:border-gray-700">
-          <h3 className="text-lg font-bold mb-3 dark:text-white">So läuft Ihr Projekt ab</h3>
+          <h3 className="text-lg font-bold mb-3 dark:text-white">
+            So läuft Ihr Projekt ab
+          </h3>
 
           <div className="space-y-4">
             {[
@@ -265,7 +279,9 @@ const MobilePricingPackages: React.FC = () => {
                 <div className="w-7 h-7 rounded-full bg-rose-100 dark:bg-rose-900/50 text-rose-600 dark:text-rose-300 flex items-center justify-center font-bold text-xs mr-3">
                   {step.day}
                 </div>
-                <span className="text-gray-800 dark:text-white font-medium">{step.title}</span>
+                <span className="text-gray-800 dark:text-white font-medium">
+                  {step.title}
+                </span>
               </div>
             ))}
           </div>
@@ -273,7 +289,9 @@ const MobilePricingPackages: React.FC = () => {
 
         {/* Folgekosten */}
         <div className="bg-white dark:bg-gray-800 rounded-lg p-4 mb-8 border border-gray-200 dark:border-gray-700">
-          <h3 className="text-lg font-bold mb-2 dark:text-white">Nach dem ersten Jahr</h3>
+          <h3 className="text-lg font-bold mb-2 dark:text-white">
+            Nach dem ersten Jahr
+          </h3>
           <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">
             Für Hosting, Domain, Updates und Support:
           </p>
