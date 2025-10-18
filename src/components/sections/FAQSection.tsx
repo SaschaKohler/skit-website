@@ -11,7 +11,7 @@ const faqs: FAQ[] = [
   {
     question: 'Wie lange dauert es, bis meine Website online ist?',
     answer:
-      'Ihre professionelle WordPress-Website ist in nur 14 Tagen online. Das beinhaltet die komplette Einrichtung: Website, Google Analytics, GDPR-Consent Banner, Email-Marketing Setup und alle rechtlichen Seiten (Impressum, Datenschutz, AGB).',
+      'Ihre professionelle WordPress-Website ist in nur 14 Tagen online. Das beinhaltet die komplette Einrichtung: Website, Google Analytics, GDPR-Consent Banner und alle rechtlichen Seiten (Impressum, Datenschutz, AGB).',
   },
   {
     question: 'Brauche ich technische Vorkenntnisse für WordPress?',
@@ -36,7 +36,7 @@ const faqs: FAQ[] = [
   {
     question: 'Welche Services sind im WordPress-Paket enthalten?',
     answer:
-      'Das komplette Paket umfasst: Professionelle WordPress-Website mit responsivem Design, Google Analytics und Tag Manager Setup, Google Unternehmensprofil, Google Search Console, GDPR-konformer Cookie-Banner, Datenschutzerklärung, Impressum, AGB, Brevo Email-Marketing Setup, Newsletter-Integration, und persönliche Schulung. Optional: Prozessautomatisierung mit make.com.',
+      'Das komplette Paket umfasst: Professionelle WordPress-Website mit responsivem Design, Google Analytics und Tag Manager Setup, Google Unternehmensprofil, Google Search Console, GDPR-konformer Cookie-Banner, Datenschutzerklärung, Impressum, AGB und persönliche Schulung. Optional zubuchbar: Email-Marketing Setup (Brevo, Newsletter-Integration) und Prozessautomatisierung mit make.com.',
   },
   {
     question: 'Für wen ist sk.IT Software ideal?',
